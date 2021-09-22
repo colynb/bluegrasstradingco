@@ -52,11 +52,10 @@ export default function EmailSignup() {
             defaultValue=""
             {...register('email', {
               required: true,
-              pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
             })}
             id="email-address"
             name="email"
-            type="text"
+            type="email"
             autoComplete="email"
             className="w-full px-5 py-3 placeholder-gray-500 focus:ring-gray-500 focus:border-gray-500 sm:max-w-xs border-gray-300 rounded-md"
             placeholder="Enter your email"
