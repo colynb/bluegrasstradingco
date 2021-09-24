@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import Modal from './Modal'
 
 export default function EmailSignup() {
   const {
@@ -10,6 +11,7 @@ export default function EmailSignup() {
   } = useForm()
   const [submitError, setSubmitError] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(null)
+  const [verifyModal, setVerifyModal] = useState(false)
 
   const onSubmit = (data) => subscribe(data)
 
@@ -18,9 +20,12 @@ export default function EmailSignup() {
       const data = await fetch(`/api/subscribe?email=${email}`).then((resp) =>
         resp.json()
       )
+      console.log({ data })
       setSubmitSuccess(true)
+      setVerifyModal(true)
     } catch (e) {
       setSubmitError(true)
+      setVerifyModal(false)
     }
   }
 
@@ -39,11 +44,21 @@ export default function EmailSignup() {
         </div>
       )}
       {errors.email && <div className="text-red-500">Email is required</div>}
-      {submitSuccess ? (
-        <div className="text-green-500">
-          Submitted. Please check your email to verify your subscription.
+      {submitSuccess === true && (
+        <div>
+          <div className="pt-4">
+            Thanks! Please check your email.{' '}
+            <button
+              className="font-semibold"
+              onClick={() => setSubmitSuccess(null)}
+            >
+              Send another.
+            </button>
+          </div>
+          <Modal open={verifyModal} setOpen={setVerifyModal} />
         </div>
-      ) : (
+      )}
+      {submitSuccess === null && (
         <form className="mt-2 sm:flex" onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="email-address" className="sr-only">
             Email address
