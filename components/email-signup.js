@@ -20,7 +20,6 @@ export default function EmailSignup() {
       const data = await fetch(`/api/subscribe?email=${email}`).then((resp) =>
         resp.json()
       )
-      console.log({ data })
       setSubmitSuccess(true)
       setVerifyModal(true)
     } catch (e) {

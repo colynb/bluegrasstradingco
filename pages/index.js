@@ -149,27 +149,24 @@ export default function Home({ description, title }) {
                 <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
                   ABOUT ME
                 </h2>
+                <div className="float-left mr-6 mb-6 rounded-xl overflow-hidden w-40 h-40">
+                  <Image
+                    src="/email.jpeg"
+                    alt="Colyn Brown"
+                    width="250"
+                    height="283"
+                    className="object-fill"
+                  />
+                </div>
                 <p>
-                  <div className="float-left mr-6 mb-6 rounded-xl overflow-hidden w-40 h-40">
-                    <Image
-                      src="/email.jpeg"
-                      alt="Colyn Brown"
-                      width="250"
-                      height="283"
-                      className="object-fill"
-                    />
-                  </div>
-                  <div>
-                    Hi, I’m Colyn Brown. I started Bluegrass Trading Company as
-                    a way to offer merchandise to bluegrass enthusiasts like
-                    myself. Though I’ve only been playing banjo since 2017, I’ve
-                    been involved in bluegrass one way or the other my whole
-                    life. My dad, Ken Brown, was an award winning banjo player
-                    early on in the mid to late 60s Northeast region of the
-                    country, hanging out and picking with young guys like Pete
-                    Wernick, Bill Keith. I spent a lot of time growing up
-                    listening to bluegrass.
-                  </div>
+                  Hi, I’m Colyn Brown. I started Bluegrass Trading Company as a
+                  way to offer merchandise to bluegrass enthusiasts like myself.
+                  Though I’ve only been playing banjo since 2017, I’ve been
+                  involved in bluegrass one way or the other my whole life. My
+                  dad, Ken Brown, was an award winning banjo player early on in
+                  the mid to late 60s Northeast region of the country, hanging
+                  out and picking with young guys like Pete Wernick, Bill Keith.
+                  I spent a lot of time growing up listening to bluegrass.
                 </p>
                 <p>
                   Why trading cards you ask? Early in 2021 the thought just hit

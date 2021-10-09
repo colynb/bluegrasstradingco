@@ -4,7 +4,6 @@ const API_URL =
 const ACCESS_TOKEN = 'be912853892acbdffd31cfae988429b2'
 
 export const storefront = async (query, variables = {}) => {
-  console.log(JSON.stringify({ query: query.trim(), variables }))
   const response = await fetch(API_URL, {
     method: 'POST',
     headers: {
