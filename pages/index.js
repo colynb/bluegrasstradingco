@@ -62,7 +62,7 @@ export default function Home() {
         </div>
         <div className="p-12 text-gray-600 text-xl leading-loose">
           <div className="max-w-4xl mx-auto space-y-4">
-            <div className="opacity-75">
+            <div className="opacity-75 space-y-4">
               <p>
                 Hi, I’m Colyn Brown. I started Bluegrass Trading Company as a
                 way to offer merchandise to bluegrass enthusiasts like myself.
