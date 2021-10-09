@@ -13,9 +13,24 @@ export default function Home() {
   return (
     <div className="h-screen w-screen">
       <Head>
-        <title>Bluegrass Trading Co.</title>
-        <meta name="description" content="Bluegrass Trading Co. - Est. 2021" />
+        <title>
+          Banjo All-Star Trading Cards | Bluegrass Trading Co. - Est. 2021
+        </title>
+        <meta
+          name="description"
+          content="Banjo All-Star Trading Cards | Bluegrass Trading Co. - Est. 2021"
+        />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:title"
+          content="Banjo All-Star Trading Cards | Bluegrass Trading Co. - Est. 2021"
+        />
+        <meta
+          property="og:description"
+          content="Banjo All-Star Trading Cards Coming Spring 2022. Pre-order yours now!"
+        />
+        <meta property="og:image" content="/SitePromo.png" />
+        <meta property="og:url" content="https://www.bluegrasstradingco.com/" />
       </Head>
       <div className="header"></div>
       <header className="px-6 sm:px-0 flex items-center py-8 justify-center bg-white">
