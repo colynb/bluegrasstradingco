@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
-        display: ['Bebas Neue', 'cursive'],
+        display: ['Roboto Condensed', 'cursive'],
       },
     },
   },

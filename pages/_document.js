@@ -11,13 +11,17 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
-            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;800&display=swap"
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap"
             rel="stylesheet"
           />
         </Head>
-        <body className="bg-yellow-50">
+        <body className="bg-white">
           <Main />
           <NextScript />
         </body>

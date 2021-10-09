@@ -11,47 +11,87 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="header"></div>
-      <header className="px-6 sm:px-0 sm:mb-24 flex items-center justify-center pt-12">
-        <div className="relative max-w-4xl h-20 sm:h-40 w-full">
+      <header className="px-6 sm:px-0 flex items-center py-8 justify-center bg-white">
+        <div className="relative max-w-4xl h-10 sm:h-20 w-full">
           <Image src="/logo.svg" alt="Bluegrass Trading Co." layout="fill" />
         </div>
       </header>
 
-      <main className="p-8 sm:p-0 max-w-6xl mx-auto sm:flex justify-between sm:space-x-24 leading-loose text-lg text-gray-700">
-        <div className="space-y-6 sm:w-3/5">
-          <div className="mb-6">
-            <h1 className="font-extrabold text-3xl mb-2">
-              Bluegrass Trading Cards
-            </h1>
-            <h2 className="text-xl font-semibold opacity-60">
-              Coming Spring or Summer 2022!
-            </h2>
+      <main>
+        <div className="md:grid sm:grid-cols-2">
+          <div className="bg-yellow-50 p-12 md:text-right flex md:justify-end">
+            <div className="max-w-xl text-[#04403F]">
+              <h1 className="font-bold font-display text-6xl mb-4 uppercase">
+                Banjo{' '}
+                <span className="text-[#b43b26] whitespace-nowrap">
+                  All-Star
+                </span>
+                <br />
+                Trading Cards
+              </h1>
+              <p className="leading-loose opacity-75 mb-4">
+                I am currently working several artists to create the
+                world&apos;s first bluegrass related, high-quality, trading
+                cards. These aren&apos;t photo cards, they will be works of art,
+                hand painted by our featured artists. The first series entitled{' '}
+                <span className="font-bold">
+                  &quot;Banjo All-Star Series One&quot;
+                </span>{' '}
+                will be devoted to highlighting 24 of your favorite banjo
+                pickers. Each pack will include 12 randomly selected cards PLUS
+                one commemorative card. The goal is to not only promote the
+                obvious choices (e.g. Earl Scruggs, J.D., etc) but more, less
+                obvious ones.
+              </p>
+
+              <button className="p-4 px-12 text-xl text-white bg-[#04403F] rounded-lg font-bold">
+                Pre-Order Yours Now!
+              </button>
+              <p className="mt-2">
+                <span className="font-bold text-xl">Shipping Spring 2022!</span>
+              </p>
+            </div>
           </div>
-          <div>
-            Yep, that&apos;s right, trading cards! I am currently working with
-            an artist from Dublin on our first series. We are creating the
-            world&apos;s first bluegrass related, high-quality, trading cards.
-            These aren&apos;t photo cards, they will be works of art, hand
-            painted by our selected artist. The first series entitled
-            &quot;Banjo All-Star Series 1&quot; will be devoted to highlighting
-            your favorite banjo pickers. Each pack will include about 8-12
-            randomly selected cards PLUS 1 special, also randomly selected,
-            commemorative card. The goal is to not only promote the obvious
-            choices (e.g. Earl Scruggs, J.D., etc) but more, less obvious
-            choices, which will remain a surprise. Sign up below to be notified
-            when these will be available for pre-order.
-          </div>
-          <div>
-            <EmailSignup />
+          <div className="bg-blue-200 relative h-96 md:h-auto">
+            <Image
+              src="/SitePromo.png"
+              alt="Bluegrass Trading Co."
+              layout="fill"
+              className="object-cover"
+            />
           </div>
         </div>
-        <div className="relative mt-6 sm:mt-0 w-60 sm:w-2/5 mx-auto">
-          <Image
-            src="/poster.png"
-            alt="Bluegrass Banjo All-Star Series 1"
-            width="450"
-            height="675"
-          />
+        <div className="p-12 text-gray-600 text-xl leading-loose">
+          <div className="max-w-4xl mx-auto opacity-75 space-y-4">
+            <p>
+              Hi, I’m Colyn Brown. I started Bluegrass Trading Company as a way
+              to offer merchandise to the bluegrass enthusiast who is as
+              enthusiastic about bluegrass as I am. Though I’ve only been
+              playing banjo for 4 years, I’ve been involved in one way or the
+              other my whole life. My dad, Ken Brown, was an award winning banjo
+              player early on in the mid to late 60s Northeast region of the
+              country, hanging out and picking with young guys like Pete
+              Wernick, Bill Keith. I spent a lot of time growing up listening to
+              bluegrass.
+            </p>
+            <p>
+              Wait, what, why trading cards you ask? Early in 2021 the thought
+              just hit me that these should exist so I asked around to see if I
+              could find them. The overwhelming response online was that I
+              should make these. I wasn&apos;t so sure I could do it. I just
+              knew that I wanted to have the cards exist so that I could have
+              some. They didn’t exist, at least not in the way I imagined, so
+              the only solution was for me to take a stab at it.
+            </p>
+
+            <p>
+              Fast forward a few months of thinking about how to do it and how I
+              would market them, I found Georgina Flood who was thrilled to
+              partner with me on this first few cards. Working with her inspired
+              me to reach out to other artists and I am happy to be working with
+              four different artists each with their own unique style.
+            </p>
+          </div>
         </div>
       </main>
     </div>
