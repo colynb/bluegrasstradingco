@@ -85,7 +85,7 @@ export default function Home({ description, title, variants }) {
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content={`${title}`} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="/SitePromo.png" />
+        <meta property="og:image" content="/SitePromoWithLogo.png" />
         <meta property="og:url" content="https://www.bluegrasstradingco.com/" />
       </Head>
       <div className="header"></div>
@@ -134,7 +134,7 @@ export default function Home({ description, title, variants }) {
               </div>
             </div>
           </div>
-          <div className="bg-blue-200 relative h-[600px] md:h-[650px]">
+          <div className="bg-[#9cc9d8] relative h-[600px] md:h-[650px]">
             <Image
               src="/SitePromo.png"
               alt="Earl Scruggs - Don Reno"
