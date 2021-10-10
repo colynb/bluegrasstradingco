@@ -28,18 +28,13 @@ export default function Home() {
             </h2>
           </div>
           <div>
-            Yep, that&apos;s right, trading cards! I am currently working with
-            an artist from Dublin on our first series. We are creating the
-            world&apos;s first bluegrass related, high-quality, trading cards.
-            These aren&apos;t photo cards, they will be works of art, hand
-            painted by our selected artist. The first series entitled
-            &quot;Banjo All-Star Series 1&quot; will be devoted to highlighting
-            your favorite banjo pickers. Each pack will include about 8-12
-            randomly selected cards PLUS 1 special, also randomly selected,
-            commemorative card. The goal is to not only promote the obvious
-            choices (e.g. Earl Scruggs, J.D., etc) but more, less obvious
-            choices, which will remain a surprise. Sign up below to be notified
-            when these will be available for pre-order.
+            Each pack of Series One Bluegrass Trading Co Banjo All-Star Trading
+            Cards contains 12 randomly sorted collectible cards and 1
+            commemorative card. The series includes Earl Scruggs, J.D. Crowe,
+            Ralph Stanley, Bill Keith, and 20 other surprises. There are a total
+            of 24 unique cards in the series. Collect them all! Pre-ordering
+            will be available very soon! Get on the list to be the first to get
+            notified!
           </div>
           <div>
             <EmailSignup />
@@ -47,10 +42,10 @@ export default function Home() {
         </div>
         <div className="relative mt-6 sm:mt-0 w-60 sm:w-2/5 mx-auto">
           <Image
-            src="/poster.png"
+            src="/poster2.png"
             alt="Bluegrass Banjo All-Star Series 1"
             width="450"
-            height="675"
+            height="495"
           />
         </div>
       </main>
