@@ -1,17 +1,82 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
 
 import { storefront } from '../utils'
 
-const PreOrderButton = () => {
+const PreOrderButton = ({
+  variantId,
+  loading = true,
+  onClick,
+  onChange,
+  quantity,
+}) => {
+  if (!variantId) {
+    return (
+      <div className="mt-6 p-3 w-full px-12 text-lg text-gray-400 bg-gray-300 rounded-xl font-medium uppercase border-4 border-[#ccc]">
+        Pre-ordering unavailable
+      </div>
+    )
+  }
   return (
-    <button className="hover:bg-gray-800 mt-6 transition-all p-3 w-full text-opacity-90 px-12 text-lg text-white bg-[#04403F] rounded-xl font-medium uppercase border-4 border-white">
-      Pre-Order Yours Now!
-    </button>
+    <div className="mt-6 ">
+      <div className="text-sm p-4">
+        Qty:{' '}
+        <input
+          type="number"
+          onChange={onChange}
+          value={quantity}
+          className="w-20 rounded"
+        />
+      </div>
+      <button
+        onClick={onClick}
+        type="button"
+        disabled={loading}
+        className="hover:bg-gray-800 disabled:bg-gray-300 disabled:text-gray-400 transition-all p-3 w-full text-opacity-90 px-12 text-lg text-white bg-[#04403F] rounded-xl font-medium uppercase border-4 border-white"
+      >
+        {loading ? 'Preparing...' : 'Pre-Order Yours Now!'}
+      </button>
+    </div>
   )
 }
 
-export default function Home({ description, title }) {
+export default function Home({ description, title, variants }) {
+  const [loading, setLoading] = useState(false)
+  const [quantity, setQuantity] = useState(1)
+  const variantId = variants?.edges[0]?.node?.id
+
+  const checkout = async () => {
+    setLoading(true)
+
+    const { data } = await storefront(cartCreateMutation, {
+      input: {
+        lines: {
+          merchandiseId: variantId,
+          quantity: parseInt(quantity),
+        },
+      },
+    })
+    const { checkoutUrl } = data?.cartCreate?.cart
+
+    console.log({ checkoutUrl })
+    // const { data } = await storefront(checkoutQuery, {
+    //   input: {
+    //     lineItems: {
+    //       variantId,
+    //       quantity: 1,
+    //     },
+    //   },
+    // })
+    // const { webUrl } = data?.checkoutCreate?.checkout
+
+    window.location.href = checkoutUrl
+  }
+
+  const handleChange = (e) => {
+    const qty = e.target.value >= 1 ? e.target.value : 1
+    setQuantity(qty)
+  }
   return (
     <div className="h-screen w-screen">
       <Head>
@@ -54,8 +119,14 @@ export default function Home({ description, title }) {
                 pickers.
               </p>
               <div className="flex lg:justify-end">
-                <div className="w-80">
-                  <PreOrderButton />
+                <div className="w-96">
+                  <PreOrderButton
+                    quantity={quantity}
+                    onChange={handleChange}
+                    loading={loading}
+                    onClick={checkout}
+                    variantId={variantId}
+                  />
                   <div className="text-base py-3 italic">
                     Cards now in progress. Shipping Spring 2022!
                   </div>
@@ -104,12 +175,11 @@ export default function Home({ description, title }) {
                   <strong>Georgina Flood</strong>
                 </p>
                 <p>
-                  Consectetur incididunt mollit reprehenderit consequat sunt
-                  fugiat dolore proident est quis elit laborum. Et Lorem magna
-                  nisi in ullamco est. Commodo veniam irure qui commodo.
-                  Reprehenderit dolor eiusmod ad duis aliqua magna ad ad sit
-                  laborum. Nisi tempor est officia ut consectetur dolore
-                  deserunt exercitation excepteur mollit in.
+                  A self taught, acrylic and graphite portrait artist from
+                  Dublin, Ireland. Once criticized for being &quot;too stylized
+                  and graphic,&quot; Georgina has developed a style that is
+                  uniquely her own, with the portrait&apos;s hair becoming her
+                  signature mark.
                 </p>
 
                 <p>
@@ -139,7 +209,13 @@ export default function Home({ description, title }) {
                   nisi nostrud minim.
                 </p>
                 <div className="max-w-sm">
-                  <PreOrderButton />
+                  <PreOrderButton
+                    quantity={quantity}
+                    onChange={handleChange}
+                    loading={loading}
+                    onClick={checkout}
+                    variantId={variantId}
+                  />
                 </div>
               </div>
             </div>
@@ -160,13 +236,14 @@ export default function Home({ description, title }) {
                 </div>
                 <p>
                   Hi, I’m Colyn Brown. I started Bluegrass Trading Company as a
-                  way to offer merchandise to bluegrass enthusiasts like myself.
-                  Though I’ve only been playing banjo since 2017, I’ve been
-                  involved in bluegrass one way or the other my whole life. My
-                  dad, Ken Brown, was an award winning banjo player early on in
-                  the mid to late 60s Northeast region of the country, hanging
-                  out and picking with young guys like Pete Wernick, Bill Keith.
-                  I spent a lot of time growing up listening to bluegrass.
+                  way to offer goods and services to bluegrass enthusiasts like
+                  myself, starting with trading cards. Though I’ve only been
+                  playing banjo since 2017, I’ve been involved in bluegrass one
+                  way or the other my whole life. My dad, Ken Brown, was an
+                  award winning banjo player early on in the mid to late 60s
+                  Northeast region of the country, hanging out and picking with
+                  young guys like Pete Wernick, Bill Keith. I spent a lot of
+                  time growing up listening to bluegrass.
                 </p>
                 <p>
                   Why trading cards you ask? Early in 2021 the thought just hit
@@ -198,7 +275,13 @@ export default function Home({ description, title }) {
                   support you can provide. Thank you!
                 </p>
                 <div className="max-w-sm clear-left">
-                  <PreOrderButton />
+                  <PreOrderButton
+                    quantity={quantity}
+                    onChange={handleChange}
+                    loading={loading}
+                    onClick={checkout}
+                    variantId={variantId}
+                  />
                 </div>
               </div>
             </div>
@@ -206,19 +289,22 @@ export default function Home({ description, title }) {
         </div>
       </main>
       <footer className="bg-gray-800">
-        <div className="mx-auto max-w-4xl text-sm text-gray-500 px-4 md:px-0 py-12 md:flex items-center space-y-4 md:space-y-0 md:space-x-4 leading-none">
-          <div>&copy; 2021 Bluegrass Trading Co.</div>
-          <div className="hidden md:block">♥</div>
-          <div>Established 2021, Friendsville Tennessee</div>
-          <div className="hidden md:block">♥</div>
-          <div>
-            <a
-              href="mailto:colyn@bluegrasstradingco.com"
-              className="text-white"
-            >
-              colyn@bluegrasstradingco.com
-            </a>
+        <div className="mx-auto max-w-4xl text-sm text-gray-500 px-4 md:px-0 py-12 space-y-4">
+          <div className="md:flex items-center space-y-4 md:space-y-0 md:space-x-4 leading-none">
+            <div>&copy; 2021 Bluegrass Trading Co.</div>
+            <div className="hidden md:block">♥</div>
+            <div>Established 2021, Friendsville Tennessee</div>
+            <div className="hidden md:block">♥</div>
+            <div>
+              <a
+                href="mailto:colyn@bluegrasstradingco.com"
+                className="text-white"
+              >
+                colyn@bluegrasstradingco.com
+              </a>
+            </div>
           </div>
+          <div>Site design and development by Bluegrass Trading Co.</div>
         </div>
       </footer>
     </div>
@@ -248,6 +334,33 @@ const productQuery = gql`
         minVariantPrice {
           amount
         }
+      }
+      variants(first: 1) {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+  }
+`
+
+const checkoutQuery = gql`
+  mutation CheckoutCreate($input: CheckoutCreateInput!) {
+    checkoutCreate(input: $input) {
+      checkout {
+        webUrl
+      }
+    }
+  }
+`
+
+const cartCreateMutation = gql`
+  mutation CartCreate($input: CartInput!) {
+    cartCreate(input: $input) {
+      cart {
+        checkoutUrl
       }
     }
   }
