@@ -41,10 +41,11 @@ const PreOrderButton = ({
   )
 }
 
-export default function Home({ description, title, variants }) {
+export default function Home({ description, title, variants, images }) {
   const [loading, setLoading] = useState(false)
   const [quantity, setQuantity] = useState(1)
   const variantId = variants?.edges[0]?.node?.id
+  const poster = images.edges[0].node.transformedSrc
 
   const checkout = async () => {
     setLoading(true)
@@ -58,17 +59,6 @@ export default function Home({ description, title, variants }) {
       },
     })
     const { checkoutUrl } = data?.cartCreate?.cart
-
-    console.log({ checkoutUrl })
-    // const { data } = await storefront(checkoutQuery, {
-    //   input: {
-    //     lineItems: {
-    //       variantId,
-    //       quantity: 1,
-    //     },
-    //   },
-    // })
-    // const { webUrl } = data?.checkoutCreate?.checkout
 
     window.location.href = checkoutUrl
   }
@@ -85,7 +75,7 @@ export default function Home({ description, title, variants }) {
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content={`${title}`} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="/SitePromoWithLogo.png" />
+        <meta property="og:image" content={poster} />
         <meta property="og:url" content="https://www.bluegrasstradingco.com/" />
       </Head>
       <div className="header"></div>
@@ -333,6 +323,13 @@ const productQuery = gql`
       priceRange {
         minVariantPrice {
           amount
+        }
+      }
+      images(first: 1) {
+        edges {
+          node {
+            transformedSrc
+          }
         }
       }
       variants(first: 1) {
