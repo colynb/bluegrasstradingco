@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <div className="header"></div>
       <header className="px-6 sm:px-0 sm:mb-24 flex items-center justify-center pt-12">
-        <div className="relative max-w-4xl h-20 sm:h-40 w-full">
+        <div className="relative max-w-4xl h-20 sm:h-32 w-full">
           <Image src="/logo.svg" alt="Bluegrass Trading Co." layout="fill" />
         </div>
       </header>
