@@ -21,7 +21,7 @@ const PreOrderButton = ({
   return (
     <div className="mt-6 ">
       <div className="text-sm p-4">
-        Qty:{' '}
+        Number of packs:{' '}
         <input
           type="number"
           onChange={onChange}
@@ -90,7 +90,7 @@ export default function Home({ description, title, variants }) {
       </Head>
       <div className="header"></div>
       <header className="px-6 sm:px-0 flex items-center py-4 md:py-8 justify-center bg-white">
-        <div className="relative max-w-4xl h-24 w-full">
+        <div className="relative max-w-4xl h-28 w-full">
           <Image src="/logo.svg" alt="Bluegrass Trading Co." layout="fill" />
         </div>
       </header>
@@ -99,7 +99,7 @@ export default function Home({ description, title, variants }) {
         <div className="lg:grid sm:grid-cols-2">
           <div className="bg-gradient-to-br from-[#9cc9d8] to-[#d4ebf3] p-4 lg:p-12 lg:text-right flex lg:justify-end">
             <div className="max-w-xl text-[#04403F]">
-              <h1 className="font-bold font-display text-4xl lg:text-6xl mb-4 uppercase">
+              <h1 className="font-bold font-display text-4xl lg:text-5xl mb-4 uppercase">
                 Banjo{' '}
                 <span className="text-[#b43b26] whitespace-nowrap">
                   All-Star
