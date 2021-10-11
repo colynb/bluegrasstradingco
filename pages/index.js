@@ -21,17 +21,19 @@ export default function Home() {
         <div className="space-y-6 sm:w-3/5">
           <div className="mb-6">
             <h1 className="font-bold font-display text-3xl mb-2">
-              Bluegrass Trading Cards
+              Bluegrass Banjo All-Star{' '}
+              <span className="text-sm align-top">&reg;</span> Trading Cards
             </h1>
             <h2 className="text-lg font-semibold opacity-60">
               Coming Spring 2022!
             </h2>
           </div>
           <div>
-            Each pack of Series One Bluegrass Trading Co Banjo All-Star Trading
-            Cards contains 5 randomly sorted collectible cards including 1
+            Each pack of Series One Bluegrass Trading Co Banjo All-Star{' '}
+            <span className="text-sm align-top">&reg;</span> Trading Cards
+            contains 5 randomly sorted collectible cards including 1
             commemorative card. The series includes Earl Scruggs, J.D. Crowe,
-            Ralph Stanley, Bill Keith, and 20 others. There are a total of 25
+            Ralph Stanley, Bill Keith, and many others. There are a total of 25
             unique cards in the series. Collect them all! Pre-ordering will be
             available very soon! Get on the list to be the first to get
             notified!
@@ -51,9 +53,6 @@ export default function Home() {
       </main>
       <div className="p-4 lg:p-12">
         <div className="max-w-6xl mx-auto space-y-4 ">
-          <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
-            ABOUT ME
-          </h2>
           <div className="float-left mr-6 mb-6 rounded-xl overflow-hidden w-40 h-40">
             <Image
               src="/email.jpeg"
@@ -103,6 +102,25 @@ export default function Home() {
           </p>
         </div>
       </div>
+      <footer className="bg-gray-800">
+        <div className="mx-auto max-w-4xl text-sm text-gray-500 px-4 md:px-0 py-12 space-y-4">
+          <div className="md:flex items-center space-y-4 md:space-y-0 md:space-x-4 leading-none">
+            <div>&copy; 2021 Bluegrass Trading Co.</div>
+            <div className="hidden md:block">♥</div>
+            <div>Established 2021, Friendsville Tennessee</div>
+            <div className="hidden md:block">♥</div>
+            <div>
+              <a
+                href="mailto:colyn@bluegrasstradingco.com"
+                className="text-white"
+              >
+                colyn@bluegrasstradingco.com
+              </a>
+            </div>
+          </div>
+          <div>Site design and development by Bluegrass Trading Co.</div>
+        </div>
+      </footer>
     </div>
   )
 }
