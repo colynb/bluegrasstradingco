@@ -111,6 +111,9 @@ export default function Home({
                 Banjo{' '}
                 <span className="text-[#b43b26] whitespace-nowrap">
                   All-Star
+                  <span className="text-lg align-top text-[#04403F]">
+                    &reg;
+                  </span>
                 </span>
                 <br />
                 Trading Cards
