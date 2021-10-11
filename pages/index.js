@@ -60,7 +60,6 @@ export default function Home({
   const [loading, setLoading] = useState(false)
   const [quantity, setQuantity] = useState(1)
   const variantId = variants?.edges[0]?.node?.id
-  const poster = images.edges[0].node.transformedSrc
   const price = priceRange.minVariantPrice.amount
 
   const PREORDER_ENABLED = process.env.NEXT_PUBLIC_PREORDER_ENABLED === 'true'
@@ -93,7 +92,12 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content={`${title}`} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={poster} />
+        <meta
+          property="og:image"
+          content={
+            'https://cdn.shopify.com/s/files/1/0601/1800/7990/products/poster3.png?v=1633876463'
+          }
+        />
         <meta property="og:url" content="https://www.bluegrasstradingco.com/" />
       </Head>
       <div className="header"></div>
