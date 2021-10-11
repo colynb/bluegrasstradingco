@@ -10,6 +10,7 @@ const PreOrderButton = ({
   onClick,
   onChange,
   quantity,
+  price,
 }) => {
   if (!variantId) {
     return (
@@ -20,14 +21,21 @@ const PreOrderButton = ({
   }
   return (
     <div className="mt-6 ">
-      <div className="text-sm p-4">
-        Number of packs:{' '}
+      <div className="text-sm p-4 flex items-center leading-none space-x-4">
+        <div>Number of packs: </div>
         <input
           type="number"
           onChange={onChange}
           value={quantity}
           className="w-20 rounded"
         />
+        <div className="font-display font-bold text-xl">
+          {new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+          }).format(price)}{' '}
+          /each
+        </div>
       </div>
       <button
         onClick={onClick}
@@ -41,11 +49,18 @@ const PreOrderButton = ({
   )
 }
 
-export default function Home({ description, title, variants, images }) {
+export default function Home({
+  description,
+  title,
+  variants,
+  images,
+  priceRange,
+}) {
   const [loading, setLoading] = useState(false)
   const [quantity, setQuantity] = useState(1)
   const variantId = variants?.edges[0]?.node?.id
   const poster = images.edges[0].node.transformedSrc
+  const price = priceRange.minVariantPrice.amount
 
   const checkout = async () => {
     setLoading(true)
@@ -105,12 +120,13 @@ export default function Home({ description, title, variants, images }) {
                 <span className="font-bold">
                   &quot;Banjo All-Star Series One&quot;
                 </span>{' '}
-                will be devoted to highlighting 24 of your favorite banjo
+                will be devoted to highlighting 25 of your favorite banjo
                 pickers.
               </p>
               <div className="flex lg:justify-end">
                 <div className="w-96">
                   <PreOrderButton
+                    price={price}
                     quantity={quantity}
                     onChange={handleChange}
                     loading={loading}
@@ -199,7 +215,7 @@ export default function Home({ description, title, variants, images }) {
                   of his home studio in Knoxville, TN.
                 </p>
 
-                <p>
+                {/* <p>
                   <strong>Fergal Coghlan</strong> <span>(Dublin, Ireland)</span>
                 </p>
 
@@ -210,9 +226,10 @@ export default function Home({ description, title, variants, images }) {
                   piece of art one wall at a time, pushing Irish Icons, But
                   Fergal also works on portrait art of Musicians, and some Film
                   and TV.
-                </p>
+                </p> */}
                 <div className="max-w-sm">
                   <PreOrderButton
+                    price={price}
                     quantity={quantity}
                     onChange={handleChange}
                     loading={loading}
@@ -279,6 +296,7 @@ export default function Home({ description, title, variants, images }) {
                 </p>
                 <div className="max-w-sm clear-left">
                   <PreOrderButton
+                    price={price}
                     quantity={quantity}
                     onChange={handleChange}
                     loading={loading}
