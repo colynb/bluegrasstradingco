@@ -162,7 +162,7 @@ export default function Home({ description, title, variants, images }) {
                   progress. More coming soon.
                 </p>
                 <p>
-                  <strong>Georgina Flood</strong>
+                  <strong>Georgina Flood</strong> <span>(Dublin, Ireland)</span>
                 </p>
                 <p>
                   A self taught, acrylic and graphite portrait artist from
@@ -173,30 +173,43 @@ export default function Home({ description, title, variants, images }) {
                 </p>
 
                 <p>
-                  <strong>Kara Lockmiller</strong>
+                  <strong>Kara Lockmiller</strong> <span>(Knoxville, TN)</span>
                 </p>
 
                 <p>
-                  Ut quis irure do duis id fugiat sunt voluptate elit nulla
-                  pariatur cillum. Nostrud eiusmod dolore id sit sit proident
-                  duis elit proident irure quis. Mollit ex aute fugiat consequat
-                  reprehenderit occaecat. Elit pariatur pariatur esse
-                  reprehenderit voluptate proident. Sunt labore ipsum est
-                  proident ullamco id. Nulla laborum aliqua veniam elit aute
-                  reprehenderit nulla. Ullamco ex nulla sint commodo cillum
-                  commodo ipsum dolor duis et.
+                  Kara is a chromesthete which means she sees a vast array of
+                  real colors in her mind when she listens to music. Her goal
+                  for each portrait is to let you glimpse music and musicians
+                  the way she does. There is a kinship between color and music –
+                  both can say what words can not.
                 </p>
 
                 <p>
-                  <strong>Robert Felker</strong>
+                  <strong>Robert Felker</strong> <span>(Knoxville, TN)</span>
                 </p>
 
                 <p>
-                  Laboris ea excepteur enim cillum do consequat est velit duis
-                  qui ea laborum nostrud ea. Sit consequat anim voluptate ea
-                  cupidatat Lorem eu elit ea eu cupidatat qui. Eiusmod culpa
-                  reprehenderit quis sint non aliqua sunt irure irure ipsum id
-                  nisi nostrud minim.
+                  Born in Knoxville, raised in Nashville and educated at School
+                  of Visual Arts in New York, Robert Felker’s journeyman career
+                  has included a variety of cities and disciplines. He started
+                  out in commercial illustration, before moving into the graphic
+                  design field. Currently, he’s working on a variety of projects
+                  including a musician series he call Patron Saints of Rock,
+                  fine art landscape paintings and public murals. He works out
+                  of his home studio in Knoxville, TN.
+                </p>
+
+                <p>
+                  <strong>Fergal Coghlan</strong> <span>(Dublin, Ireland)</span>
+                </p>
+
+                <p>
+                  Fergal Coghlan is a Dublin based artist, Works alongside many
+                  other artist at the Icon Factory based in Temple Bar area,
+                  promoting Irish culture and transforming temple bar into a
+                  piece of art one wall at a time, pushing Irish Icons, But
+                  Fergal also works on portrait art of Musicians, and some Film
+                  and TV.
                 </p>
                 <div className="max-w-sm">
                   <PreOrderButton
