@@ -49,6 +49,59 @@ export default function Home() {
           />
         </div>
       </main>
+      <div className="p-4 lg:p-12">
+        <div className="max-w-4xl mx-auto space-y-4 ">
+          <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
+            ABOUT ME
+          </h2>
+          <div className="float-left mr-6 mb-6 rounded-xl overflow-hidden w-40 h-40">
+            <Image
+              src="/email.jpeg"
+              alt="Colyn Brown"
+              width="250"
+              height="283"
+              className="object-fill"
+            />
+          </div>
+          <p>
+            Hi, I’m Colyn Brown. I started Bluegrass Trading Company as a way to
+            offer goods and services to bluegrass enthusiasts like myself,
+            starting with trading cards. Though I’ve only been playing banjo
+            since 2017, I’ve been involved in bluegrass one way or the other my
+            whole life. My dad, Ken Brown, was an award winning banjo player
+            early on in the mid to late 60s Northeast region of the country,
+            hanging out and picking with young guys like Pete Wernick, Bill
+            Keith. I spent a lot of time growing up listening to bluegrass.
+          </p>
+          <p>
+            Why trading cards you ask? Early in 2021 the thought just hit me
+            that these should exist so I asked around to see if I could find
+            them. The overwhelming response online was that I should make these.
+            I wasn&apos;t so sure I could do it. I just knew that I wanted to
+            have the cards exist so that I could have some. They didn’t exist,
+            at least not in the way I imagined, so the only solution was for me
+            to take a stab at it.
+          </p>
+
+          <p>
+            Fast forward a few months of thinking about how to do it and how I
+            would market them, I found Georgina Flood who was thrilled to
+            partner with me on the first few cards. Working with her inspired me
+            to reach out to other artists and I am happy to be working with four
+            different artists each with their own unique style.
+          </p>
+
+          <p>
+            Thank you to everyone who has expressed interest in this project. I
+            am honored to be able to do something like this and produce them for
+            you all. I am accepting pre-orders because these are not cheap to
+            make. Your pre-orders will allow me to offset some of the cost of
+            the paintings as well as the cost of print production. It also gives
+            me a better idea of how many packs I should be producing. I am
+            grateful for any support you can provide. Thank you!
+          </p>
+        </div>
+      </div>
     </div>
   )
 }
