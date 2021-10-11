@@ -20,7 +20,6 @@ export default function EmailSignup() {
       const data = await fetch(`/api/subscribe?email=${email}`).then((resp) =>
         resp.json()
       )
-      console.log({ data })
       setSubmitSuccess(true)
       setVerifyModal(true)
     } catch (e) {
@@ -30,14 +29,14 @@ export default function EmailSignup() {
   }
 
   return (
-    <div className="rounded-lg bg-yellow-200 p-6 leading-normal">
-      <p className="text-xl font-medium text-gray-600 sm:block sm:text-xl mb-2">
+    <div className="rounded-lg bg-[#04403F] text-white p-6 leading-normal">
+      <div className="text-xl font-medium sm:block sm:text-xl mb-2">
         Sign up for our pre-order waiting list.
-      </p>
-      <p className="opacity-60">
+      </div>
+      <div className="opacity-60">
         Be one of the first to be notified when these will be ready for
         pre-order and also receive updates on the progress of each of the cards.
-      </p>
+      </div>
       {submitError && (
         <div className="text-red-500">
           There was a problem submitting your email.
@@ -59,7 +58,10 @@ export default function EmailSignup() {
         </div>
       )}
       {submitSuccess === null && (
-        <form className="mt-2 sm:flex" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className="mt-2 sm:flex justify-end"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <label htmlFor="email-address" className="sr-only">
             Email address
           </label>
@@ -79,7 +81,7 @@ export default function EmailSignup() {
           <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
             <button
               type="submit"
-              className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+              className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
             >
               Notify me
             </button>
