@@ -20,20 +20,20 @@ export default function Home() {
       <main className="p-8 sm:p-0 max-w-6xl mx-auto sm:flex justify-between sm:space-x-24 leading-loose text-lg text-gray-700">
         <div className="space-y-6 sm:w-3/5">
           <div className="mb-6">
-            <h1 className="font-extrabold text-3xl mb-2">
+            <h1 className="font-bold font-display text-3xl mb-2">
               Bluegrass Trading Cards
             </h1>
-            <h2 className="text-xl font-semibold opacity-60">
-              Coming Spring or Summer 2022!
+            <h2 className="text-lg font-semibold opacity-60">
+              Coming Spring 2022!
             </h2>
           </div>
           <div>
             Each pack of Series One Bluegrass Trading Co Banjo All-Star Trading
-            Cards contains 12 randomly sorted collectible cards and 1
+            Cards contains 5 randomly sorted collectible cards including 1
             commemorative card. The series includes Earl Scruggs, J.D. Crowe,
-            Ralph Stanley, Bill Keith, and 20 other surprises. There are a total
-            of 24 unique cards in the series. Collect them all! Pre-ordering
-            will be available very soon! Get on the list to be the first to get
+            Ralph Stanley, Bill Keith, and 20 others. There are a total of 25
+            unique cards in the series. Collect them all! Pre-ordering will be
+            available very soon! Get on the list to be the first to get
             notified!
           </div>
           <div>
@@ -50,7 +50,7 @@ export default function Home() {
         </div>
       </main>
       <div className="p-4 lg:p-12">
-        <div className="max-w-4xl mx-auto space-y-4 ">
+        <div className="max-w-6xl mx-auto space-y-4 ">
           <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
             ABOUT ME
           </h2>
@@ -85,10 +85,11 @@ export default function Home() {
 
           <p>
             Fast forward a few months of thinking about how to do it and how I
-            would market them, I found Georgina Flood who was thrilled to
-            partner with me on the first few cards. Working with her inspired me
-            to reach out to other artists and I am happy to be working with four
-            different artists each with their own unique style.
+            would market them, I found an artist, Georgina Flood, who was
+            thrilled to partner with me on the first few cards. Working with her
+            inspired me to reach out to other artists and I am happy to now be
+            working with several different artists each with their own unique
+            style.
           </p>
 
           <p>
