@@ -244,13 +244,14 @@ export default function Home({
                 </p>
 
                 <p>
-                  <strong>Anna Magruder (Nashville, TN)</strong>
+                  <strong>Anna Magruder</strong> <span>(Oregon)</span>
                 </p>
                 <p>
-                  Anna specializes in portraits, whimsy and historic surrealism
-                  and finds herself drawn to new challenges: painting purely
-                  abstract art that strives to communicate a depth of feeling in
-                  even more formally surprising, expressive ways.
+                  Oregon artist Anna Magruder specializes in portraits, whimsy,
+                  and historical surrealism. She enjoys re-imagining the lives &
+                  stories of characters on canvas and exploring the emotional
+                  color of faces. Her attraction to faces, people and the
+                  stories behind them is a consistent theme in her art.
                 </p>
               </div>
             </div>
