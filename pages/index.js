@@ -230,7 +230,7 @@ export default function Home({
                   of his home studio in Knoxville, TN.
                 </p>
 
-                {/* <p>
+                <p>
                   <strong>Fergal Coghlan</strong> <span>(Dublin, Ireland)</span>
                 </p>
 
@@ -241,27 +241,22 @@ export default function Home({
                   piece of art one wall at a time, pushing Irish Icons, But
                   Fergal also works on portrait art of Musicians, and some Film
                   and TV.
-                </p> */}
-                {PREORDER_ENABLED && (
-                  <div className="max-w-sm">
-                    <PreOrderButton
-                      price={price}
-                      quantity={quantity}
-                      onChange={handleChange}
-                      loading={loading}
-                      onClick={checkout}
-                      variantId={variantId}
-                    />
-                  </div>
-                )}
+                </p>
+
+                <p>
+                  <strong>Anna Magruder (Nashville, TN)</strong>
+                </p>
+                <p>
+                  Anna specializes in portraits, whimsy and historic surrealism
+                  and finds herself drawn to new challenges: painting purely
+                  abstract art that strives to communicate a depth of feeling in
+                  even more formally surprising, expressive ways.
+                </p>
               </div>
             </div>
 
             <div className="p-4 lg:p-12">
               <div className="max-w-4xl mx-auto space-y-4 ">
-                <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
-                  ABOUT ME
-                </h2>
                 <div className="float-left mr-6 mb-6 rounded-xl overflow-hidden w-40 h-40">
                   <Image
                     src="/email.jpeg"
@@ -274,42 +269,38 @@ export default function Home({
                 <p>
                   Hi, I’m Colyn Brown. I started Bluegrass Trading Company as a
                   way to offer goods and services to bluegrass enthusiasts like
-                  myself, starting with trading cards. Though I’ve only been
-                  playing banjo since 2017, I’ve been involved in bluegrass one
-                  way or the other my whole life. My dad, Ken Brown, was an
-                  award winning banjo player early on in the mid to late 60s
-                  Northeast region of the country, hanging out and picking with
-                  young guys like Pete Wernick, Bill Keith. I spent a lot of
-                  time growing up listening to bluegrass.
+                  myself, starting with trading cards.
                 </p>
                 <p>
-                  Why trading cards you ask? Early in 2021 the thought just hit
-                  me that these should exist so I asked around to see if I could
-                  find them. The overwhelming response online was that I should
-                  make these. I wasn&apos;t so sure I could do it. I just knew
-                  that I wanted to have the cards exist so that I could have
-                  some. They didn’t exist, at least not in the way I imagined,
-                  so the only solution was for me to take a stab at it.
+                  Why trading cards you ask? Though I grew up listening to
+                  bluegrass and I’ve only been playing banjo for a few years,
+                  there are a lot of incredible banjo players that I don&apos;t
+                  think get as much recognition as they deserve. Many times, I
+                  have stumbled upon a player with jaw-dropping skill, shocked
+                  I’ve not heard of them before. So, while this series includes
+                  a few of the all-time greats, I hope you will be surprised and
+                  delighted by some of my other choices.
                 </p>
 
                 <p>
-                  Fast forward a few months of thinking about how to do it and
-                  how I would market them, I found Georgina Flood who was
-                  thrilled to partner with me on the first few cards. Working
-                  with her inspired me to reach out to other artists and I am
-                  happy to be working with four different artists each with
-                  their own unique style.
+                  For the last several months I have been thinking about how to
+                  create these cards and what they should look like. I decided
+                  that simple photographs of each of the players was not going
+                  to be good enough. I wanted the face of the card to be painted
+                  portraits of each of the players. I just needed to find the
+                  right artist. Not only did I find one artist, I found five of
+                  them.
                 </p>
 
                 <p>
-                  Thank you to everyone who has expressed interest in this
-                  project. I am honored to be able to do something like this and
-                  produce them for you all. I am accepting pre-orders because
-                  these are not cheap to make. Your pre-orders will allow me to
-                  offset some of the cost of the paintings as well as the cost
-                  of print production. It also gives me a better idea of how
-                  many packs I should be producing. I am grateful for any
-                  support you can provide. Thank you!
+                  Thank you to all who have expressed interest and enthusiasm in
+                  this project. I am honored to be able to do something like
+                  this and produce them for you all. I am accepting pre-orders
+                  because these are not cheap to make. Your pre-orders will
+                  allow me to offset some of the cost of the paintings as well
+                  as the cost of print production. It also gives me a better
+                  idea of how many packs I should be producing. I am grateful
+                  for any support you can provide. Thank you!
                 </p>
                 {PREORDER_ENABLED && (
                   <div className="max-w-sm clear-left">
