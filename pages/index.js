@@ -274,24 +274,25 @@ export default function Home({
                   myself, starting with trading cards.
                 </p>
                 <p>
-                  Why trading cards you ask? Though I grew up listening to
-                  bluegrass and I’ve only been playing banjo for a few years,
-                  there are a lot of incredible banjo players that I don&apos;t
-                  think get as much recognition as they deserve. Many times, I
-                  have stumbled upon a player with jaw-dropping skill, shocked
-                  I’ve not heard of them before. So, while this series includes
-                  a few of the all-time greats, I hope you will be surprised and
-                  delighted by some of my other choices.
+                  Why trading cards you ask? I have always loved the banjo. I
+                  grew up listening to my dad play and I’ve only been playing
+                  myself for a few years, but there are a lot of incredible
+                  banjo players that I don&apos;t think get the recognition they
+                  deserve. Many times, I have stumbled upon a player with
+                  jaw-dropping skill, shocked I’ve not heard of them before. So,
+                  while this series includes a few of the all-time greats, I
+                  hope you will be surprised and delighted by some of my other
+                  included pickers.
                 </p>
 
                 <p>
                   For the last several months I have been thinking about how to
                   create these cards and what they should look like. I decided
                   that simple photographs of each of the players was not going
-                  to be good enough. I wanted the face of the card to be painted
-                  portraits of each of the players. I just needed to find the
-                  right artist. Not only did I find one artist, I found five of
-                  them.
+                  to be good enough. I wanted each card to be a painted portrait
+                  of the respective player. I just needed to find the right
+                  artist. Not only did I find the right artist, I found five of
+                  them! And you will love them all!
                 </p>
 
                 <p>
