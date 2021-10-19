@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
 import EmailSignup from '../components/email-signup'
+import NewsletterSignup from '../components/NewsletterSignup'
 
 import { storefront } from '../utils'
 
@@ -316,6 +317,9 @@ export default function Home({
                   </div>
                 )}
               </div>
+            </div>
+            <div>
+              <NewsletterSignup />
             </div>
           </div>
         </div>
