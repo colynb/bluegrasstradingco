@@ -116,9 +116,7 @@ export default function Home({
                 Banjo{' '}
                 <span className="text-[#b43b26] whitespace-nowrap">
                   All-Star
-                  <span className="text-lg align-top text-[#04403F]">
-                    &reg;
-                  </span>
+                  <span className="text-lg align-top text-[#04403F]">TM</span>
                 </span>
                 <br />
                 Trading Cards
@@ -129,7 +127,9 @@ export default function Home({
                 cards, they will be works of art, each portrait hand painted by
                 our featured artists. The first series entitled{' '}
                 <span className="font-bold">
-                  &quot;Banjo All-Star Series One&quot;
+                  &quot;Banjo All-Star
+                  <span className="text-[10px] align-top">TM</span> Series
+                  One&quot;
                 </span>{' '}
                 will be devoted to highlighting 25 of your favorite banjo
                 pickers.
