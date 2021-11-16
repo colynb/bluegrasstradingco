@@ -109,60 +109,62 @@ export default function Home({
       </header>
 
       <main>
-        <div className="lg:grid sm:grid-cols-2">
-          <div className="bg-gradient-to-br from-[#9cc9d8] to-[#d4ebf3] p-4 lg:p-12 lg:text-right flex lg:justify-end">
-            <div className="max-w-xl text-[#04403F]">
-              <h1 className="font-bold font-display text-4xl lg:text-5xl mb-4 uppercase">
-                Banjo{' '}
-                <span className="text-[#b43b26] whitespace-nowrap">
-                  All-Star
-                  <span className="text-lg align-top text-[#04403F]">TM</span>
-                </span>
-                <br />
-                Trading Cards
-              </h1>
-              <p className="leading-loose opacity-75 mb-4 text-lg">
-                Introducing the world&apos;s first bluegrass related,
-                high-quality, trading cards. These aren&apos;t standard photo
-                cards, they will be works of art, each portrait hand painted by
-                our featured artists. The first series entitled{' '}
-                <span className="font-bold">
-                  &quot;Banjo All-Star
-                  <span className="text-[10px] align-top">TM</span> Series
-                  One&quot;
-                </span>{' '}
-                will be devoted to highlighting 25 of your favorite banjo
-                pickers.
-              </p>
+        <div className="bg-[#9cc9d8]">
+          <div className="lg:grid sm:grid-cols-2 max-w-screen-2xl mx-auto">
+            <div className="p-4 lg:p-12 lg:text-right flex lg:justify-end">
+              <div className="max-w-xl text-[#04403F]">
+                <h1 className="font-bold font-display text-4xl lg:text-5xl mb-4 uppercase">
+                  Banjo{' '}
+                  <span className="text-[#b43b26] whitespace-nowrap">
+                    All-Star
+                    <span className="text-lg align-top text-[#04403F]">TM</span>
+                  </span>
+                  <br />
+                  Trading Cards
+                </h1>
+                <p className="leading-loose opacity-75 mb-4 text-lg">
+                  Introducing the world&apos;s first bluegrass related,
+                  high-quality, trading cards. These aren&apos;t standard photo
+                  cards, they will be works of art, each portrait hand painted
+                  by our featured artists. The first series entitled{' '}
+                  <span className="font-bold">
+                    &quot;Banjo All-Star
+                    <span className="text-[10px] align-top">TM</span> Series
+                    One&quot;
+                  </span>{' '}
+                  will be devoted to highlighting 25+ of your favorite banjo
+                  pickers.
+                </p>
 
-              {!PREORDER_ENABLED ? (
-                <EmailSignup />
-              ) : (
-                <div className="flex lg:justify-end">
-                  <div className="w-96">
-                    <PreOrderButton
-                      price={price}
-                      quantity={quantity}
-                      onChange={handleChange}
-                      loading={loading}
-                      onClick={checkout}
-                      variantId={variantId}
-                    />
-                    <div className="text-base py-3 italic">
-                      Cards now in progress. Shipping Spring 2022!
+                {!PREORDER_ENABLED ? (
+                  <EmailSignup />
+                ) : (
+                  <div className="flex lg:justify-end">
+                    <div className="w-96">
+                      <PreOrderButton
+                        price={price}
+                        quantity={quantity}
+                        onChange={handleChange}
+                        loading={loading}
+                        onClick={checkout}
+                        variantId={variantId}
+                      />
+                      <div className="text-base py-3 italic">
+                        Cards now in progress. Shipping Spring 2022!
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
-          </div>
-          <div className="bg-[#9cc9d8] relative h-[600px] md:h-[650px]">
-            <Image
-              src="/SitePromo.png"
-              alt="Earl Scruggs - Don Reno"
-              layout="fill"
-              className="object-cover"
-            />
+            <div className="bg-[#9cc9d8] relative h-[600px] md:h-[650px]">
+              <Image
+                src="/SitePromo2.png"
+                alt="Earl Scruggs - Don Reno"
+                layout="fill"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
         <div className="text-gray-600 text-md lg:text-xl leading-loose">
@@ -175,24 +177,12 @@ export default function Home({
                 <p>{description}</p>
               </div>
             </div>
-            <div className="p-4 lg:p-6  hidden">
-              <div className="max-w-4xl mx-auto space-y-4 ">
-                <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
-                  PROJECT STATUS
-                </h2>
-                <p>In Progress: 2 of 24 portraits have been completed.</p>
-              </div>
-            </div>
 
             <div className="p-4 lg:p-12 bg-gray-100">
               <div className="max-w-4xl mx-auto space-y-4 ">
                 <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
                   ARTISTS
                 </h2>
-                <p>
-                  These are the artists I am working with that have works in
-                  progress. More coming soon.
-                </p>
                 <p>
                   <strong>Georgina Flood</strong> <span>(Dublin, Ireland)</span>
                 </p>
@@ -245,7 +235,7 @@ export default function Home({
                 </p>
 
                 <p>
-                  <strong>Anna Magruder</strong> <span>(Oregon)</span>
+                  <strong>Anna Magruder</strong> <span>(Portland, Oregon)</span>
                 </p>
                 <p>
                   Oregon artist Anna Magruder specializes in portraits, whimsy,
@@ -254,10 +244,20 @@ export default function Home({
                   color of faces. Her attraction to faces, people and the
                   stories behind them is a consistent theme in her art.
                 </p>
+
+                <p>
+                  <strong>Arthur Hatton</strong> <span>(Knoxville, TN)</span>
+                </p>
+                <p>
+                  Arthur Hatton is a visual artist specializing in watercolor
+                  and egg tempera. His artwork focuses on portraits and figures,
+                  using an abstracted realist style. Arthur is also a clinical
+                  psychologist.
+                </p>
               </div>
             </div>
 
-            <div className="p-4 lg:p-12">
+            <div className="p-4 lg:p-12 ">
               <div className="max-w-4xl mx-auto space-y-4 ">
                 <div className="float-left mr-6 mb-6 rounded-xl overflow-hidden w-40 h-40">
                   <Image
