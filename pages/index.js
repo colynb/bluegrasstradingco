@@ -157,10 +157,10 @@ export default function Home({
                 )}
               </div>
             </div>
-            <div className="bg-[#9cc9d8] relative h-[600px] md:h-[650px]">
+            <div className="bg-[#9cc9d8] relative h-[600px] md:h-[700px]">
               <Image
-                src="/SitePromo2.png"
-                alt="Earl Scruggs - Don Reno"
+                src="/SitePromo3.jpg"
+                alt="Bluegrass Trading Co - Banjo All-Star Series One Trading Cards"
                 layout="fill"
                 className="object-cover"
               />
