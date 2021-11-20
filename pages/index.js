@@ -6,6 +6,16 @@ import NewsletterSignup from '../components/NewsletterSignup'
 
 import { storefront } from '../utils'
 
+const artists = [
+  {
+    name: 'Michael Foster',
+    role: 'Co-Founder / CTO',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+  },
+  // More people...
+]
+
 const PreOrderButton = ({
   variantId,
   loading = true,
@@ -141,14 +151,13 @@ export default function Home({
                 ) : (
                   <div className="flex lg:justify-end">
                     <div className="w-96">
-                      <PreOrderButton
-                        price={price}
-                        quantity={quantity}
-                        onChange={handleChange}
-                        loading={loading}
-                        onClick={checkout}
-                        variantId={variantId}
-                      />
+                      <a
+                        href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"
+                        className="hover:bg-gray-800 block mt-12 text-center disabled:bg-gray-300 disabled:text-gray-400 transition-all p-3 w-full text-opacity-90 px-12 text-lg text-white bg-[#04403F] rounded-xl font-medium uppercase border-4 border-white"
+                      >
+                        {loading ? 'Preparing...' : 'Pre-Order Yours Now!'}
+                      </a>
+
                       <div className="text-base py-3 italic">
                         Cards now in progress. Shipping Spring 2022!
                       </div>
@@ -174,7 +183,7 @@ export default function Home({
                 <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
                   DESCRIPTION
                 </h2>
-                <p>{description}</p>
+                <p className="prose-lg">{description}</p>
               </div>
             </div>
 
@@ -184,7 +193,9 @@ export default function Home({
                   ARTISTS
                 </h2>
                 <p>
-                  <strong>Georgina Flood</strong> <span>(Dublin, Ireland)</span>
+                  <strong>
+                    Georgina Flood <span>(Dublin, Ireland)</span>
+                  </strong>
                 </p>
                 <p>
                   A self taught, acrylic and graphite portrait artist from
@@ -195,7 +206,9 @@ export default function Home({
                 </p>
 
                 <p>
-                  <strong>Kara Lockmiller</strong> <span>(Knoxville, TN)</span>
+                  <strong>
+                    Kara Lockmiller <span>(Knoxville, TN)</span>
+                  </strong>
                 </p>
 
                 <p>
@@ -207,7 +220,9 @@ export default function Home({
                 </p>
 
                 <p>
-                  <strong>Robert Felker</strong> <span>(Knoxville, TN)</span>
+                  <strong>
+                    Robert Felker <span>(Knoxville, TN)</span>
+                  </strong>
                 </p>
 
                 <p>
@@ -222,20 +237,9 @@ export default function Home({
                 </p>
 
                 <p>
-                  <strong>Fergal Coghlan</strong> <span>(Dublin, Ireland)</span>
-                </p>
-
-                <p>
-                  Fergal Coghlan is a Dublin based artist, Works alongside many
-                  other artist at the Icon Factory based in Temple Bar area,
-                  promoting Irish culture and transforming temple bar into a
-                  piece of art one wall at a time, pushing Irish Icons, But
-                  Fergal also works on portrait art of Musicians, and some Film
-                  and TV.
-                </p>
-
-                <p>
-                  <strong>Anna Magruder</strong> <span>(Portland, Oregon)</span>
+                  <strong>
+                    Anna Magruder <span>(Portland, Oregon)</span>
+                  </strong>
                 </p>
                 <p>
                   Oregon artist Anna Magruder specializes in portraits, whimsy,
@@ -246,13 +250,27 @@ export default function Home({
                 </p>
 
                 <p>
-                  <strong>Arthur Hatton</strong> <span>(Knoxville, TN)</span>
+                  <strong>
+                    Arthur Hatton <span>(Knoxville, TN)</span>
+                  </strong>
                 </p>
                 <p>
                   Arthur Hatton is a visual artist specializing in watercolor
                   and egg tempera. His artwork focuses on portraits and figures,
                   using an abstracted realist style. Arthur is also a clinical
                   psychologist.
+                </p>
+
+                <p>
+                  <strong>Bryan Peterson (Dallas, TX)</strong>
+                </p>
+                <p>
+                  Bryan is the founder and one of two chief designers for
+                  Peterson Ray & Company, a Dallas, TX graphic design powerhouse
+                  founded in 1985. Recently, he was named as the official
+                  portrait artist for the Texas Songwriters’ Hall of Fame and is
+                  currently working on portraits for inductees Nanci Griffith
+                  and Lightnin’ Hopkins, among others.
                 </p>
               </div>
             </div>
@@ -291,7 +309,7 @@ export default function Home({
                   that simple photographs of each of the players was not going
                   to be good enough. I wanted each card to be a painted portrait
                   of the respective player. I just needed to find the right
-                  artist. Not only did I find the right artist, I found five of
+                  artist. Not only did I find the right artist, I found six of
                   them! And you will love them all!
                 </p>
 
@@ -305,18 +323,6 @@ export default function Home({
                   idea of how many packs I should be producing. I am grateful
                   for any support you can provide. Thank you!
                 </p>
-                {PREORDER_ENABLED && (
-                  <div className="max-w-sm clear-left">
-                    <PreOrderButton
-                      price={price}
-                      quantity={quantity}
-                      onChange={handleChange}
-                      loading={loading}
-                      onClick={checkout}
-                      variantId={variantId}
-                    />
-                  </div>
-                )}
               </div>
             </div>
             <div>
