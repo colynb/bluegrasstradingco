@@ -1,108 +1,20 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
-import EmailSignup from '../components/email-signup'
 import NewsletterSignup from '../components/NewsletterSignup'
 
 import { storefront } from '../utils'
 
-const artists = [
-  {
-    name: 'Michael Foster',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  },
-  // More people...
-]
-
-const PreOrderButton = ({
-  variantId,
-  loading = true,
-  onClick,
-  onChange,
-  quantity,
-  price,
-}) => {
-  if (!variantId) {
-    return (
-      <div className="mt-6 p-3 w-full px-12 text-lg text-gray-400 bg-gray-300 rounded-xl font-medium uppercase border-4 border-[#ccc]">
-        Pre-ordering unavailable
-      </div>
-    )
-  }
-  return (
-    <div className="mt-6 ">
-      <div className="text-sm p-4 flex items-center leading-none space-x-4">
-        <div>Number of packs: </div>
-        <input
-          type="number"
-          onChange={onChange}
-          value={quantity}
-          className="w-20 rounded"
-        />
-        <div className="font-display font-bold text-xl">
-          {new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-          }).format(price)}{' '}
-          /each
-        </div>
-      </div>
-      <button
-        onClick={onClick}
-        type="button"
-        disabled={loading}
-        className="hover:bg-gray-800 disabled:bg-gray-300 disabled:text-gray-400 transition-all p-3 w-full text-opacity-90 px-12 text-lg text-white bg-[#04403F] rounded-xl font-medium uppercase border-4 border-white"
-      >
-        {loading ? 'Preparing...' : 'Pre-Order Yours Now!'}
-      </button>
-    </div>
-  )
-}
-
-export default function Home({
-  description,
-  title,
-  variants,
-  images,
-  priceRange,
-}) {
-  const [loading, setLoading] = useState(false)
-  const [quantity, setQuantity] = useState(1)
-  const variantId = variants?.edges[0]?.node?.id
-  const price = priceRange.minVariantPrice.amount
-
-  const PREORDER_ENABLED = process.env.NEXT_PUBLIC_PREORDER_ENABLED === 'true'
-
-  const checkout = async () => {
-    setLoading(true)
-
-    const { data } = await storefront(cartCreateMutation, {
-      input: {
-        lines: {
-          merchandiseId: variantId,
-          quantity: parseInt(quantity),
-        },
-      },
-    })
-    const { checkoutUrl } = data?.cartCreate?.cart
-
-    window.location.href = checkoutUrl
-  }
-
-  const handleChange = (e) => {
-    const qty = e.target.value >= 1 ? e.target.value : 1
-    setQuantity(qty)
-  }
+export default function Home({ description, title }) {
+  const fulldescription = `Bluegrass Trading Co is an online store dedicated to providing exclusive bluegrass related merchandise. Our flagship and first product, Banjo All-Star trading cards is currently in production and will be available to ship in Spring 2022. Thank you to all who have expressed interest and enthusiasm in this project. Made with ♥ by Colyn Brown in Friendsville, TN ${description}`
   return (
     <div className="h-screen w-screen">
       <Head>
         <title>{title}</title>
-        <meta name="description" content={description} />
+        <meta name="description" content={fulldescription} />
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content={`${title}`} />
-        <meta property="og:description" content={description} />
+        <meta property="og:description" content={fulldescription} />
         <meta
           property="og:image"
           content={
@@ -146,24 +58,20 @@ export default function Home({
                   pickers.
                 </p>
 
-                {!PREORDER_ENABLED ? (
-                  <EmailSignup />
-                ) : (
-                  <div className="flex lg:justify-end">
-                    <div className="w-96">
-                      <a
-                        href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"
-                        className="hover:bg-gray-800 block mt-12 text-center disabled:bg-gray-300 disabled:text-gray-400 transition-all p-3 w-full text-opacity-90 px-12 text-lg text-white bg-[#04403F] rounded-xl font-medium uppercase border-4 border-white"
-                      >
-                        {loading ? 'Preparing...' : 'Pre-Order Yours Now!'}
-                      </a>
+                <div className="flex lg:justify-end">
+                  <div className="w-96">
+                    <a
+                      href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"
+                      className="hover:bg-gray-800 block mt-12 text-center disabled:bg-gray-300 disabled:text-gray-400 transition-all p-3 w-full text-opacity-90 px-12 text-lg text-white bg-[#04403F] rounded-xl font-medium uppercase border-4 border-white"
+                    >
+                      Pre-Order Yours Now!
+                    </a>
 
-                      <div className="text-base py-3 italic">
-                        Cards now in progress. Shipping Spring 2022!
-                      </div>
+                    <div className="text-base py-3 italic">
+                      Cards now in progress. Shipping Spring 2022!
                     </div>
                   </div>
-                )}
+                </div>
               </div>
             </div>
             <div className="bg-[#9cc9d8] relative h-[600px] md:h-[700px]">
@@ -180,13 +88,31 @@ export default function Home({
           <div>
             <div className="p-4 lg:p-12">
               <div className="max-w-4xl mx-auto space-y-4 ">
-                <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
-                  DESCRIPTION
-                </h2>
-                <p className="prose-lg">{description}</p>
+                <p className="prose-lg">
+                  Our Flagship product, Banjo All-Star
+                  <span className="text-xs align-top text-[#04403F]">
+                    TM
+                  </span>{' '}
+                  Series One Trading Cards will be available Spring 2022. Until
+                  then I am accepting pre-orders. As thanks for pre-ordering,
+                  I&apos;m giving away up to 100 prototype Earl Scruggs cards.
+                  These are just about gone but I do have plenty of stickers and
+                  plus you would also be supporting a cool project helping to
+                  offset the cost of me putting this together in my spare time.
+                  For this series, I am only printing 5000 packs. There will be
+                  other ways to print up more cards of individual players but I
+                  will only be selling up to 5000 as packs. Each pack in this
+                  series contains 6 randomly sorted collectible cards (at least
+                  6) and a lucky commemorative card (e.g. Earl Scruggs, Doug
+                  Dillard). There are a total of 25+ unique cards (closer to 30
+                  actually) in the series. Collect them all! Order now at our
+                  discounted pre-order price.
+                </p>
               </div>
             </div>
-
+            <div>
+              <NewsletterSignup />
+            </div>
             <div className="p-4 lg:p-12 bg-gray-100">
               <div className="max-w-4xl mx-auto space-y-4 ">
                 <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
@@ -277,56 +203,29 @@ export default function Home({
 
             <div className="p-4 lg:p-12 ">
               <div className="max-w-4xl mx-auto space-y-4 ">
-                <div className="float-left mr-6 mb-6 rounded-xl overflow-hidden w-40 h-40">
-                  <Image
-                    src="/email.jpeg"
-                    alt="Colyn Brown"
-                    width="250"
-                    height="283"
-                    className="object-fill"
-                  />
-                </div>
+                <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
+                  ABOUT
+                </h2>
                 <p>
-                  Hi, I’m Colyn Brown. I started Bluegrass Trading Company as a
-                  way to offer goods and services to bluegrass enthusiasts like
-                  myself, starting with trading cards.
-                </p>
-                <p>
-                  Why trading cards you ask? I have always loved the banjo. I
-                  grew up listening to my dad play and I’ve only been playing
-                  myself for a few years, but there are a lot of incredible
-                  banjo players that I don&apos;t think get the recognition they
-                  deserve. Many times, I have stumbled upon a player with
-                  jaw-dropping skill, shocked I’ve not heard of them before. So,
-                  while this series includes a few of the all-time greats, I
-                  hope you will be surprised and delighted by some of my other
-                  included pickers.
-                </p>
-
-                <p>
-                  For the last several months I have been thinking about how to
-                  create these cards and what they should look like. I decided
-                  that simple photographs of each of the players was not going
-                  to be good enough. I wanted each card to be a painted portrait
-                  of the respective player. I just needed to find the right
-                  artist. Not only did I find the right artist, I found six of
-                  them! And you will love them all!
+                  Bluegrass Trading Co is an online store dedicated to providing
+                  exclusive bluegrass related merchandise. Our flagship and
+                  first product, Banjo All-Star trading cards is currently in
+                  production and will be available to ship in Spring 2022.
                 </p>
 
                 <p>
                   Thank you to all who have expressed interest and enthusiasm in
-                  this project. I am honored to be able to do something like
-                  this and produce them for you all. I am accepting pre-orders
-                  because these are not cheap to make. Your pre-orders will
-                  allow me to offset some of the cost of the paintings as well
-                  as the cost of print production. It also gives me a better
-                  idea of how many packs I should be producing. I am grateful
-                  for any support you can provide. Thank you!
+                  this project. Made with ♥ by Colyn Brown in Friendsville, TN.
+                  He can be contacted at{' '}
+                  <a
+                    href="mailto:colyn@bluegrasstradingco.com"
+                    className="text-[#04403F] font-semibold"
+                  >
+                    colyn@bluegrasstradingco.com
+                  </a>
+                  .
                 </p>
               </div>
-            </div>
-            <div>
-              <NewsletterSignup />
             </div>
           </div>
         </div>
@@ -391,16 +290,6 @@ const productQuery = gql`
             id
           }
         }
-      }
-    }
-  }
-`
-
-const checkoutQuery = gql`
-  mutation CheckoutCreate($input: CheckoutCreateInput!) {
-    checkoutCreate(input: $input) {
-      checkout {
-        webUrl
       }
     }
   }
