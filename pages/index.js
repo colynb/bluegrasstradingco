@@ -18,7 +18,7 @@ export default function Home({ description, title }) {
         <meta
           property="og:image"
           content={
-            'https://cdn.shopify.com/s/files/1/0601/1800/7990/products/poster3.png?v=1633876463'
+            'https://cdn.shopify.com/s/files/1/0601/1800/7990/products/poster_1080x.png?v=1642553130'
           }
         />
         <meta property="og:url" content="https://www.bluegrasstradingco.com/" />
@@ -32,7 +32,7 @@ export default function Home({ description, title }) {
 
       <main>
         <div className="bg-[#9cc9d8]">
-          <div className="lg:grid sm:grid-cols-2 max-w-screen-2xl mx-auto">
+          <div className="lg:grid sm:grid-cols-2 max-w-6xl mx-auto">
             <div className="p-4 lg:p-12 lg:text-right flex lg:justify-end">
               <div className="max-w-xl text-[#04403F]">
                 <h1 className="font-bold font-display text-4xl lg:text-5xl mb-4 uppercase">
@@ -54,29 +54,33 @@ export default function Home({ description, title }) {
                     <span className="text-[10px] align-top">TM</span> Series
                     One&quot;
                   </span>{' '}
-                  will be devoted to highlighting 25+ of your favorite banjo
-                  pickers.
+                  will be devoted to highlighting 40 of your favorite banjo
+                  pickers. Coming April 2022!
                 </p>
 
                 <div className="flex lg:justify-end">
-                  <div className="w-96">
+                  <div className="w-full">
                     <a
                       href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"
-                      className="hover:bg-gray-800 block mt-12 text-center disabled:bg-gray-300 disabled:text-gray-400 transition-all p-3 w-full text-opacity-90 px-12 text-lg text-white bg-[#04403F] rounded-xl font-medium uppercase border-4 border-white"
+                      className="hover:bg-gray-800 block mt-12 text-center disabled:bg-gray-300 disabled:text-gray-400 transition-all p-3 w-full text-opacity-90 px-12 text-lg text-white bg-[#04403F] rounded-xl font-medium uppercase"
                     >
-                      Pre-Order Yours Now!
+                      Pre-Order Yours Now for $14!
                     </a>
-
-                    <div className="text-base py-3 italic">
-                      Cards now in progress. Shipping Spring 2022!
-                    </div>
                   </div>
                 </div>
+                <div className="text-lg py-3 font-display font-bold">
+                  PRE-ORDER ONLY AVAILABLE UNTIL THE END OF FEBRUARY 2022
+                </div>
+                <p>
+                  These cards will be completed and ready to ship by April 2022
+                  and will be selling for $20 per pack. If you order yours now,
+                  we will discount them by 30%, that's only $14.
+                </p>
               </div>
             </div>
-            <div className="bg-[#9cc9d8] relative h-[600px] md:h-[700px]">
+            <div className="bg-[#9cc9d8] relative h-[600px] md:h-[780px]">
               <Image
-                src="/SitePromo3.jpg"
+                src="/collagewall.png"
                 alt="Bluegrass Trading Co - Banjo All-Star Series One Trading Cards"
                 layout="fill"
                 className="object-cover"
@@ -86,33 +90,30 @@ export default function Home({ description, title }) {
         </div>
         <div className="text-gray-600 text-md lg:text-xl leading-loose">
           <div>
-            <div className="p-4 lg:p-12">
+            <div className="p-4 lg:p-12 ">
               <div className="max-w-4xl mx-auto space-y-4 ">
-                <p className="prose-lg">
-                  Our Flagship product, Banjo All-Star
-                  <span className="text-xs align-top text-[#04403F]">
-                    TM
-                  </span>{' '}
-                  Series One Trading Cards will be available Spring 2022. Until
-                  then I am accepting pre-orders. As thanks for pre-ordering,
-                  I&apos;m giving away up to 100 prototype Earl Scruggs cards.
-                  These are just about gone but I do have plenty of stickers and
-                  plus you would also be supporting a cool project helping to
-                  offset the cost of me putting this together in my spare time.
-                  For this series, I am only printing 5000 packs. There will be
-                  other ways to print up more cards of individual players but I
-                  will only be selling up to 5000 as packs. Each pack in this
-                  series contains 6 randomly sorted collectible cards (at least
-                  6) and a lucky commemorative card (e.g. Earl Scruggs, Doug
-                  Dillard). There are a total of 25+ unique cards (closer to 30
-                  actually) in the series. Collect them all! Order now at our
-                  discounted pre-order price.
+                <p>
+                  Bluegrass Trading Co is an online store dedicated to providing
+                  exclusive bluegrass related merchandise. Our flagship and
+                  first product, Banjo All-Star trading cards is currently in
+                  production and will be available to ship in Spring 2022.
+                </p>
+
+                <p>
+                  Thank you to all who have expressed interest and enthusiasm in
+                  this project. Made with ♥ by Colyn Brown in Friendsville, TN.
+                  He can be contacted at{' '}
+                  <a
+                    href="mailto:colyn@bluegrasstradingco.com"
+                    className="text-[#04403F] font-semibold"
+                  >
+                    colyn@bluegrasstradingco.com
+                  </a>
+                  .
                 </p>
               </div>
             </div>
-            <div>
-              <NewsletterSignup />
-            </div>
+
             <div className="p-4 lg:p-12 bg-gray-100">
               <div className="max-w-4xl mx-auto space-y-4 ">
                 <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
@@ -200,33 +201,10 @@ export default function Home({ description, title }) {
                 </p>
               </div>
             </div>
+          </div>
 
-            <div className="p-4 lg:p-12 ">
-              <div className="max-w-4xl mx-auto space-y-4 ">
-                <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
-                  ABOUT
-                </h2>
-                <p>
-                  Bluegrass Trading Co is an online store dedicated to providing
-                  exclusive bluegrass related merchandise. Our flagship and
-                  first product, Banjo All-Star trading cards is currently in
-                  production and will be available to ship in Spring 2022.
-                </p>
-
-                <p>
-                  Thank you to all who have expressed interest and enthusiasm in
-                  this project. Made with ♥ by Colyn Brown in Friendsville, TN.
-                  He can be contacted at{' '}
-                  <a
-                    href="mailto:colyn@bluegrasstradingco.com"
-                    className="text-[#04403F] font-semibold"
-                  >
-                    colyn@bluegrasstradingco.com
-                  </a>
-                  .
-                </p>
-              </div>
-            </div>
+          <div>
+            <NewsletterSignup />
           </div>
         </div>
       </main>
