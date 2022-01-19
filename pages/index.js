@@ -74,7 +74,7 @@ export default function Home({ description, title }) {
                 <p>
                   These cards will be completed and ready to ship by April 2022
                   and will be selling for $20 per pack. If you order yours now,
-                  we will discount them by 30%, that's only $14.
+                  we will discount them by 30%, that&apos;s only $14.
                 </p>
               </div>
             </div>
