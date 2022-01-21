@@ -36,10 +36,9 @@ export default function Home({ description, title }) {
             <div className="p-4 lg:p-12 lg:text-right flex lg:justify-end">
               <div className="max-w-xl text-[#04403F]">
                 <h1 className="font-bold font-display text-4xl lg:text-5xl mb-4 uppercase">
-                  Banjo{' '}
                   <span className="text-[#b43b26] whitespace-nowrap">
-                    All-Star
-                    <span className="text-lg align-top text-[#04403F]">TM</span>
+                    Banjo All-Star
+                    <span className="text-lg align-top">TM</span>
                   </span>
                   <br />
                   Premium Trading Cards
@@ -80,10 +79,10 @@ export default function Home({ description, title }) {
             </div>
             <div className="bg-[#9cc9d8] relative h-[600px] md:h-[780px]">
               <Image
-                src="/collagewall.png"
+                src="/promo2.png"
                 alt="Bluegrass Trading Co - Banjo All-Star Series One Trading Cards"
-                layout="fill"
-                className="object-cover"
+                width="620"
+                height="780"
               />
             </div>
           </div>
@@ -110,6 +109,24 @@ export default function Home({ description, title }) {
                     colyn@bluegrasstradingco.com
                   </a>
                   .
+                </p>
+                <hr />
+                <p>
+                  Stay updated on the project status by following us on{' '}
+                  <a
+                    href="https://www.facebook.com/bluegrasstradingco"
+                    className="text-[#04403F] font-semibold"
+                  >
+                    Facebook
+                  </a>{' '}
+                  or{' '}
+                  <a
+                    href="https://www.instagram.com/realbluegrasstradingco/"
+                    className="text-[#04403F] font-semibold"
+                  >
+                    Instagram
+                  </a>{' '}
+                  or by subscribing to our email newsletter below.
                 </p>
               </div>
             </div>
