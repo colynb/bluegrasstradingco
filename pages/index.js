@@ -32,7 +32,7 @@ export default function Home({ description, title }) {
 
       <main>
         <div className="bg-[#9cc9d8]">
-          <div className="lg:grid sm:grid-cols-2 max-w-6xl mx-auto">
+          <div className="lg:grid sm:grid-cols-2 max-w-7xl mx-auto">
             <div className="p-4 lg:p-12 lg:text-right flex lg:justify-end">
               <div className="max-w-xl text-[#04403F]">
                 <h1 className="font-bold font-display text-4xl lg:text-5xl mb-4 uppercase">
@@ -42,19 +42,19 @@ export default function Home({ description, title }) {
                     <span className="text-lg align-top text-[#04403F]">TM</span>
                   </span>
                   <br />
-                  Trading Cards
+                  Premium Trading Cards
                 </h1>
                 <p className="leading-loose opacity-75 mb-4 text-lg">
-                  Introducing the world&apos;s first bluegrass related,
-                  high-quality, trading cards. These aren&apos;t standard photo
-                  cards, they will be works of art, each portrait hand painted
-                  by our featured artists. The first series entitled{' '}
+                  Introducing the world&apos;s first bluegrass related, premium,
+                  trading cards. These aren&apos;t standard photo cards, they
+                  will be works of art, each portrait hand painted by our
+                  featured artists. The first series entitled{' '}
                   <span className="font-bold">
                     &quot;Banjo All-Star
                     <span className="text-[10px] align-top">TM</span> Series
                     One&quot;
                   </span>{' '}
-                  will be devoted to highlighting 40 of your favorite banjo
+                  will be devoted to highlighting 42 of your favorite banjo
                   pickers. Coming April 2022!
                 </p>
 
@@ -211,7 +211,7 @@ export default function Home({ description, title }) {
       <footer className="bg-gray-800">
         <div className="mx-auto max-w-4xl text-sm text-gray-500 px-4 md:px-0 py-12 space-y-4">
           <div className="md:flex items-center space-y-4 md:space-y-0 md:space-x-4 leading-none">
-            <div>&copy; 2021 Bluegrass Trading Co.</div>
+            <div>&copy; 2021 Bluegrass Trading Co. LLC</div>
             <div className="hidden md:block">♥</div>
             <div>Established 2021, Friendsville Tennessee</div>
             <div className="hidden md:block">♥</div>
@@ -224,7 +224,7 @@ export default function Home({ description, title }) {
               </a>
             </div>
           </div>
-          <div>Site design and development by Bluegrass Trading Co.</div>
+          <div>Site design and development by Bluegrass Trading Co. LLC</div>
         </div>
       </footer>
     </div>
