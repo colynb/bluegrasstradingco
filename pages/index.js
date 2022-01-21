@@ -102,7 +102,7 @@ export default function Home({ description, title }) {
                 <p>
                   Thank you to all who have expressed interest and enthusiasm in
                   this project. Made with ♥ by Colyn Brown in Friendsville, TN.
-                  He can be contacted at{' '}
+                  and the many artists listed below. He can be contacted at{' '}
                   <a
                     href="mailto:colyn@bluegrasstradingco.com"
                     className="text-[#04403F] font-semibold"
