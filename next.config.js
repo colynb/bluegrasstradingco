@@ -3,7 +3,7 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/r/EARLSCRUGGS',
+        source: '/r/:player',
         destination: '/',
         permanent: false,
       },

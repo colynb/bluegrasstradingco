@@ -1,7 +1,7 @@
 const API_URL =
   'https://bluegrass-trading-company.myshopify.com/api/2021-10/graphql.json'
 
-const ACCESS_TOKEN = 'be912853892acbdffd31cfae988429b2'
+const ACCESS_TOKEN = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN
 
 export const storefront = async (query, variables = {}) => {
   const body = JSON.stringify({ query: query.trim(), variables })
