@@ -79,7 +79,7 @@ export default function Home({ description, title }) {
             </div>
             <div className="bg-[#9cc9d8] relative h-[600px] md:h-[780px]">
               <Image
-                src="/promo2.png"
+                src="/collagewall.png"
                 alt="Bluegrass Trading Co - Banjo All-Star Series One Trading Cards"
                 width="620"
                 height="780"
