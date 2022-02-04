@@ -4,7 +4,7 @@ export default function Player(props) {
     { name: 'Alan Munde', image: '_0026_ALAN MUNDE.jpg' },
     { name: 'Alison Brown', image: '_0001_ALISON BROWN.jpg' },
     { name: 'Allen Shelton', image: '_0015_ALLEN SHELTON.jpg' },
-    { name: 'Ashley Campbell', image: '' },
+    { name: 'Ashley Campbell', image: '_0033_ASHLEY CAMPBELL.jpg' },
     { name: 'Ben Clark', image: '' },
     { name: 'Bill Emerson', image: '_0014_BILL EMERSON.jpg' },
     { name: 'Bill Keith', image: '_0018_BILL KEITH.jpg' },
