@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 export default function Player(props) {
   const players = [
     { name: 'Alan Munde', image: '_0026_ALAN MUNDE.jpg' },
@@ -50,12 +51,25 @@ export default function Player(props) {
 
   return (
     <div>
-      <div className="p-12 text-center">
-        <div className="font-display font-bold  text-3xl">
+      <header className="px-6 sm:px-0 flex items-center py-4 md:py-8 justify-center bg-white">
+        <div className="relative max-w-4xl h-28 w-full">
+          <Link href="/">
+            <a>
+              <Image
+                src="/logo.svg"
+                alt="Bluegrass Trading Co."
+                layout="fill"
+              />
+            </a>
+          </Link>
+        </div>
+      </header>
+      <div className="p-12 text-center bg-[#9cc9d8]">
+        <div className="font-display font-bold  text-3xl text-gray-40">
           PLAYERS ({players.filter((p) => p.image).length} completed -{' '}
           {players.filter((p) => !p.image).length} in progress)
         </div>
-        <div className="font-display font-bold  text-xl mb-5">
+        <div className="text-xl mb-5">
           Shipping in April -{' '}
           <a
             href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"

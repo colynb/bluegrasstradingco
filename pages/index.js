@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import NewsletterSignup from '../components/NewsletterSignup'
@@ -23,7 +24,6 @@ export default function Home({ description, title }) {
         />
         <meta property="og:url" content="https://www.bluegrasstradingco.com/" />
       </Head>
-      <div className="header"></div>
       <header className="px-6 sm:px-0 flex items-center py-4 md:py-8 justify-center bg-white">
         <div className="relative max-w-4xl h-28 w-full">
           <Image src="/logo.svg" alt="Bluegrass Trading Co." layout="fill" />
@@ -55,6 +55,15 @@ export default function Home({ description, title }) {
                   </span>{' '}
                   will be devoted to highlighting 42 of your favorite banjo
                   pickers. Coming April 2022!
+                </p>
+
+                <p className="text-3xl">
+                  See running list of{' '}
+                  <Link href="/about/all-star-series1">
+                    <a className="text-blue-600 underline">
+                      completed portraits
+                    </a>
+                  </Link>
                 </p>
 
                 <div className="flex lg:justify-end">
