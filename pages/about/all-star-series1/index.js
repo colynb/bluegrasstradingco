@@ -17,7 +17,7 @@ export default function Player(props) {
     { name: 'Don Wayne Reno', image: '_0005_DON WAYNE RENO.jpg' },
     { name: 'Doug Dillard', image: '_0032_DOUG DILLARD.jpg' },
     { name: 'Earl Scruggs', image: '_0023_EARL SCRUGGS.jpg' },
-    { name: 'Eddie Adcock', image: '' },
+    { name: 'Eddie Adcock', image: '_0034_EDDIE ADCOCK.jpg' },
     { name: 'Gina Furtado ', image: '_0006_GINA FURTADO.jpg' },
     { name: 'Grandpa Jones ', image: '' },
     { name: 'Greg Cahill', image: '' },
@@ -39,6 +39,7 @@ export default function Player(props) {
     { name: 'Ralph Stanley', image: '_0020_RALPH STANLEY.jpg' },
     { name: 'Robby Boone', image: '_0029_ROBBY BOONE.jpg' },
     { name: 'Ron Block', image: '_0012_RON BLOCK.jpg' },
+    { name: 'Sammy Shelor', image: '' },
     { name: 'Scott Vestal', image: '_0021_SCOTT VESTAL.jpg' },
     { name: 'Snuffy Jenkins', image: '_0004_SNUFFY JENKINS.jpg' },
     { name: 'Sonny Osborne', image: '_0031_SONNY OSBORNE.jpg' },
@@ -49,10 +50,19 @@ export default function Player(props) {
 
   return (
     <div>
-      <div>
-        <div className="font-display font-bold text-center text-3xl">
+      <div className="p-12 text-center">
+        <div className="font-display font-bold  text-3xl">
           PLAYERS ({players.filter((p) => p.image).length} completed -{' '}
           {players.filter((p) => !p.image).length} in progress)
+        </div>
+        <div className="font-display font-bold  text-xl mb-5">
+          Shipping in April -{' '}
+          <a
+            href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"
+            className="text-blue-600"
+          >
+            Order now for a instant Pre-order discount!
+          </a>
         </div>
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-1">
