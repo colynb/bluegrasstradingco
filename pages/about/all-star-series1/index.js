@@ -62,7 +62,7 @@ export default function Player(props) {
           </Link>
         </div>
       </header>
-      <div className="p-12 text-center bg-[#9cc9d8]">
+      <div className="p-12 text-center bg-gray-100">
         <div className="font-display font-bold  text-3xl text-gray-40">
           PLAYERS ({players.filter((p) => p.image).length} completed -{' '}
           {players.filter((p) => !p.image).length} in progress)

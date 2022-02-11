@@ -1,0 +1,1 @@
+COLYN BROWN was exposed to the banjo from day one. His dad, Kenny Brown, was an award-winning banjo player around the North East in the 60s. Colyn recently started learning the banjo himself and has discovered many players and continues to be inspired by them.
