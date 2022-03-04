@@ -35,7 +35,7 @@ export default function Home({ description, title }) {
           <div className="lg:grid sm:grid-cols-2 max-w-7xl mx-auto">
             <div className="p-4 lg:p-12 lg:text-right flex lg:justify-end">
               <div className="max-w-xl text-[#04403F]">
-                <h1 className="font-bold font-display text-4xl lg:text-5xl mb-4 uppercase">
+                <h1 className="font-bold font-display text-4xl lg:text-5xl mb-4 uppercase text-left">
                   <span className="text-[#b43b26] whitespace-nowrap">
                     Banjo All-Star
                     <span className="text-lg align-top">TM</span>
@@ -43,27 +43,17 @@ export default function Home({ description, title }) {
                   <br />
                   Premium Trading Cards
                 </h1>
-                <p className="leading-loose opacity-75 mb-4 text-lg">
+                <p className="leading-loose opacity-75 mb-4 text-lg text-left">
                   Introducing the world&apos;s first bluegrass related, premium,
-                  trading cards. These aren&apos;t standard photo cards, they
-                  will be works of art, each portrait hand painted by our
-                  featured artists. The first series entitled{' '}
-                  <span className="font-bold">
-                    &quot;Banjo All-Star
-                    <span className="text-[10px] align-top">TM</span> Series
-                    One&quot;
-                  </span>{' '}
-                  will be devoted to highlighting 42 of your favorite banjo
-                  pickers. Coming April 2022!
-                </p>
-
-                <p className="text-3xl">
-                  See running list of{' '}
-                  <Link href="/about/all-star-series1">
-                    <a className="text-blue-600 underline">
-                      completed portraits
-                    </a>
-                  </Link>
+                  trading cards. Each pack of Banjo All-Star Premium Trading
+                  Cards includes 8 players, one of which is a limited edition
+                  card. Yes, every pack comes with a limited edition card! There
+                  are a total of 42 cards in all and 12 of them are limited
+                  edition. Note that packs are collated randomly meaning you do
+                  not know which 8 cards you will be getting. At this time we do
+                  not offer complete sets but we are planning on doing so in the
+                  coming weeks. This series is currently in production and will
+                  be ready to ship in April.
                 </p>
 
                 <div className="flex lg:justify-end">
@@ -72,18 +62,10 @@ export default function Home({ description, title }) {
                       href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"
                       className="hover:bg-gray-800 block mt-12 text-center disabled:bg-gray-300 disabled:text-gray-400 transition-all p-3 w-full text-opacity-90 px-12 text-lg text-white bg-[#04403F] rounded-xl font-medium uppercase"
                     >
-                      Pre-Order Yours Now for $14!
+                      Order Now! <span className="underline">$20 per pack</span>
                     </a>
                   </div>
                 </div>
-                <div className="text-lg py-3 font-display font-bold">
-                  PRE-ORDER ONLY AVAILABLE UNTIL THE END OF FEBRUARY 2022
-                </div>
-                <p>
-                  These cards will be completed and ready to ship by April 2022
-                  and will be selling for $20 per pack. If you order yours now,
-                  we will discount them by 30%, that&apos;s only $14.
-                </p>
               </div>
             </div>
             <div className="bg-[#9cc9d8] relative h-[600px] md:h-[780px]">
