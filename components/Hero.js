@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 /* This example requires Tailwind CSS v2.0+ */
 export default function Hero() {
   return (
@@ -42,6 +44,8 @@ export default function Hero() {
                           src="/portraits/_0011_TERRY BAUCOM.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
                         />
                         <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
                           Terry Baucom
@@ -52,26 +56,32 @@ export default function Hero() {
                           src="/portraits/_0003_BUTCH ROBINS.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
                         />
                         <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
                           Butch Robins
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded overflow-hidden sm:opacity-0 lg:opacity-100 relative">
-                        <img
+                        <Image
                           src="/portraits/_0001_ALISON BROWN.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
                         />
                         <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
                           Alison Brown
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <img
+                        <Image
                           src="/portraits/_0024_DON RENO.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
                         />
                         <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
                           Don Reno
@@ -80,40 +90,48 @@ export default function Hero() {
                     </div>
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2">
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <img
+                        <Image
                           src="/portraits/_0009_JD CROWE.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
                         />
                         <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
                           J.D. Crowe
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <img
+                        <Image
                           src="/portraits/_0023_EARL SCRUGGS.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
                         />
                         <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
                           Earl Scruggs
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <img
+                        <Image
                           src="/portraits/_0018_BILL KEITH.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
                         />
                         <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
                           Bill Keith
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <img
+                        <Image
                           src="/portraits/_0010_TONY TRISCHKA.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
                         />
                         <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
                           Tony Trischka
@@ -122,30 +140,36 @@ export default function Hero() {
                     </div>
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2 -top-6 relative">
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <img
+                        <Image
                           src="/portraits/_0007_KRISTIN SCOTT BENSON.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
                         />
                         <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
                           Kristin Scott Benson
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <img
+                        <Image
                           src="/portraits/_0034_EDDIE ADCOCK.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
                         />
                         <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
                           Eddie Adcock
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <img
+                        <Image
                           src="/portraits/_0014_BILL EMERSON.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
                         />
                         <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
                           Bill Emerson
