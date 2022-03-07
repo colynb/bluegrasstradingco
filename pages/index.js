@@ -45,17 +45,27 @@ export default function Home({ description, title }) {
         <div className="bg-white">
           <div className="max-w-7xl mx-auto py-24 sm:px-2 sm:py-32 lg:px-4">
             <div className="max-w-2xl mx-auto px-4 lg:max-w-none">
-              <div className="max-w-3xl">
-                <h2 className="text-3xl font-medium uppercase font-display tracking-tight text-gray-700">
-                  What is Bluegrass Trading Co?
-                </h2>
-                <p className="mt-4 text-xl text-gray-500 leading-loose">
-                  Bluegrass Trading Co is an online store dedicated to providing
-                  exclusive, quality, merchandise for bluegrass enthusiasts. Our
-                  flagship and first product, Banjo All-Star trading cards is
-                  currently in production and will be available to ship in April
-                  2022.
-                </p>
+              <div className="flex space-x-6">
+                <div className="flex-1">
+                  <h2 className="text-3xl font-medium uppercase font-display tracking-tight text-gray-700">
+                    What is Bluegrass Trading Co?
+                  </h2>
+                  <p className="mt-4 text-xl text-gray-500 leading-loose">
+                    Founded by Colyn Brown in Sept 2021, Bluegrass Trading Co is
+                    an online store dedicated to providing exclusive, quality,
+                    merchandise for bluegrass enthusiasts. Our flagship and
+                    first product, Banjo All-Star trading cards is currently in
+                    production and will be available to ship in April 2022.
+                  </p>
+                </div>
+                <div className=" rounded-xl shadow-lg  w-80 h-72 overflow-hidden relative">
+                  <Image
+                    src="/colyn.jpg"
+                    layout="fill"
+                    className="w-80 h-72 object-center object-cover "
+                    alt="Colyn Brown, Founder of Bluegrass Trading Co, LLC"
+                  />
+                </div>
               </div>
             </div>
           </div>

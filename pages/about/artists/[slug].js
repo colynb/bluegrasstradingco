@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Footer from '../../../components/Footer'
 import Header from '../../../components/Header'
+import PlayerCard from '../../../components/PlayerCard'
 
 export default function ArtistDetail({ artist }) {
   if (!artist) {
@@ -35,22 +36,11 @@ export default function ArtistDetail({ artist }) {
         <h3 className="text-2xl font-display font-medium uppercase tracking-tight mb-4">
           Selected Works
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {artist.works.map((work) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {artist.works.map((player) => {
             return (
-              <div key={work.name}>
-                <div className="w-full h-96 rounded overflow-hidden relative">
-                  <Image
-                    src={work.imageUrl}
-                    alt=""
-                    className="w-full h-full object-center object-cover"
-                    width="300"
-                    height="414"
-                  />
-                  <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4">
-                    {work.name}
-                  </div>
-                </div>
+              <div key={player.name} className="h-64 w-full">
+                <PlayerCard player={player} />
               </div>
             )
           })}

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+import PlayerCard from '../../components/PlayerCard'
 
 export default function TradingCards({ players }) {
   return (
@@ -44,29 +45,10 @@ export default function TradingCards({ players }) {
           Completed Works
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
-          {players.map((work) => {
+          {players.map((player) => {
             return (
-              <div key={work.name}>
-                <div className="w-full h-72 rounded overflow-hidden relative">
-                  <div className="absolute top-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 z-10">
-                    {work.limited && (
-                      <span className="text-yellow-400 bg-gradient-to-r from-yellow-200 to-yellow-300 text-transparent bg-clip-text font-bold font-display">
-                        LIMITED
-                      </span>
-                    )}
-                  </div>
-                  <Image
-                    src={work.imageUrl}
-                    alt=""
-                    width="300"
-                    height="414"
-                    layout="fill"
-                    className="w-full h-full object-center object-cover"
-                  />
-                  <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4">
-                    {work.name}{' '}
-                  </div>
-                </div>
+              <div key={player.name} className="h-72">
+                <PlayerCard player={player} />
               </div>
             )
           })}
