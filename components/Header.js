@@ -23,7 +23,10 @@ export default function Header({ title, description = '' }) {
       <header className="px-6 sm:px-0 flex items-center py-4 md:py-8 justify-center bg-white border-t-8 border-yellow-300">
         <div className="flex items-center justify-center font-display uppercase">
           <div className="space-x-8 hidden md:block">
-            <a href="/">Home</a>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+
             <a href="https://shop.bluegrasstradingco.com/pages/contact">
               Contact
             </a>
