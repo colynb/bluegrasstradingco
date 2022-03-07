@@ -21,14 +21,14 @@ export default function Header({ title, description = '' }) {
         <meta property="og:url" content="https://www.bluegrasstradingco.com/" />
       </Head>
       <header className="px-6 sm:px-0 flex items-center py-4 md:py-8 justify-center bg-white border-t-8 border-yellow-300">
-        <div className="flex items-center justify-center md:space-x-8 font-display uppercase">
+        <div className="flex items-center justify-center font-display uppercase">
           <div className="space-x-8 hidden md:block">
             <a href="/">Home</a>
             <a href="https://shop.bluegrasstradingco.com/pages/contact">
               Contact
             </a>
           </div>
-          <div className="relative max-w-4xl md:h-24 flex items-center p-4">
+          <div className="relative max-w-4xl md:h-24 flex items-center justify-center p-4 mx-8">
             <Image
               src="/updated-logo2.png"
               alt="Bluegrass Trading Co."

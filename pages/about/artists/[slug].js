@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import Footer from '../../../components/Footer'
 import Header from '../../../components/Header'
 
 export default function ArtistDetail({ artist }) {
@@ -48,6 +49,7 @@ export default function ArtistDetail({ artist }) {
           })}
         </div>
       </div>
+      <Footer />
     </>
   )
 }

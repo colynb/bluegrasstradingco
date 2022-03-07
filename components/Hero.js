@@ -164,7 +164,10 @@ export default function Hero() {
                   ORDER NOW
                 </a>
 
-                <a href="/" className="font-display text-gray-700">
+                <a
+                  href="/about/banjo-all-star-series1-premium-trading-cards"
+                  className="font-display text-gray-700"
+                >
                   Learn More
                 </a>
               </div>
