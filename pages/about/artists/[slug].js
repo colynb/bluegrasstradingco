@@ -59,7 +59,7 @@ export default function ArtistDetail({ artist }) {
 }
 
 export async function getStaticProps({ params }) {
-  const data = require('./data').default
+  const data = require('../../../data').default
   const artist = data.artists.find((a) => a.slug === params.slug)
   return {
     props: {
@@ -69,7 +69,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const data = require('./data').default
+  const data = require('../../../data').default
   const paths = data.artists.map((artist) => ({
     params: { slug: artist.slug },
   }))

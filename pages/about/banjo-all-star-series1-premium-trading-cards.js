@@ -78,7 +78,7 @@ export default function TradingCards({ players }) {
 }
 
 export async function getStaticProps({ params }) {
-  const data = require('./artists/data').default
+  const data = require('../../data').default
   const players = data.players
   return {
     props: {
