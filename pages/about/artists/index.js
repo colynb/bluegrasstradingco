@@ -1,59 +1,6 @@
 import Image from 'next/image'
 import Header from '../../../components/Header'
 import Link from 'next/link'
-const people = [
-  {
-    name: 'Alexandra Andreica',
-    location: 'London England',
-    imageUrl: '/artists/alexandraandreica.jpg',
-    link: 'https://www.instagram.com/arthurhattonart/',
-  },
-  {
-    name: 'Anna Magruder',
-    location: 'Portland Oregon',
-    imageUrl: '/artists/annamagruder.jpeg',
-    link: '#',
-  },
-  {
-    name: 'Arthur Hatton',
-    location: 'East Tennessee',
-    imageUrl: '/artists/arthurhatton.jpeg',
-    link: 'https://www.instagram.com/andreicaart/',
-  },
-  {
-    name: 'Bryan Peterson',
-    location: 'Dallas Texas',
-    imageUrl: '/artists/bryanpeterson.jpg',
-    link: 'https://www.instagram.com/bryanpetersonart/',
-  },
-  {
-    name: 'Garrett Briggeman',
-    location: 'Wichita Kansas',
-    imageUrl: '/artists/Garrett Briggeman.jpg',
-    link: 'https://www.facebook.com/garrett.briggeman',
-  },
-  {
-    name: 'Georgina Flood',
-    location: 'Dublin Ireland',
-    imageUrl: '/artists/georginaflood.jpg',
-    link: '#',
-  },
-
-  {
-    name: 'Kara Lockmiller',
-    location: 'Knoxville Tennessee',
-    imageUrl: '/artists/karalockmiller.jpg',
-    link: '#',
-  },
-  {
-    name: 'Robert Felker',
-    location: 'Knoxville Tennessee',
-    imageUrl: '/artists/robertfelker.jpg',
-    link: '#',
-  },
-
-  // More people...
-]
 
 export default function Artists() {
   return (

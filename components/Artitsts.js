@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Header from './Header'
 const people = [
   {
+    slug: 'alexandra-andreica',
     name: 'Alexandra Andreica',
     location: 'London England',
     imageUrl: '/artists/alexandraandreica.jpg',
@@ -10,6 +11,7 @@ const people = [
     bio: 'Non nostrud ad cillum laborum deserunt sit ea esse cillum laborum quis consectetur minim culpa. Officia et sunt sint fugiat cupidatat consequat tempor non Lorem est elit nulla velit ad. Lorem ut enim sint dolor aute et consequat elit. Quis velit esse officia esse fugiat irure anim dolor proident cupidatat eiusmod.',
   },
   {
+    slug: 'anna-magruder',
     name: 'Anna Magruder',
     location: 'Portland Oregon',
     imageUrl: '/artists/annamagruder.jpeg',
@@ -17,6 +19,7 @@ const people = [
     bio: 'Reprehenderit cillum consectetur veniam sunt id nostrud ea anim consequat sint duis do consequat. Ad culpa quis enim enim. Officia nisi ullamco duis in. Laboris aute consectetur amet nisi proident dolor reprehenderit dolor cupidatat. Aliqua amet minim non proident labore. Cupidatat voluptate officia irure deserunt cillum dolor minim. Cupidatat est deserunt non minim eiusmod cupidatat sint.',
   },
   {
+    slug: 'arthur-hatton',
     name: 'Arthur Hatton',
     location: 'East Tennessee',
     imageUrl: '/artists/arthurhatton.jpeg',
@@ -24,6 +27,7 @@ const people = [
     bio: 'Ullamco do labore do reprehenderit cillum dolor elit. Excepteur anim minim cupidatat sint minim ea aute voluptate amet exercitation duis ex voluptate officia. Deserunt sit laborum adipisicing sunt adipisicing id cillum sunt ullamco. Quis dolor aliquip et ex mollit excepteur amet magna. Adipisicing commodo irure magna officia sit nisi irure Lorem pariatur occaecat reprehenderit qui quis.',
   },
   {
+    slug: 'bryan-peterson',
     name: 'Bryan Peterson',
     location: 'Dallas Texas',
     imageUrl: '/artists/bryanpeterson.jpg',
@@ -31,6 +35,7 @@ const people = [
     bio: 'Occaecat excepteur incididunt non Lorem. Ex nisi exercitation eu cillum et anim minim excepteur sit exercitation dolor eu culpa. Aliquip in consequat proident consequat tempor veniam quis laboris ullamco tempor eu anim. Et dolor exercitation culpa ex sunt esse. Aliqua est exercitation cupidatat deserunt ut magna mollit ea tempor aute incididunt sint adipisicing. Aliquip amet veniam pariatur do nisi mollit quis adipisicing anim. Dolor laborum aliquip minim qui occaecat excepteur cillum duis eu.',
   },
   {
+    slug: 'garrett-briggeman',
     name: 'Garrett Briggeman',
     location: 'Wichita Kansas',
     imageUrl: '/artists/Garrett Briggeman.jpg',
@@ -38,6 +43,7 @@ const people = [
     bio: 'Deserunt dolor aliqua esse nulla ad eiusmod magna aliquip eu et cupidatat aute Lorem eiusmod. Excepteur elit nulla minim nostrud laborum irure qui. Pariatur ut do cillum fugiat exercitation ad quis adipisicing id. Ad mollit velit minim pariatur aute consequat dolor et amet anim tempor sit.',
   },
   {
+    slug: 'georgina-flood',
     name: 'Georgina Flood',
     location: 'Dublin Ireland',
     imageUrl: '/artists/georginaflood.jpg',
@@ -45,6 +51,7 @@ const people = [
     link: '#',
   },
   {
+    slug: 'grace-vant-hof',
     name: "Grace Van't Hof",
     location: 'Detroit Michigan',
     imageUrl: '/artists/gracevanthof.jpg',
@@ -52,6 +59,7 @@ const people = [
     link: '#',
   },
   {
+    slug: 'kara-lockmiller',
     name: 'Kara Lockmiller',
     location: 'Knoxville Tennessee',
     imageUrl: '/artists/karalockmiller.jpg',
@@ -60,6 +68,7 @@ const people = [
   },
 
   {
+    slug: 'karl-morgan',
     name: 'Karl Morgan',
     location: 'South Wales',
     imageUrl: '/artists/karlmorgan.jpg',
@@ -67,6 +76,7 @@ const people = [
     link: '#',
   },
   {
+    slug: 'robert-felker',
     name: 'Robert Felker',
     location: 'Knoxville Tennessee',
     imageUrl: '/artists/robertfelker.jpg',
@@ -83,7 +93,7 @@ export default function Example() {
       <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
           <div className="space-y-5 sm:space-y-4">
-            <h2 className="text-3xl font-medium tracking-tight uppercase font-display">
+            <h2 className="text-3xl font-medium tracking-tight uppercase font-display text-gray-700">
               Our Artists
             </h2>
             <p className="text-xl text-gray-500">
@@ -108,7 +118,7 @@ export default function Example() {
                       <p className="text-gray-500 text-base mb-2">
                         {person.location}
                       </p>
-                      <Link href="/">
+                      <Link href={`/about/artists/${person.slug}`}>
                         <a className="text-base text-gray-700 underline font-semibold">
                           More detail
                         </a>

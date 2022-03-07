@@ -20,7 +20,7 @@ export default function Header({ title, description = '' }) {
         />
         <meta property="og:url" content="https://www.bluegrasstradingco.com/" />
       </Head>
-      <header className="px-6 sm:px-0 flex items-center py-4 md:py-8 justify-center bg-white border-t-4 border-yellow-200">
+      <header className="px-6 sm:px-0 flex items-center py-4 md:py-8 justify-center bg-white border-t-8 border-yellow-300">
         <div className="flex items-center justify-center md:space-x-8 font-display uppercase">
           <div className="space-x-8 hidden md:block">
             <a href="/">Home</a>
@@ -30,7 +30,7 @@ export default function Header({ title, description = '' }) {
           </div>
           <div className="relative max-w-4xl md:h-24 flex items-center p-4">
             <Image
-              src="/updated-logo.png"
+              src="/updated-logo2.png"
               alt="Bluegrass Trading Co."
               width="250"
               height="110"
