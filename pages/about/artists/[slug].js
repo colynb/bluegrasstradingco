@@ -39,7 +39,10 @@ export default function ArtistDetail({ artist }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {artist.works.map((player) => {
             return (
-              <div key={player.name} className="h-64 w-full">
+              <div
+                key={player.name}
+                className="h-96 w-80 md:w-full md:h-64 mx-auto"
+              >
                 <PlayerCard player={player} />
               </div>
             )

@@ -446,7 +446,7 @@ const players = [
     slug: 'snuffy-jenkins-38',
     number: '38',
     name: 'Snuffy Jenkins',
-    imageUrl: '/portraits/38 - Snuffy Jenkins-2.jpg',
+    imageUrl: '/portraits/38 - Snuffy Jenkins-3.jpg',
     bio: `DeWitt “Snuffy” Jenkins, a pivotal figure in the development of three- finger bluegrass-style banjo. He is credited with directly influencing Earl Scruggs and Don Reno, who later brought this style of banjo playing to Bill Monroe.`,
     artist: {
       slug: 'karl-morgan',
