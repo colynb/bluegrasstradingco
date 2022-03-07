@@ -38,9 +38,9 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
               </Link>
             </div>
           </div>
-          <div className="flex space-x-8">
+          <div className="md:flex md:space-x-8 space-y-6">
             <div>
-              <div className="w-60 h-80 flex-1">
+              <div className="w-full h-96 md:w-60 md:h-80 flex-1">
                 <PlayerCard player={player} />
               </div>
             </div>

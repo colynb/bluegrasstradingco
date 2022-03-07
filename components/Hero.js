@@ -5,10 +5,10 @@ import Link from 'next/link'
 export default function Hero() {
   return (
     <div className="relative bg-gray-100 overflow-hidden">
-      <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
+      <div className="pt-8 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
-            <h1 className="text-2xl font-display uppercase font-semibold tracking-tight text-gray-900 sm:text-5xl">
+            <h1 className="text-4xl font-display uppercase font-semibold tracking-tight text-gray-900 sm:text-5xl">
               <span className="text-gray-700">
                 Banjo All-Star<span className="text-lg align-top">TM</span>
               </span>
@@ -37,11 +37,11 @@ export default function Hero() {
                 aria-hidden="true"
                 className="pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full"
               >
-                <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                <div className="absolute transform sm:left-1/2 sm:top-20">
                   <div className="flex items-center space-x-1 lg:space-x-2">
-                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2 top-16 relative">
-                      <div className="w-44 h-64 rounded overflow-hidden sm:opacity-0 lg:opacity-100 relative">
-                        <img
+                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2 top-24 md:top-16 relative">
+                      <div className="w-44 h-64 rounded overflow-hidden sm:opacity-0 lg:opacity-100 relative -">
+                        <Image
                           src="/portraits/_0011_TERRY BAUCOM.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -53,7 +53,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded overflow-hidden sm:opacity-0 lg:opacity-100 relative">
-                        <img
+                        <Image
                           src="/portraits/_0003_BUTCH ROBINS.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -181,17 +181,16 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="space-x-6">
+              <div className="md:flex items-center md:space-x-6 w-48 md:w-80 text-center pb-12">
+                <Link href="/about/banjo-all-star-series1-premium-trading-cards">
+                  <a className="font-display text-gray-700 block">Learn More</a>
+                </Link>
                 <a
                   href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"
                   className="inline-block border-r border-b border-r-yellow-400 border-b-yellow-400 border-t-yellow-100 border-l-yellow-100 font-display text-gray-600 text-center bg-yellow-300 border border-transparent rounded-md py-3 px-8 font-medium  hover:bg-yellow-400"
                 >
                   ORDER NOW
                 </a>
-
-                <Link href="/about/banjo-all-star-series1-premium-trading-cards">
-                  <a className="font-display text-gray-700">Learn More</a>
-                </Link>
               </div>
             </div>
           </div>

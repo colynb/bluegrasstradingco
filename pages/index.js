@@ -45,7 +45,7 @@ export default function Home({ description, title }) {
         <div className="bg-white">
           <div className="max-w-7xl mx-auto py-24 sm:px-2 sm:py-32 lg:px-4">
             <div className="max-w-2xl mx-auto px-4 lg:max-w-none">
-              <div className="flex space-x-6">
+              <div className="md:flex md:space-x-6">
                 <div className="flex-1">
                   <h2 className="text-3xl font-medium uppercase font-display tracking-tight text-gray-700">
                     What is Bluegrass Trading Co?

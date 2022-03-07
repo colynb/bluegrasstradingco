@@ -42,22 +42,45 @@ export default function Header({ title, description = '' }) {
               height="110"
             />
           </div>
+
           <div className="hidden md:flex items-center">
+            <Link href="/">
+              <a className="w-20 block text-center">Home</a>
+            </Link>
+
             <a
-              href="https://shop.bluegrasstradingco.com/blogs/news"
-              className="w-20  block text-center"
+              href="https://shop.bluegrasstradingco.com/pages/contact"
+              className="w-20 block text-center"
             >
-              News
-            </a>
-            <a
-              href="https://shop.bluegrasstradingco.com/pages/faq"
-              className="w-20  block text-center"
-            >
-              Faq
+              Contact
             </a>
           </div>
         </div>
       </header>
+      <div className="flex md:hidden items-center font-display justify-center pb-6 uppercase">
+        <Link href="/">
+          <a className="w-20 block text-center">Home</a>
+        </Link>
+
+        <a
+          href="https://shop.bluegrasstradingco.com/pages/contact"
+          className="w-20 block text-center"
+        >
+          Contact
+        </a>
+        <a
+          href="https://shop.bluegrasstradingco.com/blogs/news"
+          className="w-20  block text-center"
+        >
+          News
+        </a>
+        <a
+          href="https://shop.bluegrasstradingco.com/pages/faq"
+          className="w-20  block text-center"
+        >
+          Faq
+        </a>
+      </div>
     </div>
   )
 }
