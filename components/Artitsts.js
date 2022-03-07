@@ -108,10 +108,12 @@ export default function Example() {
               {people.map((person) => (
                 <li key={person.name}>
                   <div className="flex items-center space-x-4 lg:space-x-6">
-                    <img
+                    <Image
                       className="w-16 h-16 rounded-full lg:w-20 lg:h-20"
                       src={person.imageUrl}
                       alt=""
+                      width="100"
+                      height="100"
                     />
                     <div className="font-medium text-lg leading-6">
                       <h3>{person.name}</h3>
