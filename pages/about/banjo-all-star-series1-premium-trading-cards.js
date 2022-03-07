@@ -48,16 +48,19 @@ export default function TradingCards({ players }) {
             return (
               <div key={work.name}>
                 <div className="w-full h-72 rounded overflow-hidden relative">
-                  <div className="absolute top-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4">
+                  <div className="absolute top-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 z-10">
                     {work.limited && (
                       <span className="text-yellow-400 bg-gradient-to-r from-yellow-200 to-yellow-300 text-transparent bg-clip-text font-bold font-display">
                         LIMITED
                       </span>
                     )}
                   </div>
-                  <img
+                  <Image
                     src={work.imageUrl}
                     alt=""
+                    width="300"
+                    height="414"
+                    layout="fill"
                     className="w-full h-full object-center object-cover"
                   />
                   <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4">

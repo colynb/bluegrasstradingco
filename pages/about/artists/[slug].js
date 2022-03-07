@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+import Image from 'next/image'
 import Footer from '../../../components/Footer'
 import Header from '../../../components/Header'
 
@@ -13,10 +13,12 @@ export default function ArtistDetail({ artist }) {
         <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
           <div>
             <div className="space-y-5 sm:space-y-4 text-center">
-              <img
+              <Image
                 className="w-40 h-40 rounded-full mx-auto border-8 border-white"
                 src={artist.imageUrl}
                 alt=""
+                width="150"
+                height="150"
               />
               <h1 className="text-3xl font-display font-medium uppercase tracking-tight sm:text-4xl">
                 {artist.name}
@@ -35,10 +37,12 @@ export default function ArtistDetail({ artist }) {
             return (
               <div key={work.name}>
                 <div className="w-full h-96 rounded overflow-hidden relative">
-                  <img
+                  <Image
                     src={work.imageUrl}
                     alt=""
                     className="w-full h-full object-center object-cover"
+                    width="300"
+                    height="414"
                   />
                   <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4">
                     {work.name}
