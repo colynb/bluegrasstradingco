@@ -76,7 +76,7 @@ export async function getStaticProps({ params }) {
   const player = data.players[index]
   let nextIndex = index + 1
   let prevIndex = index - 1
-  if (prevIndex <= 0) {
+  if (prevIndex < 0) {
     prevIndex = data.players.length - 1
   }
   if (nextIndex === data.players.length) {
