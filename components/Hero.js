@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 /* This example requires Tailwind CSS v2.0+ */
 export default function Hero() {
@@ -188,12 +189,12 @@ export default function Hero() {
                   ORDER NOW
                 </a>
 
-                <a
+                <Link
                   href="/about/banjo-all-star-series1-premium-trading-cards"
                   className="font-display text-gray-700"
                 >
-                  Learn More
-                </a>
+                  <a>Learn More</a>
+                </Link>
               </div>
             </div>
           </div>
