@@ -3,6 +3,9 @@ import Footer from '../../../components/Footer'
 import Header from '../../../components/Header'
 
 export default function ArtistDetail({ artist }) {
+  if (!artist) {
+    return null
+  }
   return (
     <>
       <Header
