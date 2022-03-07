@@ -6,13 +6,16 @@ export default function Hero() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
             <h1 className="text-2xl font-display uppercase font-semibold tracking-tight text-gray-900 sm:text-5xl">
-              Banjo All-Star Premium Trading Cards
+              Banjo All-Star<span className="text-lg align-top">TM</span>
+              <br />
+              Premium Trading Cards
             </h1>
             <p className="mt-4 text-xl text-gray-500">
               Introducing the world&apos;s first bluegrass related, premium,
               trading cards. Each pack of Banjo All-Star Premium Trading Cards
               includes 8 players, one of which is a limited edition card. Yes,
-              every pack comes with a limited edition card!. Shipping in April
+              every pack comes with a limited edition card!.{' '}
+              <strong>Shipping in April!</strong>
             </p>
           </div>
           <div>
