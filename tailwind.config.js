@@ -5,13 +5,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Roboto', 'sans-serif'],
-        display: ['Roboto Condensed', 'cursive'],
+        display: ['Oswald', 'sans-serif'],
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography', require('@tailwindcss/aspect-ratio')),
+  ],
 }

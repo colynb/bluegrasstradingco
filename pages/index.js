@@ -5,216 +5,63 @@ import { useState } from 'react'
 import NewsletterSignup from '../components/NewsletterSignup'
 
 import { storefront } from '../utils'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
+import Artists from '../components/Artitsts'
 
 export default function Home({ description, title }) {
   const fulldescription = `Bluegrass Trading Co is an online store dedicated to providing exclusive bluegrass related merchandise. Our flagship and first product, Banjo All-Star trading cards is currently in production and will be available to ship in Spring 2022. Thank you to all who have expressed interest and enthusiasm in this project. Made with ♥ by Colyn Brown in Friendsville, TN ${description}`
+  const incentives = [
+    {
+      name: 'Free shipping',
+      imageSrc:
+        'https://tailwindui.com/img/ecommerce/icons/icon-shipping-simple.svg',
+      description:
+        "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
+    },
+    {
+      name: '10-year warranty',
+      imageSrc:
+        'https://tailwindui.com/img/ecommerce/icons/icon-warranty-simple.svg',
+      description:
+        "If it breaks in the first 10 years we'll replace it. After that you're on your own though.",
+    },
+    {
+      name: 'Exchanges',
+      imageSrc:
+        'https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg',
+      description:
+        "If you don't like it, trade it to one of your friends for something of theirs. Don't send it here though.",
+    },
+  ]
   return (
     <div className="h-screen w-screen">
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={fulldescription} />
-        <link rel="icon" href="/favicon.ico" />
-        <meta property="og:title" content={`${title}`} />
-        <meta property="og:description" content={fulldescription} />
-        <meta
-          property="og:image"
-          content={
-            'https://cdn.shopify.com/s/files/1/0601/1800/7990/products/poster_1080x.png?v=1642553130'
-          }
-        />
-        <meta property="og:url" content="https://www.bluegrasstradingco.com/" />
-      </Head>
-      <header className="px-6 sm:px-0 flex items-center py-4 md:py-8 justify-center bg-white">
-        <div className="relative max-w-4xl h-28 w-full">
-          <Image src="/logo.svg" alt="Bluegrass Trading Co." layout="fill" />
-        </div>
-      </header>
+      <Header title={title} description={description} />
 
       <main>
-        <div className="bg-[#9cc9d8]">
-          <div className="lg:grid sm:grid-cols-2 max-w-7xl mx-auto">
-            <div className="p-4 lg:p-12 lg:text-right flex lg:justify-end">
-              <div className="max-w-xl text-[#04403F]">
-                <h1 className="font-bold font-display text-4xl lg:text-5xl mb-4 uppercase text-left">
-                  <span className="text-[#b43b26] whitespace-nowrap">
-                    Banjo All-Star
-                    <span className="text-lg align-top">TM</span>
-                  </span>
-                  <br />
-                  Premium Trading Cards
-                </h1>
-                <p className="leading-loose opacity-75 mb-4 text-lg text-left">
-                  Introducing the world&apos;s first bluegrass related, premium,
-                  trading cards. Each pack of Banjo All-Star Premium Trading
-                  Cards includes 8 players, one of which is a limited edition
-                  card. Yes, every pack comes with a limited edition card! There
-                  are a total of 42 cards in all and 12 of them are limited
-                  edition. Note that packs are collated randomly meaning you do
-                  not know which 8 cards you will be getting. At this time we do
-                  not offer complete sets but we are planning on doing so in the
-                  coming weeks. This series is currently in production and will
-                  be ready to ship in April.
-                </p>
+        <Hero />
 
-                <div className="flex lg:justify-end">
-                  <div className="w-full">
-                    <a
-                      href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"
-                      className="hover:bg-gray-800 block mt-12 text-center disabled:bg-gray-300 disabled:text-gray-400 transition-all p-3 w-full text-opacity-90 px-12 text-lg text-white bg-[#04403F] rounded-xl font-medium uppercase"
-                    >
-                      Order Now! <span className="underline">$20 per pack</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-[#9cc9d8] relative h-[600px] md:h-[780px]">
-              <Image
-                src="/collagewall.png"
-                alt="Bluegrass Trading Co - Banjo All-Star Series One Trading Cards"
-                width="620"
-                height="780"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="text-gray-600 text-md lg:text-xl leading-loose">
-          <div>
-            <div className="p-4 lg:p-12 ">
-              <div className="max-w-4xl mx-auto space-y-4 ">
-                <p>
+        <div className="bg-white">
+          <div className="max-w-7xl mx-auto py-24 sm:px-2 sm:py-32 lg:px-4">
+            <div className="max-w-2xl mx-auto px-4 lg:max-w-none">
+              <div className="max-w-3xl">
+                <h2 className="text-3xl font-medium uppercase font-display tracking-tight text-gray-900">
+                  Why we started Bluegrass Trading Co
+                </h2>
+                <p className="mt-4 text-xl text-gray-500 leading-loose">
                   Bluegrass Trading Co is an online store dedicated to providing
                   exclusive bluegrass related merchandise. Our flagship and
                   first product, Banjo All-Star trading cards is currently in
-                  production and will be available to ship in Spring 2022.
-                </p>
-
-                <p>
-                  Thank you to all who have expressed interest and enthusiasm in
-                  this project. Made with ♥ by Colyn Brown in Friendsville, TN.
-                  and the many artists listed below. He can be contacted at{' '}
-                  <a
-                    href="mailto:colyn@bluegrasstradingco.com"
-                    className="text-[#04403F] font-semibold"
-                  >
-                    colyn@bluegrasstradingco.com
-                  </a>
-                  .
-                </p>
-                <hr />
-                <p>
-                  Stay updated on the project status by following us on{' '}
-                  <a
-                    href="https://www.facebook.com/bluegrasstradingco"
-                    className="text-[#04403F] font-semibold"
-                  >
-                    Facebook
-                  </a>{' '}
-                  or{' '}
-                  <a
-                    href="https://www.instagram.com/realbluegrasstradingco/"
-                    className="text-[#04403F] font-semibold"
-                  >
-                    Instagram
-                  </a>{' '}
-                  or by subscribing to our email newsletter below.
+                  production and will be available to ship in April 2022.
                 </p>
               </div>
             </div>
-
-            <div className="p-4 lg:p-12 bg-gray-100">
-              <div className="max-w-4xl mx-auto space-y-4 ">
-                <h2 className="font-bold font-display uppercase text-3xl text-[#04403F]">
-                  ARTISTS
-                </h2>
-                <p>
-                  <strong>
-                    Georgina Flood <span>(Dublin, Ireland)</span>
-                  </strong>
-                </p>
-                <p>
-                  A self taught, acrylic and graphite portrait artist from
-                  Dublin, Ireland. Once criticized for being &quot;too stylized
-                  and graphic,&quot; Georgina has developed a style that is
-                  uniquely her own, with the portrait&apos;s hair becoming her
-                  signature mark.
-                </p>
-
-                <p>
-                  <strong>
-                    Kara Lockmiller <span>(Knoxville, TN)</span>
-                  </strong>
-                </p>
-
-                <p>
-                  Kara is a chromesthete which means she sees a vast array of
-                  real colors in her mind when she listens to music. Her goal
-                  for each portrait is to let you glimpse music and musicians
-                  the way she does. There is a kinship between color and music –
-                  both can say what words can not.
-                </p>
-
-                <p>
-                  <strong>
-                    Robert Felker <span>(Knoxville, TN)</span>
-                  </strong>
-                </p>
-
-                <p>
-                  Born in Knoxville, raised in Nashville and educated at School
-                  of Visual Arts in New York, Robert Felker’s journeyman career
-                  has included a variety of cities and disciplines. He started
-                  out in commercial illustration, before moving into the graphic
-                  design field. Currently, he’s working on a variety of projects
-                  including a musician series he call Patron Saints of Rock,
-                  fine art landscape paintings and public murals. He works out
-                  of his home studio in Knoxville, TN.
-                </p>
-
-                <p>
-                  <strong>
-                    Anna Magruder <span>(Portland, Oregon)</span>
-                  </strong>
-                </p>
-                <p>
-                  Oregon artist Anna Magruder specializes in portraits, whimsy,
-                  and historical surrealism. She enjoys re-imagining the lives &
-                  stories of characters on canvas and exploring the emotional
-                  color of faces. Her attraction to faces, people and the
-                  stories behind them is a consistent theme in her art.
-                </p>
-
-                <p>
-                  <strong>
-                    Arthur Hatton <span>(Knoxville, TN)</span>
-                  </strong>
-                </p>
-                <p>
-                  Arthur Hatton is a visual artist specializing in watercolor
-                  and egg tempera. His artwork focuses on portraits and figures,
-                  using an abstracted realist style. Arthur is also a clinical
-                  psychologist.
-                </p>
-
-                <p>
-                  <strong>Bryan Peterson (Dallas, TX)</strong>
-                </p>
-                <p>
-                  Bryan is the founder and one of two chief designers for
-                  Peterson Ray & Company, a Dallas, TX graphic design powerhouse
-                  founded in 1985. Recently, he was named as the official
-                  portrait artist for the Texas Songwriters’ Hall of Fame and is
-                  currently working on portraits for inductees Nanci Griffith
-                  and Lightnin’ Hopkins, among others.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <NewsletterSignup />
           </div>
         </div>
+        <div className="bg-gray-100">
+          <Artists />
+        </div>
+        <NewsletterSignup />
       </main>
       <footer className="bg-gray-800">
         <div className="mx-auto max-w-4xl text-sm text-gray-500 px-4 md:px-0 py-12 space-y-4">
