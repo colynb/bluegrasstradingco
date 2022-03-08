@@ -44,15 +44,18 @@ export default function Header({ title, description = '' }) {
           </div>
 
           <div className="hidden md:flex items-center">
-            <Link href="/">
-              <a className="w-20 block text-center">Home</a>
-            </Link>
-
             <a
-              href="https://shop.bluegrasstradingco.com/pages/contact"
+              href="https://shop.bluegrasstradingco.com/pages/faq"
               className="w-20 block text-center"
             >
-              Contact
+              FAQ
+            </a>
+
+            <a
+              href="https://shop.bluegrasstradingco.com/blogs/news"
+              className="w-20 block text-center"
+            >
+              NEWS
             </a>
           </div>
         </div>

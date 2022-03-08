@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Hero() {
   return (
     <div className="relative bg-gray-100 overflow-hidden">
-      <div className="pt-8 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
+      <div className="pt-8 md:pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
             <h1 className="text-3xl font-display uppercase font-semibold tracking-tight text-gray-900 sm:text-5xl">
@@ -13,7 +13,7 @@ export default function Hero() {
                 Banjo All-Star<span className="text-lg align-top">TM</span>
               </span>
               <br />
-              <span className="text-yellow-400 bg-gradient-to-r from-yellow-300 to-yellow-500 text-transparent bg-clip-text">
+              <span className="text-yellow-400 bg-gradient-to-r from-yellow-300 to-yellow-400 text-transparent bg-clip-text">
                 {' '}
                 Premium Trading Cards
               </span>
@@ -31,13 +31,13 @@ export default function Hero() {
             </div>
           </div>
           <div>
-            <div className="mt-10">
+            <div className="mt-10 ">
               {/* Decorative image grid */}
               <div
                 aria-hidden="true"
                 className="pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full"
               >
-                <div className="absolute transform sm:left-1/2 md:-top-28">
+                <div className="absolute transform sm:left-1/2 md:-top-28 rotate-6 p-2 hidden md:block opacity-75">
                   <div className="flex items-center space-x-1 lg:space-x-2">
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2 top-24 md:top-16 relative">
                       <div className="w-44 h-64 rounded overflow-hidden sm:opacity-0 lg:opacity-100 relative -">
@@ -48,7 +48,7 @@ export default function Hero() {
                           width="362"
                           height="550"
                         />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
                           Terry Baucom
                         </div>
                       </div>
@@ -60,7 +60,7 @@ export default function Hero() {
                           width="362"
                           height="550"
                         />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
                           Butch Robins
                         </div>
                       </div>
@@ -72,7 +72,7 @@ export default function Hero() {
                           width="362"
                           height="550"
                         />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
                           Alison Brown
                         </div>
                       </div>
@@ -84,7 +84,7 @@ export default function Hero() {
                           width="362"
                           height="550"
                         />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
                           Don Reno
                         </div>
                       </div>
@@ -98,7 +98,7 @@ export default function Hero() {
                           width="362"
                           height="550"
                         />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
                           J.D. Crowe
                         </div>
                       </div>
@@ -110,7 +110,7 @@ export default function Hero() {
                           width="362"
                           height="550"
                         />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
                           Earl Scruggs
                         </div>
                       </div>
@@ -122,7 +122,7 @@ export default function Hero() {
                           width="362"
                           height="550"
                         />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
                           Bill Keith
                         </div>
                       </div>
@@ -134,12 +134,24 @@ export default function Hero() {
                           width="362"
                           height="550"
                         />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
                           Tony Trischka
                         </div>
                       </div>
                     </div>
-                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2 -top-6 relative">
+                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2 top-6 relative">
+                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
+                        <Image
+                          src="/portraits/_0031_SONNY OSBORNE.jpg"
+                          alt=""
+                          className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
+                        />
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
+                          Sonny Osborne
+                        </div>
+                      </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
                         <Image
                           src="/portraits/_0007_KRISTIN SCOTT BENSON.jpg"
@@ -148,7 +160,7 @@ export default function Hero() {
                           width="362"
                           height="550"
                         />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
                           Kristin Scott Benson
                         </div>
                       </div>
@@ -160,7 +172,7 @@ export default function Hero() {
                           width="362"
                           height="550"
                         />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
                           Eddie Adcock
                         </div>
                       </div>
@@ -172,8 +184,58 @@ export default function Hero() {
                           width="362"
                           height="550"
                         />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-60">
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
                           Bill Emerson
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex-shrink-0 hidden grid-cols-1 gap-y-1 lg:gap-y-2 -top-24 relative">
+                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
+                        <Image
+                          src="/portraits/_0013_CARL JACKSON.jpg"
+                          alt=""
+                          className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
+                        />
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
+                          Carl Jackson
+                        </div>
+                      </div>
+                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
+                        <Image
+                          src="/portraits/_0020_RALPH STANLEY.jpg"
+                          alt=""
+                          className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
+                        />
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
+                          Ralph Stanley
+                        </div>
+                      </div>
+                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
+                        <Image
+                          src="/portraits/18 - Greg Cahill-2.jpg"
+                          alt=""
+                          className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
+                        />
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
+                          Greg Cahill
+                        </div>
+                      </div>
+                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
+                        <Image
+                          src="/portraits/_0032_DOUG DILLARD.jpg"
+                          alt=""
+                          className="w-full h-full object-center object-cover"
+                          width="362"
+                          height="550"
+                        />
+                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
+                          Doug Dillard
                         </div>
                       </div>
                     </div>
