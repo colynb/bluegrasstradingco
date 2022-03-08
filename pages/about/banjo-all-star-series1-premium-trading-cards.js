@@ -11,7 +11,7 @@ export default function TradingCards({ players }) {
       <Header title="Bluegrass Trading Co Banjo All-Star Artists" />
       <div className="bg-gray-100">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static py-12">
-          <h1 className="text-2xl font-display uppercase font-semibold tracking-tight text-gray-900 sm:text-5xl">
+          <h1 className="text-3xl font-display uppercase font-semibold tracking-tight text-gray-900 sm:text-5xl">
             <span className="text-gray-700">
               Banjo All-Star<span className="text-lg align-top">TM</span>
             </span>
@@ -47,7 +47,10 @@ export default function TradingCards({ players }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
           {players.map((player) => {
             return (
-              <div key={player.name} className="h-72">
+              <div
+                key={player.name}
+                className="w-72 h-96 md:h-72 md:w-full mx-auto"
+              >
                 <PlayerCard player={player} />
               </div>
             )

@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="pt-8 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
-            <h1 className="text-4xl font-display uppercase font-semibold tracking-tight text-gray-900 sm:text-5xl">
+            <h1 className="text-3xl font-display uppercase font-semibold tracking-tight text-gray-900 sm:text-5xl">
               <span className="text-gray-700">
                 Banjo All-Star<span className="text-lg align-top">TM</span>
               </span>
@@ -37,7 +37,7 @@ export default function Hero() {
                 aria-hidden="true"
                 className="pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full"
               >
-                <div className="absolute transform sm:left-1/2 sm:top-20">
+                <div className="absolute transform sm:left-1/2 md:-top-28">
                   <div className="flex items-center space-x-1 lg:space-x-2">
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2 top-24 md:top-16 relative">
                       <div className="w-44 h-64 rounded overflow-hidden sm:opacity-0 lg:opacity-100 relative -">
@@ -90,7 +90,7 @@ export default function Hero() {
                       </div>
                     </div>
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2">
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
+                      <div className="hidden md:block w-44 h-64 rounded shadow-lg overflow-hidden relative">
                         <Image
                           src="/portraits/_0009_JD CROWE.jpg"
                           alt=""
@@ -181,16 +181,18 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="md:flex items-center md:space-x-6 w-48 md:w-80 text-center pb-12">
-                <Link href="/about/banjo-all-star-series1-premium-trading-cards">
-                  <a className="font-display text-gray-700 block">Learn More</a>
-                </Link>
+              <div className="flex items-center md:space-x-6  space-x-8 text-center pb-12">
                 <a
                   href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"
                   className="inline-block border-r border-b border-r-yellow-400 border-b-yellow-400 border-t-yellow-100 border-l-yellow-100 font-display text-gray-600 text-center bg-yellow-300 border border-transparent rounded-md py-3 px-8 font-medium  hover:bg-yellow-400"
                 >
                   ORDER NOW
                 </a>
+                <Link href="/about/banjo-all-star-series1-premium-trading-cards">
+                  <a className="font-display text-lg text-gray-700 block font-medium underline text-center">
+                    Learn More
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
