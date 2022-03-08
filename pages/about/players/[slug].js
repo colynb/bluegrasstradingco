@@ -71,7 +71,7 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
 }
 
 export async function getStaticProps({ params }) {
-  const data = require('../../../data').default
+  const data = require('../../../data')
   const index = data.players.findIndex((a) => a.slug === params.slug)
   const player = data.players[index]
   let nextIndex = index + 1
@@ -92,7 +92,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const data = require('../../../data').default
+  const data = require('../../../data')
   const paths = data.players.map((player) => ({
     params: { slug: player.slug },
   }))

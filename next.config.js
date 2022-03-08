@@ -1,17 +1,16 @@
+const data = require('./data')
+
+const sources = data.players.map((player) => {
+  return {
+    source: `/r/${player.code}`,
+    destination: `/about/players/${player.slug}`,
+    permanent: false,
+  }
+})
+
 module.exports = {
   reactStrictMode: true,
   async redirects() {
-    return [
-      {
-        source: '/r/SPBGMA25',
-        destination: 'https://shop.bluegrasstradingco.com/discount/SPBGMA25',
-        permanent: true,
-      },
-      {
-        source: '/r/:player',
-        destination: '/',
-        permanent: false,
-      },
-    ]
+    return sources
   },
 }

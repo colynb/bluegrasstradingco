@@ -1,6 +1,7 @@
 const players = [
   {
     slug: 'alan-munde-01',
+    code: 'ALANMUNDE',
     number: '01',
     name: 'Alan Munde',
     imageUrl: '/portraits/_0026_ALAN MUNDE.jpg',
@@ -13,6 +14,7 @@ const players = [
   },
   {
     slug: 'alison-brown-02',
+    code: 'ALISON',
     number: '02',
     name: 'Alison Brown',
     imageUrl: '/portraits/_0001_ALISON BROWN.jpg',
@@ -26,6 +28,7 @@ const players = [
   },
   {
     slug: 'ashley-campbell-03',
+    code: 'ASHLEY',
     number: '03',
     name: 'Ashley Campbell',
     imageUrl: '/portraits/_0033_ASHLEY CAMPBELL.jpg',
@@ -37,6 +40,7 @@ const players = [
   },
   {
     slug: 'ben-clark-04',
+    code: 'BANJOBEN',
     number: '04',
     name: 'Ben Clark',
     imageUrl: '/portraits/_0035_BEN CLARK.jpg',
@@ -48,6 +52,7 @@ const players = [
   },
   {
     slug: 'bill-emerson-05',
+    code: 'BILLEMERSON',
     number: '05',
     name: 'Bill Emerson',
     imageUrl: '/portraits/_0014_BILL EMERSON.jpg',
@@ -60,6 +65,7 @@ const players = [
   },
   {
     slug: 'bill-keith-06',
+    code: 'BILLKEITH',
     number: '06',
     name: 'Bill Keith',
     imageUrl: '/portraits/_0018_BILL KEITH.jpg',
@@ -73,6 +79,7 @@ const players = [
   },
   {
     slug: 'butch-robins-07',
+    code: 'BUTCH',
     number: '07',
     name: 'Butch Robins',
     imageUrl: '/portraits/_0003_BUTCH ROBINS.jpg',
@@ -87,6 +94,7 @@ const players = [
   },
   {
     slug: 'carl-jackson-08',
+    code: 'CARLJACKSON',
     number: '08',
     name: 'Carl Jackson',
     imageUrl: '/portraits/_0013_CARL JACKSON.jpg',
@@ -98,6 +106,7 @@ const players = [
   },
   {
     slug: 'catherine-bb-bowness-09',
+    code: 'BB',
     number: '09',
     name: 'Catherine “BB” Bowness',
     imageUrl: '/portraits/09 - BB Bowness-2.jpg',
@@ -110,6 +119,7 @@ const players = [
   },
   {
     slug: 'charlie-poole-10',
+    code: 'CHARLIEPOOLE',
     number: '10',
     name: 'Charlie Poole',
     imageUrl: '/portraits/10 - Charlie Poole-2.jpg',
@@ -123,6 +133,7 @@ const players = [
   },
   {
     slug: 'cory-walker-11',
+    code: 'CORYWALKER',
     number: '11',
     name: 'Cory Walker',
     imageUrl: '/portraits/_0025_CORY WALKER.jpg',
@@ -134,6 +145,7 @@ const players = [
   },
   {
     slug: 'don-reno-12',
+    code: 'DONRENO',
     number: '12',
     name: 'Don Reno',
     imageUrl: '/portraits/_0024_DON RENO.jpg',
@@ -146,6 +158,7 @@ const players = [
   },
   {
     slug: 'don-wayne-reno-13',
+    code: 'DONWAYNERENO',
     number: '13',
     name: 'Don Wayne Reno',
     imageUrl: '/portraits/13 - Don Wayne Reno-2.jpg',
@@ -158,6 +171,7 @@ const players = [
   },
   {
     slug: 'doug-dillard-14',
+    code: 'DOUGDILLARD',
     number: '14',
     name: 'Doug Dillard',
     imageUrl: '/portraits/_0032_DOUG DILLARD.jpg',
@@ -170,6 +184,7 @@ const players = [
   },
   {
     slug: 'earl-scruggs-15',
+    code: 'EARL',
     number: '15',
     name: 'Earl Scruggs',
     imageUrl: '/portraits/_0023_EARL SCRUGGS.jpg',
@@ -185,6 +200,7 @@ const players = [
   },
   {
     slug: 'eddie-adcock-16',
+    code: 'EDDIE',
     number: '16',
     name: 'Eddie Adcock',
     imageUrl: '/portraits/_0034_EDDIE ADCOCK.jpg',
@@ -198,6 +214,7 @@ const players = [
   },
   {
     slug: 'gina-furtado-17',
+    code: 'GINAFURTADO',
     number: '17',
     name: 'Gina Furtado',
     imageUrl: '/portraits/_0006_GINA FURTADO.jpg',
@@ -210,6 +227,7 @@ const players = [
   },
   {
     slug: 'greg-cahill-18',
+    code: 'GREGCAHILL',
     number: '18',
     name: 'Greg Cahill',
     imageUrl: '/portraits/18 - Greg Cahill-2.jpg',
@@ -221,6 +239,7 @@ const players = [
   },
   {
     slug: 'jd-crowe-19',
+    code: 'JDCROWE',
     number: '19',
     name: 'J.D. Crowe',
     imageUrl: '/portraits/_0009_JD CROWE.jpg',
@@ -235,6 +254,7 @@ const players = [
   },
   {
     slug: 'jason-davis-20',
+    code: 'JASONDAVIS',
     number: '20',
     name: 'Jason Davis',
     imageUrl: '/portraits/_0000_JASON DAVIS.jpg',
@@ -248,6 +268,7 @@ const players = [
   },
   {
     slug: 'jens-koch-21',
+    code: 'JENSKOCH',
     number: '21',
     name: 'Jens Koch',
     imageUrl: '/portraits/_0030_JENS KOCH.jpg',
@@ -259,6 +280,7 @@ const players = [
   },
   {
     slug: 'jeremy-stephens-22',
+    code: 'JEREMYSTEPHENS',
     number: '22',
     name: 'Jeremy Stephens',
     imageUrl: '/portraits/_0002_JEREMY STEPHENS.jpg',
@@ -271,6 +293,7 @@ const players = [
   },
   {
     slug: 'jim-pankey-23',
+    code: 'JIMPANKEY',
     number: '23',
     name: 'Jim Pankey',
     imageUrl: '/portraits/_0019_JIM PANKEY.jpg',
@@ -282,6 +305,7 @@ const players = [
   },
   {
     slug: 'john-apfelthaler-24',
+    code: 'JOHNAPFELTHALER',
     number: '24',
     name: 'John Apfelthaler',
     imageUrl: '/portraits/24 - John Apfelthaler-2.jpg',
@@ -294,6 +318,7 @@ const players = [
   },
   {
     slug: 'john-dowling-25',
+    code: 'JOHNDOWLING',
     number: '25',
     name: 'John Dowling',
     imageUrl: '/portraits/25 - John Dowling-2.jpg',
@@ -307,6 +332,7 @@ const players = [
   },
   {
     slug: 'kenny-brown-26',
+    code: 'KENNYBROWN',
     number: '26',
     name: 'Kenny Brown',
     imageUrl: '/portraits/26 - Kenny Brown-2.jpg',
@@ -318,6 +344,7 @@ const players = [
   },
   {
     slug: 'kristin-scott-benson-27',
+    code: 'KRISTIN',
     number: '27',
     name: 'Kristin Scott Benson',
     imageUrl: '/portraits/_0007_KRISTIN SCOTT BENSON.jpg',
@@ -330,6 +357,7 @@ const players = [
   },
   {
     slug: 'mike-scott-28',
+    code: 'MIKESCOTT',
     number: '28',
     name: 'Mike Scott',
     imageUrl: '/portraits/_0008_MIKE SCOTT.jpg',
@@ -341,6 +369,7 @@ const players = [
   },
   {
     slug: 'mike-sumner-29',
+    code: 'MIKESUMNER',
     number: '29',
     name: 'Mike Sumner',
     imageUrl: '/portraits/_0022_MIKE SUMNER.jpg',
@@ -353,6 +382,7 @@ const players = [
   },
   {
     slug: 'ned-luberecki-30',
+    code: 'NEDSKY',
     number: '30',
     name: 'Ned Luberecki',
     imageUrl: '/portraits/_0028_NED LUBERECKI.jpg',
@@ -364,6 +394,7 @@ const players = [
   },
   {
     slug: 'nick-einterz-31',
+    code: 'NICKEINTERZ',
     number: '31',
     name: 'Nick Einterz',
     bio: `Nick brings a progressive approach to bluegrass banjo. His attention to fretboard theory helps him achieve a unique fluency on the 5-string. In his EP, Myth & Morel, he blends blue- grass banjo techniques with unexpected genres while performing more traditional Americana in his band High Lonesome.`,
@@ -375,6 +406,7 @@ const players = [
   },
   {
     slug: 'nick-hornbuckle-32',
+    code: 'NICKHORNBUCKLE',
     number: '32',
     name: 'Nick Hornbuckle',
     imageUrl: '/portraits/_0016_NICK HORNBUCKLE.jpg',
@@ -386,6 +418,7 @@ const players = [
   },
   {
     slug: 'ralph-stanley-33',
+    code: 'RALPHSTANLEY',
     number: '33',
     name: 'Ralph Stanley',
     imageUrl: '/portraits/_0020_RALPH STANLEY.jpg',
@@ -398,6 +431,7 @@ const players = [
   },
   {
     slug: 'robby-boone-34',
+    code: 'ROBBYBOONE',
     number: '34',
     name: 'Robby Boone',
     imageUrl: '/portraits/_0029_ROBBY BOONE.jpg',
@@ -410,6 +444,7 @@ const players = [
   },
   {
     slug: 'ron-block-35',
+    code: 'RONBLOCK',
     number: '35',
     name: 'Ron Block',
     imageUrl: '/portraits/_0012_RON BLOCK.jpg',
@@ -421,6 +456,7 @@ const players = [
   },
   {
     slug: 'sammy-shelor-36',
+    code: 'SAMMYSHELOR',
     number: '36',
     name: 'Sammy Shelor',
     imageUrl: '/portraits/037_SAMMY_SHELOR.jpg',
@@ -433,6 +469,7 @@ const players = [
   },
   {
     slug: 'scott-vestal-37',
+    code: 'SCOTTVESTAL',
     number: '37',
     name: 'Scott Vestal',
     imageUrl: '/portraits/_0021_SCOTT VESTAL.jpg',
@@ -444,6 +481,7 @@ const players = [
   },
   {
     slug: 'snuffy-jenkins-38',
+    code: 'SNUFFY',
     number: '38',
     name: 'Snuffy Jenkins',
     imageUrl: '/portraits/38 - Snuffy Jenkins-3.jpg',
@@ -455,6 +493,7 @@ const players = [
   },
   {
     slug: 'sonny-osborne-39',
+    code: 'SONNY',
     number: '39',
     name: 'Sonny Osborne',
     imageUrl: '/portraits/_0031_SONNY OSBORNE.jpg',
@@ -469,6 +508,7 @@ const players = [
   },
   {
     slug: 'terry-baucom-40',
+    code: 'TERRYBAUCOM',
     number: '40',
     name: 'Terry Baucom',
     imageUrl: '/portraits/_0011_TERRY BAUCOM.jpg',
@@ -481,6 +521,7 @@ const players = [
   },
   {
     slug: 'tony-trischka-41',
+    code: 'TONYTRISCHKA',
     number: '41',
     name: 'Tony Trischka',
     imageUrl: '/portraits/_0010_TONY TRISCHKA.jpg',
@@ -494,6 +535,7 @@ const players = [
 
   {
     slug: 'wes-corbett-42',
+    code: 'WESCORBETT',
     number: '42',
     name: 'Wes Corbett',
     imageUrl: '/portraits/_0027_WES CORBETT.jpg',
@@ -671,4 +713,4 @@ const data = {
   ],
 }
 
-export default data
+module.exports = data
