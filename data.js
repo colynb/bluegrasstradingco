@@ -184,7 +184,7 @@ const players = [
   },
   {
     slug: 'earl-scruggs-15',
-    code: 'EARL',
+    code: 'EARLSCRUGGS',
     number: '15',
     name: 'Earl Scruggs',
     imageUrl: '/portraits/_0023_EARL SCRUGGS.jpg',
@@ -382,7 +382,7 @@ const players = [
   },
   {
     slug: 'ned-luberecki-30',
-    code: 'NEDSKY',
+    code: 'NEDSKI',
     number: '30',
     name: 'Ned Luberecki',
     imageUrl: '/portraits/_0028_NED LUBERECKI.jpg',
