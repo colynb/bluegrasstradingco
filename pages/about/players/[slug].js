@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Footer from '../../../components/Footer'
 import Header from '../../../components/Header'
 import PlayerCard from '../../../components/PlayerCard'
+import { getPlayers } from '../../api/players'
 
 export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
   const router = useRouter()
@@ -10,6 +11,8 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
   if (!player) {
     return null
   }
+
+  console.log({ nextPlayer })
 
   return (
     <>
@@ -43,7 +46,7 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
                     </svg>
                   </span>
                   <span>
-                    {prevPlayer.name} (#{prevPlayer.number})
+                    {prevPlayer.name} (#{prevPlayer.series_number})
                   </span>
                 </a>
               </Link>
@@ -55,7 +58,7 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
                   className="font-display flex items-center leading-none underline text-gray-600 rounded px-4 py-1"
                 >
                   <span>
-                    {nextPlayer.name} (#{nextPlayer.number})
+                    {nextPlayer.name} (#{nextPlayer.series_number})
                   </span>
                   <span>
                     <svg
@@ -84,7 +87,7 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
             <div className="flex-1">
               <div className="flex items-center space-x-8 mb-6">
                 <div className="text-4xl font-display font-medium uppercase bg-yellow-200 rounded-full w-16 h-16 flex items-center justify-center text-yellow-600">
-                  {player.number}
+                  {player.series_number}
                 </div>
                 <h1 className="text-3xl font-display font-medium uppercase tracking-tight sm:text-4xl">
                   {player.name}
@@ -94,9 +97,11 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
               <p className="text-2xl text-gray-500 mb-5">{player.bio}</p>
               <div>
                 portrait by{' '}
-                <Link href={`/about/artists/${player.artist.slug}`}>
+                <Link
+                  href={`/about/artists/${player.artist.data.attributes.slug}`}
+                >
                   <a className="font-bold underline text-blue-600">
-                    {player.artist.name}
+                    {player.artist.data.attributes.name}
                   </a>
                 </Link>
               </div>
@@ -111,25 +116,47 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
 }
 
 export async function getStaticProps({ params }) {
-  const data = require('../../../data')
-  const index = data.players.findIndex((a) => a.slug === params.slug)
-  const player = data.players[index]
+  const players = await getPlayers()
+  const index = players.data.findIndex((a) => a.attributes.slug === params.slug)
+  const player = players.data[index]
   let nextIndex = index + 1
   let prevIndex = index - 1
   if (prevIndex < 0) {
-    prevIndex = data.players.length - 1
+    prevIndex = players.data.length - 1
   }
-  if (nextIndex === data.players.length) {
+  if (nextIndex === players.data.length) {
     nextIndex = 0
   }
+
   return {
     props: {
-      prevPlayer: data.players[prevIndex],
-      nextPlayer: data.players[nextIndex],
-      player,
+      prevPlayer: players.data[prevIndex].attributes,
+      nextPlayer: players.data[nextIndex].attributes,
+      player: player.attributes,
     },
   }
 }
+
+// export async function getStaticProps({ params }) {
+//   const data = require('../../../data')
+//   const index = data.players.findIndex((a) => a.slug === params.slug)
+//   const player = data.players[index]
+//   let nextIndex = index + 1
+//   let prevIndex = index - 1
+//   if (prevIndex < 0) {
+//     prevIndex = data.players.length - 1
+//   }
+//   if (nextIndex === data.players.length) {
+//     nextIndex = 0
+//   }
+//   return {
+//     props: {
+//       prevPlayer: data.players[prevIndex],
+//       nextPlayer: data.players[nextIndex],
+//       player,
+//     },
+//   }
+// }
 
 export async function getStaticPaths() {
   const data = require('../../../data')

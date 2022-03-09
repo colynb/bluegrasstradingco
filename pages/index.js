@@ -87,6 +87,7 @@ export async function getStaticProps() {
   const { data } = await storefront(productQuery, {
     handle: 'bluegrass-trading-co-banjo-all-star-series-one-pack',
   })
+
   return {
     props: {
       ...data.productByHandle,

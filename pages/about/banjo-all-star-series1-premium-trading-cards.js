@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import PlayerCard from '../../components/PlayerCard'
+import { getPlayers } from '../api/players'
 
 export default function TradingCards({ players }) {
   return (
@@ -45,13 +46,13 @@ export default function TradingCards({ players }) {
           Completed Works
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
-          {players.map((player) => {
+          {players.data.map((player) => {
             return (
               <div
                 key={player.name}
                 className="w-72 h-96 md:h-72 md:w-full mx-auto"
               >
-                <PlayerCard player={player} />
+                <PlayerCard player={player.attributes} />
               </div>
             )
           })}
@@ -63,8 +64,8 @@ export default function TradingCards({ players }) {
 }
 
 export async function getStaticProps({ params }) {
-  const data = require('../../data')
-  const players = data.players
+  const players = await getPlayers()
+
   return {
     props: {
       players,

@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 export default function PlayerCard({ player }) {
+  const image = player.imagePath
+
   return (
     <Link href={`/about/players/${player.slug}`}>
       <a className="block w-full h-full rounded overflow-hidden relative">
@@ -12,7 +14,7 @@ export default function PlayerCard({ player }) {
           )}
         </div>
         <Image
-          src={player.imageUrl}
+          src={image}
           alt=""
           layout="fill"
           className="w-full h-full object-center object-cover"

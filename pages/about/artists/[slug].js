@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Footer from '../../../components/Footer'
 import Header from '../../../components/Header'
 import PlayerCard from '../../../components/PlayerCard'
+import { getArtists } from '../../api/artists'
 
 export default function ArtistDetail({ artist }) {
   if (!artist) {
@@ -19,7 +20,7 @@ export default function ArtistDetail({ artist }) {
             <div className="space-y-5 sm:space-y-4 text-center">
               <Image
                 className="w-40 h-40 rounded-full mx-auto border-8 border-white"
-                src={artist.imageUrl}
+                src={artist.imagePath}
                 alt=""
                 width="150"
                 height="150"
@@ -37,13 +38,14 @@ export default function ArtistDetail({ artist }) {
           Selected Works
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {artist.works.map((player) => {
+          {artist.players.data.map((player) => {
+            console.log(player.attributes)
             return (
               <div
-                key={player.name}
+                key={player.attributes.name}
                 className="h-96 w-80 md:w-full md:h-64 mx-auto"
               >
-                <PlayerCard player={player} />
+                <PlayerCard player={player.attributes} />
               </div>
             )
           })}
@@ -55,11 +57,14 @@ export default function ArtistDetail({ artist }) {
 }
 
 export async function getStaticProps({ params }) {
-  const data = require('../../../data')
-  const artist = data.artists.find((a) => a.slug === params.slug)
+  const artists = await getArtists()
+
+  console.log(artists)
+
+  const artist = artists.data.find((a) => a.attributes.slug === params.slug)
   return {
     props: {
-      artist,
+      artist: artist.attributes,
     },
   }
 }
