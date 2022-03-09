@@ -1,9 +1,12 @@
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Footer from '../../../components/Footer'
 import Header from '../../../components/Header'
 import PlayerCard from '../../../components/PlayerCard'
 
 export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
+  const router = useRouter()
+
   if (!player) {
     return null
   }
@@ -13,6 +16,8 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
       <Header
         title={`Banjo All-Star Series 1 Player, ${player.name}`}
         description={player.bio}
+        image={player.imageUrl}
+        path={router.asPath}
       />
       <div className="bg-gray-100">
         <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
