@@ -557,7 +557,9 @@ const data = {
       location: 'London England',
       imageUrl: '/artists/alexandraandreica.jpg',
       link: 'https://www.instagram.com/arthurhattonart/',
-      bio: 'Non nostrud ad cillum laborum deserunt sit ea esse cillum laborum quis consectetur minim culpa. Officia et sunt sint fugiat cupidatat consequat tempor non Lorem est elit nulla velit ad. Lorem ut enim sint dolor aute et consequat elit. Quis velit esse officia esse fugiat irure anim dolor proident cupidatat eiusmod.',
+      bio: `Alexandra was born in 1986, in Zalau, Romania. As a child, she used to watch her mother paint, but she only discovers her talent in her early twenties.
+      She studied Fine Arts at “University of Oradea” where she graduates top of her class. She loves figurative painting, especially painting portraits, but also approaches abstract art and different themes and subjects.
+      She had exhibitions in Romania in cities like Oradea, Cluj Napoca, Bucharest, and in the UK in Cardiff and London. She lives and works in London since 2015.`,
 
       works: players.filter((p) =>
         ['ashley-campbell-03', 'jason-davis-20'].includes(p.slug)
