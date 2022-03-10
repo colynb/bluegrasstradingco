@@ -10,7 +10,6 @@ export default function ArtistDetail({ artist }) {
     return null
   }
 
-  console.log(artist)
   return (
     <>
       <Header

@@ -13,8 +13,6 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
     return null
   }
 
-  console.log({ nextPlayer })
-
   return (
     <div className="h-screen flex flex-col border border-red-500 justify-between">
       <div>
@@ -138,7 +136,6 @@ export async function getStaticProps({ params }) {
     *[_type == "player"]{_id, name, imageUrl, slug, limited, 'bio': bio[0].children[0].text, series_number, artist->{name, slug, imageUrl}}
     `
   )
-  console.log(players)
   const index = players.findIndex((a) => a.slug.current === params.slug)
   const player = players[index]
   let nextIndex = index + 1
