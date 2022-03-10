@@ -1,9 +1,7 @@
-import Image from 'next/image'
 import client from '../../../client'
 import Footer from '../../../components/Footer'
 import Header from '../../../components/Header'
 import PlayerCard from '../../../components/PlayerCard'
-import { getArtists } from '../../api/artists'
 
 export default function ArtistDetail({ artist }) {
   if (!artist) {

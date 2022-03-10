@@ -1,10 +1,7 @@
-import Image from 'next/image'
-
-import Link from 'next/link'
+import client from '../../client'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import PlayerCard from '../../components/PlayerCard'
-import { getPlayers } from '../api/players'
 
 export default function TradingCards({ players }) {
   return (
@@ -46,13 +43,13 @@ export default function TradingCards({ players }) {
           Completed Works
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
-          {players.data.map((player) => {
+          {players.map((player) => {
             return (
               <div
                 key={player.name}
                 className="w-72 h-96 md:h-72 md:w-full mx-auto"
               >
-                <PlayerCard player={player.attributes} />
+                <PlayerCard player={player} />
               </div>
             )
           })}
@@ -64,7 +61,11 @@ export default function TradingCards({ players }) {
 }
 
 export async function getStaticProps({ params }) {
-  const players = await getPlayers()
+  const players = await client.fetch(
+    `
+    *[_type == "player"]{_id, name, imageUrl, slug, limited, 'bio': bio[0].children[0].text, series_number, artist->{name, slug, imageUrl}}
+    `
+  )
 
   return {
     props: {
