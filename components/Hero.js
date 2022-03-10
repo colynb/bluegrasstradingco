@@ -41,7 +41,7 @@ export default function Hero() {
                   <div className="flex items-center space-x-1 lg:space-x-2">
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2 top-24 md:top-16 relative">
                       <div className="w-44 h-64 rounded overflow-hidden sm:opacity-0 lg:opacity-100 relative -">
-                        <Image
+                        <img
                           src="/portraits/_0011_TERRY BAUCOM.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -53,7 +53,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded overflow-hidden sm:opacity-0 lg:opacity-100 relative">
-                        <Image
+                        <img
                           src="/portraits/_0003_BUTCH ROBINS.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -65,7 +65,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded overflow-hidden sm:opacity-0 lg:opacity-100 relative">
-                        <Image
+                        <img
                           src="/portraits/_0001_ALISON BROWN.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -77,7 +77,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/_0024_DON RENO.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -91,7 +91,7 @@ export default function Hero() {
                     </div>
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2">
                       <div className="hidden md:block w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/_0009_JD CROWE.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -103,7 +103,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/_0023_EARL SCRUGGS.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -115,7 +115,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/_0018_BILL KEITH.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -127,7 +127,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/_0010_TONY TRISCHKA.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -141,7 +141,7 @@ export default function Hero() {
                     </div>
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2 top-6 relative">
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/_0031_SONNY OSBORNE.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -153,7 +153,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/_0007_KRISTIN SCOTT BENSON.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -165,7 +165,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/_0034_EDDIE ADCOCK.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -177,7 +177,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/_0014_BILL EMERSON.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -191,7 +191,7 @@ export default function Hero() {
                     </div>
                     <div className="flex-shrink-0 hidden grid-cols-1 gap-y-1 lg:gap-y-2 -top-24 relative">
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/_0013_CARL JACKSON.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -203,7 +203,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/_0020_RALPH STANLEY.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -215,7 +215,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/18 - Greg Cahill-2.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"
@@ -227,7 +227,7 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
+                        <img
                           src="/portraits/_0032_DOUG DILLARD.jpg"
                           alt=""
                           className="w-full h-full object-center object-cover"

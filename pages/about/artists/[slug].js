@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import client from '../../../client'
 import Footer from '../../../components/Footer'
 import Header from '../../../components/Header'
 import PlayerCard from '../../../components/PlayerCard'
@@ -8,6 +9,8 @@ export default function ArtistDetail({ artist }) {
   if (!artist) {
     return null
   }
+
+  console.log(artist)
   return (
     <>
       <Header
@@ -18,9 +21,9 @@ export default function ArtistDetail({ artist }) {
         <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
           <div>
             <div className="space-y-5 sm:space-y-4 text-center">
-              <Image
+              <img
                 className="w-40 h-40 rounded-full mx-auto border-8 border-white"
-                src={artist.imagePath}
+                src={artist.imageUrl}
                 alt=""
                 width="150"
                 height="150"
@@ -38,14 +41,13 @@ export default function ArtistDetail({ artist }) {
           Selected Works
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {artist.players.data.map((player) => {
-            console.log(player.attributes)
+          {artist.players.map((player) => {
             return (
               <div
-                key={player.attributes.name}
+                key={player.name}
                 className="h-96 w-80 md:w-full md:h-64 mx-auto"
               >
-                <PlayerCard player={player.attributes} />
+                <PlayerCard player={player} />
               </div>
             )
           })}
@@ -57,14 +59,17 @@ export default function ArtistDetail({ artist }) {
 }
 
 export async function getStaticProps({ params }) {
-  const artists = await getArtists()
+  const artist = await client.fetch(
+    `
+    *[_type == "artist"  && slug.current == $slug][0]
+    {_id, name, location, imageUrl, 'bio': bio[0].children[0].text, players[]->{name, slug, bio, series_number, imageUrl, limited}}
+    `,
+    { slug: params.slug }
+  )
 
-  console.log(artists)
-
-  const artist = artists.data.find((a) => a.attributes.slug === params.slug)
   return {
     props: {
-      artist: artist.attributes,
+      artist,
     },
   }
 }

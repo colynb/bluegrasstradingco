@@ -9,32 +9,9 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Artists from '../components/Artitsts'
 import Footer from '../components/Footer'
+import client from '../client'
 
-export default function Home({ description, title }) {
-  const fulldescription = `Bluegrass Trading Co is an online store dedicated to providing exclusive bluegrass related merchandise. Our flagship and first product, Banjo All-Star trading cards is currently in production and will be available to ship in Spring 2022. Thank you to all who have expressed interest and enthusiasm in this project. Made with ♥ by Colyn Brown in Friendsville, TN ${description}`
-  const incentives = [
-    {
-      name: 'Free shipping',
-      imageSrc:
-        'https://tailwindui.com/img/ecommerce/icons/icon-shipping-simple.svg',
-      description:
-        "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
-    },
-    {
-      name: '10-year warranty',
-      imageSrc:
-        'https://tailwindui.com/img/ecommerce/icons/icon-warranty-simple.svg',
-      description:
-        "If it breaks in the first 10 years we'll replace it. After that you're on your own though.",
-    },
-    {
-      name: 'Exchanges',
-      imageSrc:
-        'https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg',
-      description:
-        "If you don't like it, trade it to one of your friends for something of theirs. Don't send it here though.",
-    },
-  ]
+export default function Home({ description, title, artists }) {
   return (
     <div className="h-screen w-screen">
       <Header title={title} description={description} />
@@ -74,7 +51,7 @@ export default function Home({ description, title }) {
           </div>
         </div>
         <div className="bg-gray-100">
-          <Artists />
+          <Artists artists={artists} />
         </div>
         <NewsletterSignup />
       </main>
@@ -88,8 +65,13 @@ export async function getStaticProps() {
     handle: 'bluegrass-trading-co-banjo-all-star-series-one-pack',
   })
 
+  const artists = await client.fetch(
+    `*[_type == "artist"]| order(name){ _id, name, bio, players, imageUrl, slug }`
+  )
+
   return {
     props: {
+      artists,
       ...data.productByHandle,
     },
   }

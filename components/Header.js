@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Header({
@@ -48,7 +47,7 @@ export default function Header({
             </a>
           </div>
           <div className="relative max-w-4xl md:h-24 flex items-center justify-center p-4 mx-8">
-            <Image
+            <img
               src="/updated-logo2.png"
               alt="Bluegrass Trading Co."
               width="250"

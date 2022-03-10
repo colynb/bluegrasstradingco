@@ -1,5 +1,5 @@
 const ACCESS_TOKEN = `Bearer ${process.env.STRAPI_API_KEY}`
-const API_BASE = `http://localhost:1337`
+const API_BASE = process.env.STRAPI_API_BASE_URL
 
 export const getPlayers = async () => {
   var myHeaders = new Headers()
