@@ -75,12 +75,12 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const data = require('../../../data')
-  const paths = data.artists.map((artist) => ({
-    params: { slug: artist.slug },
+  const artists = await client.fetch(`*[_type == "artist"]{slug}`)
+  const paths = artists.map((artist) => ({
+    params: { slug: artist.slug.current },
   }))
   return {
     paths,
-    fallback: true, // false or 'blocking'
+    fallback: false, // false or 'blocking'
   }
 }

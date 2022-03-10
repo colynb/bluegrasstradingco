@@ -1,6 +1,6 @@
 const data = require('./data')
 
-const sources = data.players.map((player) => {
+const sources = data.map((player) => {
   return {
     source: `/r/${player.code}`,
     destination: `/about/players/${player.slug}`,

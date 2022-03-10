@@ -159,34 +159,13 @@ export async function getStaticProps({ params }) {
   }
 }
 
-// export async function getStaticProps({ params }) {
-//   const data = require('../../../data')
-//   const index = data.players.findIndex((a) => a.slug === params.slug)
-//   const player = data.players[index]
-//   let nextIndex = index + 1
-//   let prevIndex = index - 1
-//   if (prevIndex < 0) {
-//     prevIndex = data.players.length - 1
-//   }
-//   if (nextIndex === data.players.length) {
-//     nextIndex = 0
-//   }
-//   return {
-//     props: {
-//       prevPlayer: data.players[prevIndex],
-//       nextPlayer: data.players[nextIndex],
-//       player,
-//     },
-//   }
-// }
-
 export async function getStaticPaths() {
-  const data = require('../../../data')
-  const paths = data.players.map((player) => ({
-    params: { slug: player.slug },
+  const players = await client.fetch(`*[_type == "player"]{slug}`)
+  const paths = players.map((player) => ({
+    params: { slug: player.slug.current },
   }))
   return {
     paths,
-    fallback: true, // false or 'blocking'
+    fallback: false, // false or 'blocking'
   }
 }
