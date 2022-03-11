@@ -5,6 +5,7 @@ import Header from '../../../components/Header'
 import PlayerCard from '../../../components/PlayerCard'
 import { getPlayers } from '../../api/players'
 import client from '../../../client'
+import Layout from '../../../components/Layout'
 
 export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
   const router = useRouter()
@@ -13,16 +14,14 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
     return null
   }
 
+  const metaData = {
+    title: `${player.name}, Banjo All-Star`,
+    description: player.bio,
+    image: player.imageUrl,
+  }
+
   return (
-    <div className="h-screen flex flex-col border border-red-500 justify-between">
-      <div>
-        <Header
-          title={`${player.name}, Banjo All-Star`}
-          description={player.bio}
-          image={player.imageUrl}
-          path={router.asPath}
-        />
-      </div>
+    <Layout metaData={metaData}>
       <div className="bg-gray-100 flex-1">
         <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
           <div className="flex justify-between mb-6">
@@ -122,11 +121,7 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
           </div>
         </div>
       </div>
-
-      <div className="border border-green-400">
-        <Footer />
-      </div>
-    </div>
+    </Layout>
   )
 }
 

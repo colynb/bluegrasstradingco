@@ -1,19 +1,21 @@
 import client from '../../../client'
 import Footer from '../../../components/Footer'
 import Header from '../../../components/Header'
+import Layout from '../../../components/Layout'
 import PlayerCard from '../../../components/PlayerCard'
 
 export default function ArtistDetail({ artist }) {
   if (!artist) {
     return null
   }
+  const metaData = {
+    title: `${artist.name}, Banjo All-Star Artist`,
+    description: artist.bio,
+    image: artist.imageUrl,
+  }
 
   return (
-    <>
-      <Header
-        title={`${artist.name}, Banjo All-Star Artist`}
-        description={artist.bio}
-      />
+    <Layout metaData={metaData}>
       <div className="bg-gray-100">
         <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
           <div>
@@ -51,8 +53,7 @@ export default function ArtistDetail({ artist }) {
             })}
         </div>
       </div>
-      <Footer />
-    </>
+    </Layout>
   )
 }
 

@@ -1,23 +1,20 @@
-import Head from 'next/head'
-import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
 import NewsletterSignup from '../components/NewsletterSignup'
 
 import { storefront } from '../utils'
-import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Artists from '../components/Artitsts'
-import Footer from '../components/Footer'
 import client from '../client'
+import Layout from '../components/Layout'
 
 export default function Home({ description, title, artists, featured }) {
-  return (
-    <div className="h-screen w-screen">
-      <div>
-        <Header title={title} description={description} />
-      </div>
+  const metaData = {
+    title,
+    description,
+  }
 
+  return (
+    <Layout metaData={metaData}>
       <main>
         <Hero featured={featured} />
 
@@ -57,8 +54,7 @@ export default function Home({ description, title, artists, featured }) {
         </div>
         <NewsletterSignup />
       </main>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 

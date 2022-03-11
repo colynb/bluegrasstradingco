@@ -1,12 +1,18 @@
 import client from '../../client'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
+import Layout from '../../components/Layout'
 import PlayerCard from '../../components/PlayerCard'
 
 export default function TradingCards({ players }) {
+  const metaData = {
+    title: 'Bluegrass Trading Co Banjo All-Star Artists',
+    description: `Introducing the world's first premium trading cards for the bluegrass enthusiast. With a total of 42 featured banjo greats, completed by 10 equally great artists, each pack of Banjo All-Star Premium Trading Cards includes 8 players, including a foil accented limited edition card. Yes, every pack comes with a limited edition card! Collect them all!
+    Series 1 is shipping in April!`,
+  }
+
   return (
-    <div className="">
-      <Header title="Bluegrass Trading Co Banjo All-Star Artists" />
+    <Layout metaData={metaData}>
       <div className="bg-gray-100">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static py-12">
           <h1 className="text-3xl font-display uppercase font-semibold tracking-tight text-gray-900 sm:text-5xl">
@@ -55,8 +61,7 @@ export default function TradingCards({ players }) {
           })}
         </div>
       </div>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 

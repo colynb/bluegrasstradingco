@@ -7,8 +7,14 @@ export default function FAQ({ faqs }) {
       return `${faq.question} ${faq.answer}`
     })
     .join('; ')
+
+  const metaData = {
+    title: 'FAQ',
+    description: metaDescription,
+  }
+
   return (
-    <Layout title={'FAQ'} path="/faq" description={metaDescription}>
+    <Layout metaData={metaData}>
       <div className="bg-gray-100">
         <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -53,8 +59,6 @@ export async function getStaticProps() {
   const faqs = await client.fetch(
     `*[_type == "faq"]|order(_createdAt){question, answer}`
   )
-
-  console.log(faqs)
 
   return {
     props: {
