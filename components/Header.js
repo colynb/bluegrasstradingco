@@ -55,12 +55,13 @@ export default function Header({
               Contact
             </a>
           </div>
-          <div className="relative max-w-4xl md:h-24 flex items-center justify-center p-4 mx-8">
+          <div className="relative max-w-4xl h-16 md:h-24 flex items-center justify-center p-4 mx-8">
             <img
               src="/updated-logo2.png"
               alt="Bluegrass Trading Co."
               width="250"
               height="110"
+              className="w-40 h-16 md:w-60 md:h-28 max-w-none"
             />
           </div>
 
@@ -78,7 +79,7 @@ export default function Header({
           </div>
         </div>
       </header>
-      <div className="flex md:hidden items-center font-display justify-center pb-6 uppercase">
+      <div className="flex md:hidden items-center font-display justify-center mb-2 md:pb-6 uppercase text-sm">
         <Link href="/">
           <a className="w-20 block text-center">Home</a>
         </Link>
