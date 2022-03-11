@@ -5,6 +5,23 @@ export default createSchema({
   name: 'AppSchema',
   types: schemaTypes.concat([
     {
+      title: 'FAQ',
+      name: 'faq',
+      type: 'document',
+      fields: [
+        {
+          title: 'Question',
+          name: 'question',
+          type: 'string',
+        },
+        {
+          title: 'Answer',
+          name: 'answer',
+          type: 'text',
+        },
+      ],
+    },
+    {
       title: 'Artist',
       name: 'artist',
       type: 'document',
@@ -127,6 +144,26 @@ export default createSchema({
           title: 'Featured',
           name: 'featured',
           type: 'boolean',
+        },
+      ],
+      preview: {
+        select: {
+          title: 'name',
+          subtitle: 'series_number',
+        },
+        prepare(selection) {
+          const { title, subtitle } = selection
+          return {
+            title: `${subtitle} - ${title}`,
+            subtitle: null,
+          }
+        },
+      },
+      orderings: [
+        {
+          title: 'Series Number, Asc',
+          name: 'series_number_asc',
+          by: [{ field: 'series_number', direction: 'asc' }],
         },
       ],
     },

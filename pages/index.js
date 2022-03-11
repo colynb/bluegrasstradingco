@@ -14,7 +14,9 @@ import client from '../client'
 export default function Home({ description, title, artists, featured }) {
   return (
     <div className="h-screen w-screen">
-      <Header title={title} description={description} />
+      <div>
+        <Header title={title} description={description} />
+      </div>
 
       <main>
         <Hero featured={featured} />

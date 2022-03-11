@@ -63,10 +63,7 @@ export default function Hero({ featured }) {
                                 className="w-44 h-64 overflow-hidden sm:opacity-0 lg:opacity-100 relative -"
                               >
                                 <img
-                                  src={feature.imageUrl.replace(
-                                    't_portrait/',
-                                    't_portrait_small/'
-                                  )}
+                                  src={feature.imageUrl}
                                   alt={feature.name}
                                   className="w-full h-full object-center object-cover"
                                   width="362"

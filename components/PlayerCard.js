@@ -11,7 +11,7 @@ export default function PlayerCard({ player }) {
           )}
         </div>
         <img
-          src={player.imageUrl.replace('t_portrait/', 't_portrait_small/')}
+          src={player.imageUrl}
           alt=""
           className="w-full h-full object-center object-cover"
         />

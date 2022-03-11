@@ -17,7 +17,7 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
     <div className="h-screen flex flex-col border border-red-500 justify-between">
       <div>
         <Header
-          title={`Banjo All-Star Series 1 Player, ${player.name}`}
+          title={`${player.name}, Banjo All-Star`}
           description={player.bio}
           image={player.imageUrl}
           path={router.asPath}

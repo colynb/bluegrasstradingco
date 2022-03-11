@@ -11,7 +11,7 @@ export default function ArtistDetail({ artist }) {
   return (
     <>
       <Header
-        title={`Banjo All-Star Series 1 Artist, ${artist.name}`}
+        title={`${artist.name}, Banjo All-Star Artist`}
         description={artist.bio}
       />
       <div className="bg-gray-100">
