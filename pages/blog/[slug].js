@@ -39,6 +39,7 @@ const ptComponents = {
 }
 
 const Post = ({ post }) => {
+  if (!post) return null
   const {
     title = 'Missing title',
     name = 'Missing name',
@@ -96,12 +97,12 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   body
 }`
 export async function getStaticPaths() {
-  const paths = await client.fetch(
-    groq`*[_type == "post" && defined(slug.current)][].slug.current`
-  )
-
+  const posts = await client.fetch(`*[_type == "post"]{slug}`)
+  const paths = posts.map((post) => ({
+    params: { slug: post.slug.current },
+  }))
   return {
-    paths: paths.map((slug) => ({ params: { slug } })),
+    paths,
     fallback: true,
   }
 }
@@ -116,4 +117,5 @@ export async function getStaticProps(context) {
     },
   }
 }
+
 export default Post
