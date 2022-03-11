@@ -20,6 +20,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body className="bg-white">
           <Main />
