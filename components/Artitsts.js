@@ -22,7 +22,7 @@ export default function Artists({ artists }) {
                 <li key={artist.name}>
                   <div className="flex items-center space-x-4 lg:space-x-6">
                     <img
-                      className="w-16 h-16 rounded-full lg:w-20 lg:h-20"
+                      className="w-16 h-16 rounded-full lg:w-20 lg:h-20 object-cover"
                       src={artist.imageUrl}
                       alt={artist.name}
                       width="100"

@@ -19,7 +19,7 @@ export default function ArtistDetail({ artist }) {
           <div>
             <div className="space-y-5 sm:space-y-4 text-center">
               <img
-                className="w-40 h-40 rounded-full mx-auto border-8 border-white"
+                className="w-40 h-40 rounded-full mx-auto border-8 border-white object-cover"
                 src={artist.imageUrl}
                 alt=""
                 width="150"
@@ -38,16 +38,17 @@ export default function ArtistDetail({ artist }) {
           Selected Works
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {artist.players.map((player) => {
-            return (
-              <div
-                key={player.name}
-                className="h-96 w-80 md:w-full md:h-64 mx-auto"
-              >
-                <PlayerCard player={player} />
-              </div>
-            )
-          })}
+          {artist.players &&
+            artist.players.map((player) => {
+              return (
+                <div
+                  key={player.name}
+                  className="h-96 w-80 md:w-full md:h-64 mx-auto"
+                >
+                  <PlayerCard player={player} />
+                </div>
+              )
+            })}
         </div>
       </div>
       <Footer />
