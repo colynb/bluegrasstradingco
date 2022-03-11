@@ -1,8 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+function sliceIntoChunks(arr, chunkSize) {
+  const res = []
+  for (let i = 0; i < arr.length; i += chunkSize) {
+    const chunk = arr.slice(i, i + chunkSize)
+    res.push(chunk)
+  }
+  return res
+}
+
 /* This example requires Tailwind CSS v2.0+ */
-export default function Hero() {
+export default function Hero({ featured }) {
+  const featuredChunks = sliceIntoChunks(featured, 4)
+
   return (
     <div className="relative bg-gray-100 overflow-hidden">
       <div className="pt-8 md:pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
@@ -38,207 +49,38 @@ export default function Hero() {
                 className="pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full"
               >
                 <div className="absolute transform sm:left-1/2 md:-top-28 rotate-6 p-2 hidden md:block opacity-75">
-                  <div className="flex items-center space-x-1 lg:space-x-2">
-                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2 top-24 md:top-16 relative">
-                      <div className="w-44 h-64 rounded overflow-hidden sm:opacity-0 lg:opacity-100 relative -">
-                        <Image
-                          src="/portraits/_0011_TERRY BAUCOM.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Terry Baucom
+                  <div className="flex items-center space-x-1">
+                    {featuredChunks.map((chunk, i) => {
+                      return (
+                        <div
+                          key={`featured_container_${i}`}
+                          className="grid gap-1"
+                        >
+                          {chunk.map((feature) => {
+                            return (
+                              <div
+                                key={`featured_${feature.imageUrl}`}
+                                className="w-44 h-64 overflow-hidden sm:opacity-0 lg:opacity-100 relative -"
+                              >
+                                <img
+                                  src={feature.imageUrl.replace(
+                                    't_portrait/',
+                                    't_portrait_small/'
+                                  )}
+                                  alt={feature.name}
+                                  className="w-full h-full object-center object-cover"
+                                  width="362"
+                                  height="550"
+                                />
+                                <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
+                                  {feature.name}
+                                </div>
+                              </div>
+                            )
+                          })}
                         </div>
-                      </div>
-                      <div className="w-44 h-64 rounded overflow-hidden sm:opacity-0 lg:opacity-100 relative">
-                        <Image
-                          src="/portraits/_0003_BUTCH ROBINS.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Butch Robins
-                        </div>
-                      </div>
-                      <div className="w-44 h-64 rounded overflow-hidden sm:opacity-0 lg:opacity-100 relative">
-                        <Image
-                          src="/portraits/_0001_ALISON BROWN.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Alison Brown
-                        </div>
-                      </div>
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/_0024_DON RENO.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Don Reno
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2">
-                      <div className="hidden md:block w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/_0009_JD CROWE.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          J.D. Crowe
-                        </div>
-                      </div>
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/_0023_EARL SCRUGGS.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Earl Scruggs
-                        </div>
-                      </div>
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/_0018_BILL KEITH.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Bill Keith
-                        </div>
-                      </div>
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/_0010_TONY TRISCHKA.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Tony Trischka
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-1 lg:gap-y-2 top-6 relative">
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/_0031_SONNY OSBORNE.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Sonny Osborne
-                        </div>
-                      </div>
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/_0007_KRISTIN SCOTT BENSON.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Kristin Scott Benson
-                        </div>
-                      </div>
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/_0034_EDDIE ADCOCK.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Eddie Adcock
-                        </div>
-                      </div>
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/_0014_BILL EMERSON.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Bill Emerson
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex-shrink-0 hidden grid-cols-1 gap-y-1 lg:gap-y-2 -top-24 relative">
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/_0013_CARL JACKSON.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Carl Jackson
-                        </div>
-                      </div>
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/_0020_RALPH STANLEY.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Ralph Stanley
-                        </div>
-                      </div>
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/18 - Greg Cahill-2.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Greg Cahill
-                        </div>
-                      </div>
-                      <div className="w-44 h-64 rounded shadow-lg overflow-hidden relative">
-                        <Image
-                          src="/portraits/_0032_DOUG DILLARD.jpg"
-                          alt=""
-                          className="w-full h-full object-center object-cover"
-                          width="362"
-                          height="550"
-                        />
-                        <div className="absolute bottom-0 right-0 text-white font-display bg-gray-600 bg-opacity-40 px-4 opacity-100">
-                          Doug Dillard
-                        </div>
-                      </div>
-                    </div>
+                      )
+                    })}
                   </div>
                 </div>
               </div>

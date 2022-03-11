@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import client from '../../../client'
 import Footer from '../../../components/Footer'
 import Header from '../../../components/Header'
 import PlayerCard from '../../../components/PlayerCard'
@@ -7,6 +7,7 @@ export default function ArtistDetail({ artist }) {
   if (!artist) {
     return null
   }
+
   return (
     <>
       <Header
@@ -17,8 +18,8 @@ export default function ArtistDetail({ artist }) {
         <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
           <div>
             <div className="space-y-5 sm:space-y-4 text-center">
-              <Image
-                className="w-40 h-40 rounded-full mx-auto border-8 border-white"
+              <img
+                className="w-40 h-40 rounded-full mx-auto border-8 border-white object-cover"
                 src={artist.imageUrl}
                 alt=""
                 width="150"
@@ -37,16 +38,17 @@ export default function ArtistDetail({ artist }) {
           Selected Works
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {artist.works.map((player) => {
-            return (
-              <div
-                key={player.name}
-                className="h-96 w-80 md:w-full md:h-64 mx-auto"
-              >
-                <PlayerCard player={player} />
-              </div>
-            )
-          })}
+          {artist.players &&
+            artist.players.map((player) => {
+              return (
+                <div
+                  key={player.name}
+                  className="h-96 w-80 md:w-full md:h-64 mx-auto"
+                >
+                  <PlayerCard player={player} />
+                </div>
+              )
+            })}
         </div>
       </div>
       <Footer />
@@ -55,8 +57,14 @@ export default function ArtistDetail({ artist }) {
 }
 
 export async function getStaticProps({ params }) {
-  const data = require('../../../data')
-  const artist = data.artists.find((a) => a.slug === params.slug)
+  const artist = await client.fetch(
+    `
+    *[_type == "artist"  && slug.current == $slug][0]
+    {_id, name, location, imageUrl, bio, players[]->{name, slug, bio, series_number, imageUrl, limited}}
+    `,
+    { slug: params.slug }
+  )
+
   return {
     props: {
       artist,
@@ -65,12 +73,12 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const data = require('../../../data')
-  const paths = data.artists.map((artist) => ({
-    params: { slug: artist.slug },
+  const artists = await client.fetch(`*[_type == "artist"]{slug}`)
+  const paths = artists.map((artist) => ({
+    params: { slug: artist.slug.current },
   }))
   return {
     paths,
-    fallback: true, // false or 'blocking'
+    fallback: false, // false or 'blocking'
   }
 }
