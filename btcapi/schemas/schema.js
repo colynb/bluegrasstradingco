@@ -22,8 +22,7 @@ export default createSchema({
         {
           title: 'Bio',
           name: 'bio',
-          type: 'array',
-          of: [{ type: 'block' }],
+          type: 'text',
         },
         {
           title: 'Slug',
@@ -98,8 +97,7 @@ export default createSchema({
         {
           title: 'Bio',
           name: 'bio',
-          type: 'array',
-          of: [{ type: 'block' }],
+          type: 'text',
         },
         {
           title: 'Slug',
@@ -123,6 +121,11 @@ export default createSchema({
         {
           title: 'Limited',
           name: 'limited',
+          type: 'boolean',
+        },
+        {
+          title: 'Featured',
+          name: 'featured',
           type: 'boolean',
         },
       ],

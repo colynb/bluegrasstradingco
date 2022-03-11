@@ -102,7 +102,7 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
                 <a className="relative rounded-lg border inline-flex border-gray-300 bg-white p-2 px-4 shadow-sm items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                   <div className="flex-shrink-0">
                     <img
-                      className="h-10 w-10 rounded-full"
+                      className="h-10 w-10 rounded-full object-cover"
                       src={player.artist.imageUrl}
                       alt=""
                     />
@@ -133,7 +133,7 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
 export async function getStaticProps({ params }) {
   const players = await client.fetch(
     `
-    *[_type == "player"]{_id, name, imageUrl, slug, limited, 'bio': bio[0].children[0].text, series_number, artist->{name, slug, imageUrl}}
+    *[_type == "player"]|order(series_number){_id, name, imageUrl, slug, limited, bio, series_number, artist->{name, slug, imageUrl}}
     `
   )
   const index = players.findIndex((a) => a.slug.current === params.slug)

@@ -60,7 +60,7 @@ export async function getStaticProps({ params }) {
   const artist = await client.fetch(
     `
     *[_type == "artist"  && slug.current == $slug][0]
-    {_id, name, location, imageUrl, 'bio': bio[0].children[0].text, players[]->{name, slug, bio, series_number, imageUrl, limited}}
+    {_id, name, location, imageUrl, bio, players[]->{name, slug, bio, series_number, imageUrl, limited}}
     `,
     { slug: params.slug }
   )

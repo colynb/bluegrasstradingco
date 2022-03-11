@@ -11,13 +11,13 @@ import Artists from '../components/Artitsts'
 import Footer from '../components/Footer'
 import client from '../client'
 
-export default function Home({ description, title, artists }) {
+export default function Home({ description, title, artists, featured }) {
   return (
     <div className="h-screen w-screen">
       <Header title={title} description={description} />
 
       <main>
-        <Hero />
+        <Hero featured={featured} />
 
         <div className="bg-white">
           <div className="max-w-7xl mx-auto py-12 sm:px-2 sm:py-32 lg:px-4">
@@ -69,8 +69,12 @@ export async function getStaticProps() {
     `*[_type == "artist"]| order(name){ _id, name, bio, players, imageUrl, slug }`
   )
 
+  const featured = await client.fetch(
+    `*[_type == "player" && limited == true]|order(series_number){name, series_number, slug, imageUrl}`
+  )
   return {
     props: {
+      featured,
       artists,
       ...data.productByHandle,
     },
