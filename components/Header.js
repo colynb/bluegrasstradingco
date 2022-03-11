@@ -95,12 +95,10 @@ export default function Header({
         >
           News
         </a>
-        <a
-          href="https://shop.bluegrasstradingco.com/pages/faq"
-          className="w-20  block text-center"
-        >
-          Faq
-        </a>
+
+        <Link href="/faq">
+          <a className="w-20 block text-center">FAQ</a>
+        </Link>
       </div>
     </div>
   )
