@@ -1,5 +1,5 @@
 const API_URL =
-  'https://bluegrass-trading-company.myshopify.com/api/2021-10/graphql.json'
+  'https://bluegrass-trading-company.myshopify.com/api/2022-01/graphql.json'
 
 const ACCESS_TOKEN = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN
 

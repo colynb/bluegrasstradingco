@@ -24,7 +24,7 @@ export default function Hero({ featured }) {
                 Banjo All-Star<span className="text-lg align-top">TM</span>
               </span>
               <br />
-              <span className="text-yellow-400 bg-gradient-to-r from-yellow-300 to-yellow-400 text-transparent bg-clip-text">
+              <span className="text-amber-400 bg-gradient-to-r from-amber-300 to-amber-400 text-transparent bg-clip-text">
                 {' '}
                 Premium Trading Cards
               </span>
@@ -85,7 +85,7 @@ export default function Hero({ featured }) {
               <div className="flex items-center md:space-x-6  space-x-8 text-center pb-12">
                 <a
                   href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"
-                  className="inline-block border-r border-b border-r-yellow-400 border-b-yellow-400 border-t-yellow-100 border-l-yellow-100 font-display text-gray-600 text-center bg-yellow-300 border border-transparent rounded-md py-3 px-8 font-medium  hover:bg-yellow-400"
+                  className="inline-block border-r border-b border-r-amber-400 border-b-amber-400 border-t-amber-100 border-l-amber-100 font-display text-gray-600 text-center bg-amber-300 border border-transparent rounded-md py-3 px-8 font-medium hover:text-gray-600 hover:bg-amber-400"
                 >
                   ORDER NOW
                 </a>
