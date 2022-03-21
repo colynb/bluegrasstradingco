@@ -1,3 +1,4 @@
+import ReactMarkdown from 'react-markdown'
 import client from '../client'
 import Layout from '../components/Layout'
 
@@ -44,7 +45,9 @@ export default function FAQ({ faqs }) {
                   <dt className="text-lg leading-6 font-medium text-gray-900">
                     {faq.question}
                   </dt>
-                  <dd className="mt-2 text-base text-gray-500">{faq.answer}</dd>
+                  <dd className="mt-2 text-base text-gray-500">
+                    <ReactMarkdown>{faq.answer}</ReactMarkdown>
+                  </dd>
                 </div>
               ))}
             </dl>
