@@ -9,6 +9,7 @@ import artist from './artist'
 import player from './player'
 import youtube from './youtube'
 import html from './html'
+import faq from './faq'
 
 export default createSchema({
   name: 'AppSchema',
@@ -25,5 +26,6 @@ export default createSchema({
     blockContent,
     youtube,
     html,
+    faq,
   ]),
 })
