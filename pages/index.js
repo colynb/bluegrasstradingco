@@ -26,22 +26,22 @@ export default function Home({
         <Hero featured={featured} />
         <FeaturedProducts collection={collection} />
         <div className="bg-gray-100">
-          <div className="max-w-7xl mx-auto py-12 sm:px-2 sm:py-32 lg:px-4">
-            <div className="max-w-2xl mx-auto px-4 lg:max-w-none">
+          <div className="mx-auto max-w-7xl py-12 sm:px-2 sm:py-32 lg:px-4">
+            <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
               <div className="md:flex md:space-x-6">
-                <div className=" rounded-xl shadow-lg w-full  md:w-80 h-72 overflow-hidden relative mb-4">
+                <div className=" relative mb-4 h-72  w-full overflow-hidden rounded-xl shadow-lg md:w-80">
                   <Image
                     src="/colyn.jpg"
                     layout="fill"
-                    className="w-80 h-72 object-center object-cover "
+                    className="h-72 w-80 object-cover object-center "
                     alt="Colyn Brown, Founder of Bluegrass Trading Co, LLC"
                   />
                 </div>
                 <div className="flex-1 text-gray-700">
-                  <h2 className="text-3xl font-medium uppercase font-display tracking-tight text-gray-700">
+                  <h2 className="font-display text-3xl font-medium uppercase tracking-tight text-gray-700">
                     What is Bluegrass Trading Co?
                   </h2>
-                  <p className="mt-4 text-xl text-gray-500 leading-loose">
+                  <p className="mt-4 text-xl leading-loose text-gray-500">
                     Founded by Colyn Brown in Sept 2021, Bluegrass Trading Co is
                     an online store dedicated to providing exclusive, quality,
                     merchandise for bluegrass enthusiasts. Our flagship product,{' '}
@@ -51,7 +51,7 @@ export default function Home({
                     is currently in production and Series 1 will begin shipping
                     in April 2022!
                   </p>
-                  <h3 className="font-display mt-3 font-medium text-xl uppercase border-b mb-4">
+                  <h3 className="mt-3 mb-4 border-b font-display text-xl font-medium uppercase">
                     Featured in the news!
                   </h3>
                   <div className="space-y-3 text-lg">
