@@ -16,9 +16,9 @@ export default function NewsletterSignup() {
 
   const subscribe = async ({ email }) => {
     try {
-      const data = await fetch(`/api/subscribe?email=${email}`).then((resp) =>
-        resp.json()
-      )
+      const data = await fetch(
+        `/api/subscribe?email=${encodeURIComponent(email)}`
+      ).then((resp) => resp.json())
       setSubmitSuccess(true)
       setVerifyModal(true)
     } catch (e) {

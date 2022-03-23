@@ -30,7 +30,9 @@ export default function Hero({ featured }) {
   const subscribe = async ({ email, first_name }) => {
     try {
       const data = await fetch(
-        `/api/contest?email=${email}&first_name=${first_name}`
+        `/api/contest?email=${encodeURIComponent(
+          email
+        )}&first_name=${encodeURIComponent(first_name)}`
       ).then((resp) => resp.json())
       setSubmitSuccess(true)
       setVerifyModal(true)
