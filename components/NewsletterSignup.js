@@ -29,9 +29,9 @@ export default function NewsletterSignup() {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:py-32 lg:px-8 lg:flex lg:items-center">
+      <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:flex lg:items-center lg:py-32 lg:px-8">
         <div className="lg:w-0 lg:flex-1">
-          <h2 className="text-3xl font-medium uppercase font-display text-gray-900">
+          <h2 className="font-display text-3xl font-medium uppercase text-gray-900">
             Sign up for our newsletter
           </h2>
           <p className="mt-3 max-w-3xl text-lg text-gray-500">
@@ -56,22 +56,23 @@ export default function NewsletterSignup() {
         <div className="mt-8 lg:mt-0 lg:ml-8">
           {submitSuccess === null && (
             <form className="sm:flex" onSubmit={handleSubmit(onSubmit)}>
-              <label htmlFor="email-address" className="sr-only">
+              <label htmlFor="email" className="sr-only">
                 Email address
               </label>
               <input
-                id="email-address"
-                name="email-address"
+                {...register('email')}
+                id="email"
+                name="email"
                 type="email"
                 autoComplete="email"
                 required
-                className="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs rounded-md"
+                className="w-full rounded-md border border-gray-300 px-5 py-3 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 sm:max-w-xs"
                 placeholder="Enter your email"
               />
               <div className="mt-3  sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                 <button
                   type="submit"
-                  className="uppercase inline-block border-r border-b border-r-amber-400 border-b-amber-400 border-t-amber-100 border-l-amber-100 font-display text-gray-600 text-center bg-amber-300 border border-transparent rounded-md py-3 px-8 font-medium  hover:bg-amber-400"
+                  className="inline-block rounded-md border border-r border-b border-transparent border-r-amber-400 border-b-amber-400 border-t-amber-100 border-l-amber-100 bg-amber-300 py-3 px-8 text-center font-display font-medium uppercase text-gray-600  hover:bg-amber-400"
                 >
                   Notify me
                 </button>
@@ -88,7 +89,7 @@ export default function NewsletterSignup() {
             <div className="text-red-500">Email is required</div>
           )}
           {submitSuccess === true && (
-            <div className="sm:mx-auto sm:max-w-lg sm:flex text-green-600 p-8 rounded-lg  text-center">
+            <div className="rounded-lg p-8 text-center text-green-600 sm:mx-auto sm:flex  sm:max-w-lg">
               <div>
                 Thanks! Please check your email.{' '}
                 <button
