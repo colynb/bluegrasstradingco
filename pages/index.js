@@ -77,7 +77,9 @@ export default function Home({
           <Artists artists={artists} />
         </div>
         <div className="bg-gray-100">
-          <NewsletterSignup />
+          <div className="mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:flex lg:items-center lg:space-x-8 lg:py-32 lg:px-8">
+            <NewsletterSignup />
+          </div>
         </div>
       </main>
     </Layout>
@@ -90,7 +92,7 @@ export async function getStaticProps() {
   })
 
   const collection = await storefront(collectionQuery, {
-    handle: 'frontpage',
+    handle: 'new-products',
   })
 
   const artists = await client.fetch(
