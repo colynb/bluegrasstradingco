@@ -50,7 +50,7 @@ export default function Hero({ featured }) {
         <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
           <div className="sm:max-w-lg">
             <h1 className="font-display text-5xl font-semibold uppercase tracking-tight text-gray-900">
-              <span className="bg-gradient-to-r from-amber-300 to-amber-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r text-amber-500">
                 Enter to Win the Complete Set!
               </span>
             </h1>
