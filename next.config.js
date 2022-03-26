@@ -1,11 +1,9 @@
-const data = require('./data')
+var sources = []
 
-const sources = data.map((player) => {
-  return {
-    source: `/r/${player.code}`,
-    destination: `/about/players/${player.slug}`,
-    permanent: false,
-  }
+sources.push({
+  source: `/r/:path*`,
+  destination: `/api/redirects/:path*`,
+  permanent: false,
 })
 
 module.exports = {
