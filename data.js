@@ -211,7 +211,7 @@ const redirects = [
   },
   {
     coupon: 'BANJOALLSTAR',
-    path: '/',
+    path: '/giveaway',
     code: 'BANJOALLSTAR',
   },
 ]

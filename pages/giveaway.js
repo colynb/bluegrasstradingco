@@ -5,8 +5,7 @@ import Layout from '../components/Layout'
 export const Giveaway = ({ featured }) => {
   const metaData = {
     title: 'Enter to Win the Complete Set',
-    description: `Thank you so much for your purchase. As a thank you, we are giving away 3 complete sets of Banjo All-Star Premium Trading Cards to 3 lucky subscribers to our newsletter. Each set is 12 packs and a collectible display box. Subscribe now and also get a 20% OFF
-  coupon code delivered to your inbox.`,
+    description: `Thank you so much for your purchase. As a thank you, we are giving away 3 complete sets of Banjo All-Star Premium Trading Cards to 3 lucky subscribers to our newsletter. Each set is 12 packs and a collectible display box.`,
   }
   return (
     <Layout metaData={metaData}>

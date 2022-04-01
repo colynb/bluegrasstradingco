@@ -47,6 +47,11 @@ export default {
       name: 'featured',
       type: 'boolean',
     },
+    {
+      title: 'Collection',
+      name: 'collection',
+      type: 'string',
+    },
   ],
   preview: {
     select: {

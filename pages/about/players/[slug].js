@@ -6,8 +6,15 @@ import PlayerCard from '../../../components/PlayerCard'
 import { getPlayers } from '../../api/players'
 import client from '../../../client'
 import Layout from '../../../components/Layout'
+import FeaturedProducts from '../../../components/FeaturedProducts'
+import { loadCollection } from '../../../lib/loadCollection'
 
-export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
+export default function PlayerDetail({
+  player,
+  prevPlayer,
+  nextPlayer,
+  collection,
+}) {
   const router = useRouter()
 
   if (!player) {
@@ -22,14 +29,14 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
 
   return (
     <Layout metaData={metaData}>
-      <div className="bg-gray-100 flex-1">
-        <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
-          <div className="flex justify-between mb-6">
+      <div className="flex-1 bg-gray-100">
+        <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
+          <div className="mb-6 flex justify-between">
             <div>
               <Link href={`/about/players/${prevPlayer.slug.current}`}>
                 <a
                   title={prevPlayer.name}
-                  className="flex items-center font-display underline text-gray-600 rounded px-2 py-1"
+                  className="flex items-center rounded px-2 py-1 font-display text-gray-600 underline"
                 >
                   <span>
                     <svg
@@ -55,7 +62,7 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
               <Link href={`/about/players/${nextPlayer.slug.current}`}>
                 <a
                   title={nextPlayer.name}
-                  className="font-display flex items-center leading-none underline text-gray-600 rounded px-4 py-1"
+                  className="flex items-center rounded px-4 py-1 font-display leading-none text-gray-600 underline"
                 >
                   <span>
                     {nextPlayer.name} (#{nextPlayer.series_number})
@@ -78,27 +85,27 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
               </Link>
             </div>
           </div>
-          <div className="md:flex md:space-x-8 space-y-6">
+          <div className="mb-12 space-y-6 md:flex md:space-x-8">
             <div>
-              <div className="w-80 mx-auto h-96 md:w-60 md:h-80 flex-1">
+              <div className="mx-auto h-96 w-80 flex-1 md:h-80 md:w-60">
                 <PlayerCard player={player} />
               </div>
             </div>
             <div className="flex-1">
-              <div className="flex items-center space-x-8 mb-6">
-                <div className="text-4xl font-display font-medium uppercase bg-yellow-200 rounded-full w-16 h-16 flex items-center justify-center text-yellow-600">
+              <div className="mb-6 flex items-center space-x-8">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-yellow-200 font-display text-4xl font-medium uppercase text-yellow-600">
                   {player.series_number}
                 </div>
-                <h1 className="text-3xl font-display font-medium uppercase tracking-tight sm:text-4xl">
+                <h1 className="font-display text-3xl font-medium uppercase tracking-tight sm:text-4xl">
                   {player.name}
                 </h1>
               </div>
 
-              <p className="text-2xl text-gray-500 mb-5">{player.bio}</p>
+              <p className="mb-5 text-2xl text-gray-500">{player.bio}</p>
 
               <div className="font-bold">Artist</div>
               <Link href={`/about/artists/${player.artist.slug.current}`}>
-                <a className="relative rounded-lg border inline-flex border-gray-300 bg-white p-2 px-4 shadow-sm items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                <a className="relative inline-flex items-center space-x-3 rounded-lg border border-gray-300 bg-white p-2 px-4 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
                   <div className="flex-shrink-0">
                     <img
                       className="h-10 w-10 rounded-full object-cover"
@@ -106,12 +113,12 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
                       alt=""
                     />
                   </div>
-                  <div className="flex-1 min-w-0">
+                  <div className="min-w-0 flex-1">
                     <span className="absolute inset-0" aria-hidden="true" />
                     <p className="text-sm font-medium text-gray-900">
                       {player.artist.name}
                     </p>
-                    <p className="text-sm text-gray-500 truncate">
+                    <p className="truncate text-sm text-gray-500">
                       {player.artist.location}
                     </p>
                   </div>
@@ -119,6 +126,8 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
               </Link>
             </div>
           </div>
+
+          <FeaturedProducts collection={collection} />
         </div>
       </div>
     </Layout>
@@ -128,7 +137,7 @@ export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
 export async function getStaticProps({ params }) {
   const players = await client.fetch(
     `
-    *[_type == "player"]|order(series_number){_id, name, imageUrl, slug, limited, bio, series_number, artist->{name, slug, imageUrl}}
+    *[_type == "player"]|order(series_number){_id, name, imageUrl, slug, collection, limited, bio, series_number, artist->{name, slug, imageUrl}}
     `
   )
   const index = players.findIndex((a) => a.slug.current === params.slug)
@@ -142,11 +151,16 @@ export async function getStaticProps({ params }) {
     nextIndex = 0
   }
 
+  const collection = await loadCollection(
+    player.collection || 'products-now-shipping'
+  )
+
   return {
     props: {
       prevPlayer: players[prevIndex],
       nextPlayer: players[nextIndex],
       player,
+      collection,
     },
   }
 }

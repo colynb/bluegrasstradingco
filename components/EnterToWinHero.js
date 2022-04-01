@@ -61,11 +61,8 @@ export default function Hero({ featured }) {
               </a>{' '}
               to 3 lucky newsletter subscribers. Each set is 12 packs and a
               collectible display box. Winners will be announced during a live
-              stream around the start of May. (No purchase necessary) Subscribe
-              to our newsletter now and also get a 20% OFF coupon code delivered
-              to your inbox. If you&apos;re already a subscriber, you are
-              already entered to win but still enter to receive your coupon
-              code.
+              stream around the start of May. (No purchase necessary) If
+              you&apos;re already a subscriber, you are already entered to win.
             </div>
 
             <div className="mt-4">

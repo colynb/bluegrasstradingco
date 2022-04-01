@@ -3,10 +3,11 @@ import NewsletterSignup from '../components/NewsletterSignup'
 
 import { storefront } from '../utils'
 import Hero from '../components/Hero'
-import Artists from '../components/Artitsts'
+import Artists from '../components/Artists'
 import client from '../client'
 import Layout from '../components/Layout'
 import FeaturedProducts from '../components/FeaturedProducts'
+import { loadCollection } from '../lib/loadCollection'
 
 export default function Home({
   description,
@@ -91,9 +92,7 @@ export async function getStaticProps() {
     handle: 'bluegrass-trading-co-banjo-all-star-series-one-pack',
   })
 
-  const collection = await storefront(collectionQuery, {
-    handle: 'new-products',
-  })
+  const collection = await loadCollection('new-products')
 
   const artists = await client.fetch(
     `*[_type == "artist"]| order(name){ _id, name, bio, players, imageUrl, slug }`
@@ -107,7 +106,7 @@ export async function getStaticProps() {
       featured,
       artists,
       ...product.data.product,
-      collection: collection.data.collection,
+      collection,
     },
   }
 }
