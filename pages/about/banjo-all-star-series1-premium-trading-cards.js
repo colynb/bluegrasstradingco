@@ -14,13 +14,13 @@ export default function TradingCards({ players }) {
   return (
     <Layout metaData={metaData}>
       <div className="bg-gray-100">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static py-12">
-          <h1 className="text-3xl font-display uppercase font-semibold tracking-tight text-gray-900 sm:text-5xl">
+        <div className="relative mx-auto max-w-7xl px-4 py-12 sm:static sm:px-6 lg:px-8">
+          <h1 className="font-display text-3xl font-semibold uppercase tracking-tight text-gray-900 sm:text-5xl">
             <span className="text-gray-700">
-              Banjo All-Star<span className="text-lg align-top">TM</span>
+              Banjo All-Star<span className="align-top text-lg">TM</span>
             </span>
             <br />
-            <span className="text-yellow-400 bg-gradient-to-r from-yellow-300 to-yellow-500 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-yellow-400 text-transparent">
               {' '}
               Premium Trading Cards
             </span>
@@ -38,22 +38,22 @@ export default function TradingCards({ players }) {
           </div>
           <a
             href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"
-            className="mt-4 inline-block border-r border-b border-r-yellow-400 border-b-yellow-400 border-t-yellow-100 border-l-yellow-100 font-display text-gray-600 text-center bg-yellow-300 border border-transparent rounded-md py-3 px-8 font-medium  hover:bg-yellow-400"
+            className="mt-4 inline-block rounded-md border border-r border-b border-transparent border-r-yellow-400 border-b-yellow-400 border-t-yellow-100 border-l-yellow-100 bg-yellow-300 py-3 px-8 text-center font-display font-medium text-gray-600  hover:bg-yellow-400"
           >
             ORDER NOW
           </a>
         </div>
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static py-12">
-        <h3 className="text-2xl font-display font-medium uppercase tracking-tight mb-4">
+      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:static sm:px-6 lg:px-8">
+        <h3 className="mb-4 font-display text-2xl font-medium uppercase tracking-tight">
           Completed Works
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1">
+        <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
           {players.map((player) => {
             return (
               <div
                 key={player.name}
-                className="w-72 h-96 md:h-72 md:w-full mx-auto"
+                className="mx-auto h-96 w-72 md:h-72 md:w-full"
               >
                 <PlayerCard player={player} />
               </div>
