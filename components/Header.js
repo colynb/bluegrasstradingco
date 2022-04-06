@@ -38,58 +38,69 @@ export default function Header({ metaData }) {
         <meta name="twitter:description" content={fullDescription} />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
       </Head>
-      <header className="px-6 sm:px-0 flex items-center py-4 md:py-8 justify-center bg-white border-t-8 border-yellow-300">
+      <Link href="/giveaway">
+        <a className="block bg-amber-700 p-4 text-white">
+          <div className="mx-auto max-w-5xl text-center font-display text-2xl uppercase">
+            <span className="font-bold">ENTER TO WIN</span>{' '}
+            <span className="font-thin opacity-80">
+              A 12-pack Complete Set of Banjo All-Star Premium Trading Cards
+            </span>
+          </div>
+        </a>
+      </Link>
+
+      <header className="flex items-center justify-center border-t-8 border-yellow-300 bg-white px-6 py-4 sm:px-0 md:py-8">
         <div className="flex items-center justify-center font-display uppercase">
-          <div className="hidden md:flex items-center">
+          <div className="hidden items-center md:flex">
             <Link href="/">
-              <a className="w-20 block text-center">Home</a>
+              <a className="block w-20 text-center">Home</a>
             </Link>
 
             <a
               href="https://shop.bluegrasstradingco.com/pages/contact"
-              className="w-20 block text-center"
+              className="block w-20 text-center"
             >
               Contact
             </a>
           </div>
-          <div className="relative max-w-4xl h-16 md:h-24 flex items-center justify-center p-4 mx-8">
+          <div className="relative mx-8 flex h-16 max-w-4xl items-center justify-center p-4 md:h-24">
             <img
               src="/updated-logo2.png"
               alt="Bluegrass Trading Co."
               width="250"
               height="110"
-              className="w-40 h-16 md:w-60 md:h-28 max-w-none"
+              className="h-16 w-40 max-w-none md:h-28 md:w-60"
             />
           </div>
 
-          <div className="hidden md:flex items-center">
+          <div className="hidden items-center md:flex">
             <Link href="/faq">
-              <a className="w-20 block text-center">FAQ</a>
+              <a className="block w-20 text-center">FAQ</a>
             </Link>
 
             <Link href="/blog">
-              <a className="w-20 block text-center">News</a>
+              <a className="block w-20 text-center">News</a>
             </Link>
           </div>
         </div>
       </header>
-      <div className="flex md:hidden items-center font-display justify-center mb-2 md:pb-6 uppercase text-sm">
+      <div className="mb-2 flex items-center justify-center font-display text-sm uppercase md:hidden md:pb-6">
         <Link href="/">
-          <a className="w-20 block text-center">Home</a>
+          <a className="block w-20 text-center">Home</a>
         </Link>
 
         <a
           href="https://shop.bluegrasstradingco.com/pages/contact"
-          className="w-20 block text-center"
+          className="block w-20 text-center"
         >
           Contact
         </a>
         <Link href="/blog">
-          <a className="w-20 block text-center">News</a>
+          <a className="block w-20 text-center">News</a>
         </Link>
 
         <Link href="/faq">
-          <a className="w-20 block text-center">FAQ</a>
+          <a className="block w-20 text-center">FAQ</a>
         </Link>
       </div>
     </div>
