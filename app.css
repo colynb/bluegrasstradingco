@@ -12,3 +12,7 @@ a:hover {
   @apply bg-slate-600;
   @apply bg-opacity-75;
 }
+
+.vl-heading {
+  line-height: normal;
+}

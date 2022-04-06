@@ -61,7 +61,8 @@ export default function Hero({ featured }) {
               </a>{' '}
               to 3 lucky newsletter subscribers. Each set is 12 packs and a
               collectible display box. Winners will be announced during a live
-              stream around the start of May. (No purchase necessary)
+              stream around the start of May. (No purchase necessary){' '}
+              <strong>Refer your friends for even more chances to win!</strong>
             </div>
 
             <div className="mt-4">
