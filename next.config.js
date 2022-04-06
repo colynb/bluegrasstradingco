@@ -6,6 +6,12 @@ sources.push({
   permanent: false,
 })
 
+sources.push({
+  source: '/signup',
+  destination: `/giveaway`,
+  permanent: true,
+})
+
 module.exports = {
   reactStrictMode: true,
   async redirects() {
