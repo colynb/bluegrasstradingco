@@ -61,77 +61,16 @@ export default function Hero({ featured }) {
               </a>{' '}
               to 3 lucky newsletter subscribers. Each set is 12 packs and a
               collectible display box. Winners will be announced during a live
-              stream around the start of May. (No purchase necessary) If
-              you&apos;re already a subscriber, you are already entered to win.
+              stream around the start of May. (No purchase necessary)
             </div>
 
             <div className="mt-4">
-              {submitSuccess === null && (
-                <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-                  <label htmlFor="first_name" className="sr-only">
-                    First Name
-                  </label>
-                  <input
-                    {...register('first_name')}
-                    type="first_name"
-                    autoComplete="first_name"
-                    required
-                    className="mb-3 w-full max-w-none flex-1 rounded-md border border-gray-300 px-5 py-3 text-2xl placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
-                    placeholder="First name"
-                  />
-                  <label htmlFor="email" className="sr-only">
-                    Email address
-                  </label>
-                  <input
-                    {...register('email')}
-                    type="email"
-                    autoComplete="email"
-                    required
-                    className="w-full max-w-none flex-1 rounded-md border border-gray-300 px-5 py-3 text-2xl placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
-                    placeholder="Email"
-                  />
-                  <div className="mt-3">
-                    <button
-                      type="submit"
-                      className="inline-block h-16 w-60 rounded-md border border-r border-b border-transparent border-r-amber-400 border-b-amber-400 border-t-amber-100 border-l-amber-100 bg-amber-300 text-center font-display text-xl font-medium uppercase text-gray-600  hover:bg-amber-400"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </form>
-              )}
-
-              {submitError && (
-                <div className="text-red-500">
-                  There was a problem submitting your email.
-                </div>
-              )}
-              {errors.email && (
-                <div className="text-red-500">Email is required</div>
-              )}
-              {submitSuccess === true && (
-                <div className="rounded-lg p-8 text-center text-green-600 sm:mx-auto sm:flex  sm:max-w-lg">
-                  <div>
-                    Thanks! Please check your email.{' '}
-                    <button
-                      className="font-semibold"
-                      onClick={() => setSubmitSuccess(null)}
-                    >
-                      Send another.
-                    </button>
-                  </div>
-                  <Modal open={verifyModal} setOpen={setVerifyModal} />
-                </div>
-              )}
-              <p className="mt-3 text-sm text-gray-500">
-                We care about the protection of your data. Read our{' '}
-                <a
-                  href="https://shop.bluegrasstradingco.com/policies/privacy-policy"
-                  className="font-medium underline"
-                >
-                  Privacy Policy.
-                </a>
-              </p>
+              <button
+                type="submit"
+                className="vrlps-trigger inline-block h-16 w-60 rounded-md border border-r border-b border-transparent border-r-amber-400 border-b-amber-400 border-t-amber-100 border-l-amber-100 bg-amber-300 text-center font-display text-xl font-medium text-gray-600  hover:bg-amber-400"
+              >
+                Get Started
+              </button>
             </div>
           </div>
           <div>

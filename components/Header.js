@@ -38,16 +38,6 @@ export default function Header({ metaData }) {
         <meta name="twitter:description" content={fullDescription} />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
       </Head>
-      <Link href="/giveaway">
-        <a className="block bg-amber-700 p-4 text-white">
-          <div className="mx-auto max-w-5xl text-center font-display text-2xl uppercase">
-            <span className="font-bold">ENTER TO WIN</span>{' '}
-            <span className="font-thin opacity-80">
-              A 12-pack Complete Set of Banjo All-Star Premium Trading Cards
-            </span>
-          </div>
-        </a>
-      </Link>
 
       <header className="flex items-center justify-center border-t-8 border-yellow-300 bg-white px-6 py-4 sm:px-0 md:py-8">
         <div className="flex items-center justify-center font-display uppercase">

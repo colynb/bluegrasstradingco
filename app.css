@@ -7,3 +7,8 @@ a {
 a:hover {
   @apply text-amber-300;
 }
+
+.vl-vrlps-popup {
+  @apply bg-slate-600;
+  @apply bg-opacity-75;
+}
