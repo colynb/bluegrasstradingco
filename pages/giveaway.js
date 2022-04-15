@@ -9,7 +9,11 @@ export const Giveaway = ({ featured }) => {
     image:
       'https://res.cloudinary.com/dlrg6wtbf/image/upload/c_lfill,g_center,h_500,w_500/v1648588625/Site/IMG_3738.jpg',
     title: 'Enter to Win the Complete Set',
-    description: `Thank you so much for your purchase. As a thank you, we are giving away 3 complete sets of Banjo All-Star Premium Trading Cards to 3 lucky subscribers to our newsletter. Each set is 12 packs and a collectible display box.`,
+    description: `We are giving away the Complete Set of Banjo All-Star Premium Trading Cards
+    to 3 lucky newsletter subscribers. Each set is 12 packs and a
+    collectible display box. Winners will be announced during a live
+    stream around the start of May. (No purchase necessary)
+    Refer your friends for even more chances to win!`,
   }
   return (
     <Layout metaData={metaData} options={{ giveawayBanner: false }}>
