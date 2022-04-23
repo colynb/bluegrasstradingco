@@ -214,6 +214,11 @@ const redirects = [
     path: '/giveaway',
     code: 'BANJOALLSTAR',
   },
+  {
+    coupon: 'BERKELEY20',
+    path: '/giveaway',
+    code: 'BERKELEY20',
+  },
 ]
 
 module.exports = redirects
