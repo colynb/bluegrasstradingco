@@ -4,6 +4,10 @@ import Footer from './Footer'
 import Header from './Header'
 import Link from 'next/link'
 
+const messages = require('../data/codeMessages').default
+
+console.log(messages)
+
 export default function Layout({
   children,
   options = { giveawayBanner: true },
@@ -39,14 +43,9 @@ export default function Layout({
           <div className="mx-auto max-w-3xl">
             <p>Thank you for stopping by!</p>{' '}
             <p className="font-normal text-white">
-              We see you were sent here by way of a QR code. Use this coupon
-              code{' '}
-              <a
-                href={`https://shop.bluegrasstradingco.com/discount/${showSourceBanner}`}
-              >
-                {showSourceBanner}
-              </a>{' '}
-              for 10% OFF your next order! (One use per customer)
+              {messages[showSourceBanner]?.message ||
+                `Thank you for stopping by! Use this coupon
+              code`}
             </p>
           </div>
         </div>
