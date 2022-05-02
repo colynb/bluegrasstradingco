@@ -2,7 +2,8 @@ const messages = {
   BERKELEY20: {
     message: (
       <div>
-        Thank you for stopping by! Use this coupon code{' '}
+        Welcome, 2022 BERKELEY BLUEGRASS FESTIVAL goers! Thank you for stopping
+        by! Use this coupon code{' '}
         <a href={`https://shop.bluegrasstradingco.com/discount/BERKELEY20`}>
           BERKELEY20
         </a>{' '}
