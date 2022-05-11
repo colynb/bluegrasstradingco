@@ -30,6 +30,12 @@ sources.push({
   permanent: false,
 })
 
+sources.push({
+  source: '/PICKYFINGERS',
+  destination: `/api/redirects/PICKYFINGERS`,
+  permanent: false,
+})
+
 module.exports = {
   reactStrictMode: true,
   async redirects() {

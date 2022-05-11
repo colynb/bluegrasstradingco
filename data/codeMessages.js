@@ -33,6 +33,17 @@ const messages = {
       </div>
     ),
   },
+  PICKYFINGERS: {
+    message: (
+      <div>
+        Welcome Picky Fingers Listeners! Use this coupon code{' '}
+        <a href={`https://shop.bluegrasstradingco.com/discount/PICKYFINGERS`}>
+          PICKYFINGERS
+        </a>{' '}
+        for 10% your next order.
+      </div>
+    ),
+  },
 }
 
 export default messages
