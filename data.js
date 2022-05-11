@@ -229,6 +229,11 @@ const redirects = [
     path: '/',
     code: 'PICKYFINGERS',
   },
+  {
+    coupon: 'JIM',
+    path: '/',
+    code: 'JIM',
+  },
 ]
 
 module.exports = redirects

@@ -44,6 +44,15 @@ const messages = {
       </div>
     ),
   },
+  JIM: {
+    message: (
+      <div>
+        Welcome Jim Pankey Fans! Use this coupon code{' '}
+        <a href={`https://shop.bluegrasstradingco.com/discount/JIM`}>JIM</a> for
+        10% your next order.
+      </div>
+    ),
+  },
 }
 
 export default messages
