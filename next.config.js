@@ -36,6 +36,12 @@ sources.push({
   permanent: false,
 })
 
+sources.push({
+  source: '/JIM',
+  destination: `/api/redirects/JIM`,
+  permanent: false,
+})
+
 module.exports = {
   reactStrictMode: true,
   async redirects() {
