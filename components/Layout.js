@@ -6,11 +6,9 @@ import Link from 'next/link'
 
 const messages = require('../data/codeMessages').default
 
-console.log(messages)
-
 export default function Layout({
   children,
-  options = { giveawayBanner: true },
+  options = { giveawayBanner: false },
   ...rest
 }) {
   const [showSourceBanner, setShowSourceBanner] = useState(null)
