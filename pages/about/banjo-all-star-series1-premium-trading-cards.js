@@ -45,10 +45,16 @@ export default function TradingCards({ players }) {
             </a>
           </div>
           <div className="w-96 md:pl-4">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0601/1800/7990/products/image_188bf4c2-4a17-4726-930f-d6859b15fd72_1296x.heic?v=1648774708"
-              alt="Banjo All-Stars"
-              className="h-96 w-96 max-w-none rounded-lg object-cover shadow-2xl"
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FNELLIECANEBG%2Fvideos%2F739212347292183%2F&show_text=false&width=230&t=0"
+              width={320}
+              height={476}
+              style={{ border: 'none', overflow: 'hidden' }}
+              scrolling="no"
+              frameBorder={0}
+              allowFullScreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              className="rounded"
             />
           </div>
         </div>
