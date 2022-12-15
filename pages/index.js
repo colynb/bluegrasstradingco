@@ -1,13 +1,13 @@
-import Image from 'next/image'
-import NewsletterSignup from '../components/NewsletterSignup'
+import Image from "next/image";
+import NewsletterSignup from "../components/NewsletterSignup";
 
-import { storefront } from '../utils'
-import Hero from '../components/Hero'
-import Artists from '../components/Artists'
-import client from '../client'
-import Layout from '../components/Layout'
-import FeaturedProducts from '../components/FeaturedProducts'
-import { loadCollection } from '../lib/loadCollection'
+import { storefront } from "../utils";
+import Hero from "../components/Hero";
+import Artists from "../components/Artists";
+import client from "../client";
+import Layout from "../components/Layout";
+import FeaturedProducts from "../components/FeaturedProducts";
+import { loadCollection } from "../lib/loadCollection";
 
 export default function Home({
   description,
@@ -19,14 +19,13 @@ export default function Home({
   const metaData = {
     title,
     description,
-  }
+  };
 
   return (
     <Layout metaData={metaData}>
       <main>
         <Hero featured={featured} />
-        <FeaturedProducts collection={collection} />
-        <div className="bg-gray-100">
+        <div className="bg-gray-50">
           <div className="mx-auto max-w-7xl py-12 sm:px-2 sm:py-32 lg:px-4">
             <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
               <div className="md:flex md:space-x-6">
@@ -45,10 +44,10 @@ export default function Home({
                   <p className="mt-4 text-xl leading-loose text-gray-500">
                     Founded by Colyn Brown in Sept 2021, Bluegrass Trading Co is
                     an online store dedicated to providing exclusive, quality,
-                    merchandise for bluegrass enthusiasts. Our flagship product,{' '}
+                    merchandise for bluegrass enthusiasts. Our flagship product,{" "}
                     <span className="font-semibold">
                       Banjo All-Star Premium Trading Cards
-                    </span>{' '}
+                    </span>{" "}
                     is currently in production and Series 1 will begin shipping
                     in April 2022!
                   </p>
@@ -84,34 +83,26 @@ export default function Home({
         </div>
       </main>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const product = await storefront(productQuery, {
-    handle: 'bluegrass-trading-co-banjo-all-star-series-one-pack',
-  })
-
-  const collection = await loadCollection('new-products')
-
   const artists = await client.fetch(
     `*[_type == "artist"]| order(name){ _id, name, bio, players, imageUrl, slug }`
-  )
+  );
 
   const featured = await client.fetch(
     `*[_type == "player" && limited == true]|order(series_number){name, series_number, slug, imageUrl}`
-  )
+  );
   return {
     props: {
       featured,
       artists,
-      ...product.data.product,
-      collection,
     },
-  }
+  };
 }
 
-const gql = String.raw
+const gql = String.raw;
 
 const productQuery = gql`
   query SingleProduct($handle: String!) {
@@ -140,7 +131,7 @@ const productQuery = gql`
       }
     }
   }
-`
+`;
 
 const collectionQuery = gql`
   query CollectionQuery($handle: String!) {
@@ -174,4 +165,4 @@ const collectionQuery = gql`
       }
     }
   }
-`
+`;

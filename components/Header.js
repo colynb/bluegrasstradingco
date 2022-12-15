@@ -1,13 +1,13 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Header({ metaData }) {
-  const router = useRouter()
+  const router = useRouter();
 
-  const { title, description, image } = metaData
+  const { title, description, image } = metaData;
 
-  const fullDescription = ` ${description} Bluegrass Trading Co is an online store dedicated to providing exclusive bluegrass related merchandise. Our flagship and first product, Banjo All-Star trading cards is currently in production and will be available to ship in Spring 2022. Thank you to all who have expressed interest and enthusiasm in this project. Made with ♥ by Colyn Brown in Friendsville, TN`
+  const fullDescription = ` ${description} Bluegrass Trading Co is an online store dedicated to providing exclusive bluegrass related merchandise. Our flagship and first product, Banjo All-Star trading cards is currently in production and will be available to ship in Spring 2022. Thank you to all who have expressed interest and enthusiasm in this project. Made with ♥ by Colyn Brown in Friendsville, TN`;
   return (
     <div>
       <Head>
@@ -26,7 +26,7 @@ export default function Header({ metaData }) {
           property="og:image"
           content={
             `${image}` ||
-            'https://cdn.shopify.com/s/files/1/0601/1800/7990/products/poster_1080x.png?v=1642553130'
+            "https://cdn.shopify.com/s/files/1/0601/1800/7990/products/poster_1080x.png?v=1642553130"
           }
         />
         <meta
@@ -47,7 +47,7 @@ export default function Header({ metaData }) {
             </Link>
 
             <a
-              href="https://shop.bluegrasstradingco.com/pages/contact"
+              href="mailto:colyn@bluegrasstradingco.com"
               className="block w-20 text-center"
             >
               Contact
@@ -80,7 +80,7 @@ export default function Header({ metaData }) {
         </Link>
 
         <a
-          href="https://shop.bluegrasstradingco.com/pages/contact"
+          href="mailto:colyn@bluegrasstradingco.com"
           className="block w-20 text-center"
         >
           Contact
@@ -94,5 +94,5 @@ export default function Header({ metaData }) {
         </Link>
       </div>
     </div>
-  )
+  );
 }

@@ -1,15 +1,15 @@
-import client from '../../client'
-import Footer from '../../components/Footer'
-import Header from '../../components/Header'
-import Layout from '../../components/Layout'
-import PlayerCard from '../../components/PlayerCard'
+import client from "../../client";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import Layout from "../../components/Layout";
+import PlayerCard from "../../components/PlayerCard";
 
 export default function TradingCards({ players }) {
   const metaData = {
-    title: 'Bluegrass Trading Co Banjo All-Star Artists',
+    title: "Bluegrass Trading Co Banjo All-Star Artists",
     description: `Introducing the world's first premium trading cards for the bluegrass enthusiast. With a total of 42 featured banjo greats, completed by 10 equally great artists, each pack of Banjo All-Star Premium Trading Cards includes 8 players, including a foil accented limited edition card. Yes, every pack comes with a limited edition card! Collect them all!
     Series 1 is shipping in April!`,
-  }
+  };
 
   return (
     <Layout metaData={metaData}>
@@ -22,7 +22,7 @@ export default function TradingCards({ players }) {
               </span>
               <br />
               <span className="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-yellow-400 text-transparent">
-                {' '}
+                {" "}
                 Premium Trading Cards
               </span>
             </h1>
@@ -34,11 +34,11 @@ export default function TradingCards({ players }) {
                 All-Star Premium Trading Cards includes 8 players, including a
                 foil accented limited edition card. Yes, every pack comes with a
                 limited edition card! Collect them all!
-              </span>{' '}
+              </span>{" "}
               <div className="font-bold">Now Shipping!</div>
             </div>
             <a
-              href="https://shop.bluegrasstradingco.com/products/bluegrass-trading-co-banjo-all-star-series-one-pack"
+              href="https://banjoallstars.etsy.com"
               className="mt-4 inline-block rounded-md border border-r border-b border-transparent border-r-yellow-400 border-b-yellow-400 border-t-yellow-100 border-l-yellow-100 bg-yellow-300 py-3 px-8 text-center font-display font-medium text-gray-600  hover:bg-yellow-400"
             >
               ORDER NOW
@@ -49,7 +49,7 @@ export default function TradingCards({ players }) {
               src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FNELLIECANEBG%2Fvideos%2F739212347292183%2F&show_text=false&width=230&t=0"
               width={320}
               height={476}
-              style={{ border: 'none', overflow: 'hidden' }}
+              style={{ border: "none", overflow: "hidden" }}
               scrolling="no"
               frameBorder={0}
               allowFullScreen="true"
@@ -72,12 +72,12 @@ export default function TradingCards({ players }) {
               >
                 <PlayerCard player={player} />
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps({ params }) {
@@ -85,11 +85,11 @@ export async function getStaticProps({ params }) {
     `
     *[_type == "player"]|order(series_number){_id, name, imageUrl, slug, limited, 'bio': bio[0].children[0].text, series_number, artist->{name, slug, imageUrl}}
     `
-  )
+  );
 
   return {
     props: {
       players,
     },
-  }
+  };
 }

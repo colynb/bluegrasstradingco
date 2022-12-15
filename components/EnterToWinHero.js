@@ -1,16 +1,16 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import Modal from './Modal'
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import Modal from "./Modal";
 function sliceIntoChunks(arr, chunkSize) {
-  const res = []
+  const res = [];
   //   arr.sort(() => Math.random() - 0.5)
   for (let i = 0; i < arr.length; i += chunkSize) {
-    const chunk = arr.slice(i, i + chunkSize)
-    res.push(chunk)
+    const chunk = arr.slice(i, i + chunkSize);
+    res.push(chunk);
   }
-  return res
+  return res;
 }
 
 /* This example requires Tailwind CSS v2.0+ */
@@ -20,12 +20,12 @@ export default function Hero({ featured }) {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm()
+  } = useForm();
 
-  const [submitError, setSubmitError] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(null)
-  const [verifyModal, setVerifyModal] = useState(false)
-  const onSubmit = (data) => subscribe(data)
+  const [submitError, setSubmitError] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(null);
+  const [verifyModal, setVerifyModal] = useState(false);
+  const onSubmit = (data) => subscribe(data);
 
   const subscribe = async ({ email, first_name }) => {
     try {
@@ -33,16 +33,16 @@ export default function Hero({ featured }) {
         `/api/contest?email=${encodeURIComponent(
           email
         )}&first_name=${encodeURIComponent(first_name)}`
-      ).then((resp) => resp.json())
-      setSubmitSuccess(true)
-      setVerifyModal(true)
+      ).then((resp) => resp.json());
+      setSubmitSuccess(true);
+      setVerifyModal(true);
     } catch (e) {
-      setSubmitError(true)
-      setVerifyModal(false)
+      setSubmitError(true);
+      setVerifyModal(false);
     }
-  }
+  };
 
-  const featuredChunks = sliceIntoChunks(featured, 10)
+  const featuredChunks = sliceIntoChunks(featured, 10);
 
   return (
     <div className="relative overflow-hidden bg-gray-100">
@@ -55,13 +55,13 @@ export default function Hero({ featured }) {
               </span>
             </h1>
             <div className="mt-4 text-xl text-gray-500">
-              We are giving away the{' '}
-              <a href="https://shop.bluegrasstradingco.com/products/12-pack-of-banjo-all-star-premium-trading-cards">
+              We are giving away the{" "}
+              <a href="https://banjoallstars.etsy.com">
                 Complete Set of Banjo All-Star Premium Trading Cards
-              </a>{' '}
+              </a>{" "}
               to 3 lucky newsletter subscribers. Each set is 12 packs and a
               collectible display box. Winners will be announced during a live
-              stream around the start of May. (No purchase necessary){' '}
+              stream around the start of May. (No purchase necessary){" "}
               <strong>Refer your friends for even more chances to win!</strong>
             </div>
 
@@ -106,10 +106,10 @@ export default function Hero({ featured }) {
                                   height="550"
                                 />
                               </div>
-                            )
+                            );
                           })}
                         </div>
-                      )
+                      );
                     })}
                   </div>
                 </div>
@@ -119,5 +119,5 @@ export default function Hero({ featured }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
