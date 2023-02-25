@@ -1,13 +1,10 @@
 import Image from "next/image";
 import NewsletterSignup from "../components/NewsletterSignup";
 
-import { storefront } from "../utils";
 import Hero from "../components/Hero";
 import Artists from "../components/Artists";
 import client from "../client";
 import Layout from "../components/Layout";
-import FeaturedProducts from "../components/FeaturedProducts";
-import { loadCollection } from "../lib/loadCollection";
 
 export default function Home({
   description,

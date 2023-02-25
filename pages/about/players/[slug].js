@@ -1,31 +1,21 @@
-import { useRouter } from 'next/router'
-import Link from 'next/link'
-import Footer from '../../../components/Footer'
-import Header from '../../../components/Header'
-import PlayerCard from '../../../components/PlayerCard'
-import { getPlayers } from '../../api/players'
-import client from '../../../client'
-import Layout from '../../../components/Layout'
-import FeaturedProducts from '../../../components/FeaturedProducts'
-import { loadCollection } from '../../../lib/loadCollection'
+import { useRouter } from "next/router";
+import Link from "next/link";
+import PlayerCard from "../../../components/PlayerCard";
+import client from "../../../client";
+import Layout from "../../../components/Layout";
 
-export default function PlayerDetail({
-  player,
-  prevPlayer,
-  nextPlayer,
-  collection,
-}) {
-  const router = useRouter()
+export default function PlayerDetail({ player, prevPlayer, nextPlayer }) {
+  const router = useRouter();
 
   if (!player) {
-    return null
+    return null;
   }
 
   const metaData = {
     title: `${player.name}, Banjo All-Star`,
     description: player.bio,
     image: player.imageUrl,
-  }
+  };
 
   return (
     <Layout metaData={metaData}>
@@ -126,12 +116,10 @@ export default function PlayerDetail({
               </Link>
             </div>
           </div>
-
-          <FeaturedProducts collection={collection} />
         </div>
       </div>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps({ params }) {
@@ -139,39 +127,34 @@ export async function getStaticProps({ params }) {
     `
     *[_type == "player"]|order(series_number){_id, name, imageUrl, slug, collection, limited, bio, series_number, artist->{name, slug, imageUrl}}
     `
-  )
-  const index = players.findIndex((a) => a.slug.current === params.slug)
-  const player = players[index]
-  let nextIndex = index + 1
-  let prevIndex = index - 1
+  );
+  const index = players.findIndex((a) => a.slug.current === params.slug);
+  const player = players[index];
+  let nextIndex = index + 1;
+  let prevIndex = index - 1;
   if (prevIndex < 0) {
-    prevIndex = players.length - 1
+    prevIndex = players.length - 1;
   }
   if (nextIndex === players.length) {
-    nextIndex = 0
+    nextIndex = 0;
   }
-
-  const collection = await loadCollection(
-    player.collection || 'products-now-shipping'
-  )
 
   return {
     props: {
       prevPlayer: players[prevIndex],
       nextPlayer: players[nextIndex],
       player,
-      collection,
     },
-  }
+  };
 }
 
 export async function getStaticPaths() {
-  const players = await client.fetch(`*[_type == "player"]{slug}`)
+  const players = await client.fetch(`*[_type == "player"]{slug}`);
   const paths = players.map((player) => ({
     params: { slug: player.slug.current },
-  }))
+  }));
   return {
     paths,
     fallback: false, // false or 'blocking'
-  }
+  };
 }
