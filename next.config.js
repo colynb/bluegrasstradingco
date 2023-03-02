@@ -7,6 +7,12 @@ sources.push({
 });
 
 sources.push({
+  source: `/about/artists/grace-van-t-hof`,
+  destination: `https://banjoallstars.com/about/artists/grace-vant-hof`,
+  permanent: true,
+});
+
+sources.push({
   source: `/about/artists/:path*`,
   destination: `https://banjoallstars.com/about/artists/:path*`,
   permanent: true,
